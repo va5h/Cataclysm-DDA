@@ -234,7 +234,7 @@
     "points": 0,
     "traits": [ "PROF_SKATER" ],
     "items": {
-      "both": [ "mask_hockey", "hockey_stick", "jersey", "pants", "socks", "sneakers", "mouthpiece", "puck" ],
+      "both": [ "mask_hockey", { "item": "hockey_stick", "custom-flags": [ "auto_wield" ] }, "jersey", "pants", "socks", "sneakers", "mouthpiece", "puck" ],
       "male": [ "briefs" ],
       "female": [ "sports_bra", "panties" ]
     }
