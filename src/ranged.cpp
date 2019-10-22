@@ -349,8 +349,23 @@ int player::fire_gun( const tripoint &target, int shots, item &gun )
     /** @EFFECT_SMG delays effects of recoil during automatic fire */
     /** @EFFECT_RIFLE delays effects of recoil during automatic fire */
     /** @EFFECT_SHOTGUN delays effects of recoil during automatic fire */
-    double absorb = std::min( get_skill_level( gun.gun_skill() ), MAX_SKILL ) / double( MAX_SKILL * 2 );
-
+    /*  Tweak : modified calculation as follows.
+        - Max amount or recoil absorb now capped at 95% 
+        (MAX_SKILL is not of much use here, actually).
+        - Progress is linear such as that at skill level 10 it's still 0.5 (k = 1 / 20 = 0.05)
+        - From lvl10 onwards k = 0.03 therefore value caps at skill level 25
+    */
+    // TODO Yeah yeah, i know it's lame. Must come up with better idea, for sure.
+    double current_absorb = 0;
+    int current_lvl = get_skill_level( gun.gun_skill() );
+    if (current_lvl <= 10 ) {
+        current_absorb = current_lvl * 0.05;
+    }
+    else {
+        current_absorb = current_lvl;
+    }
+    double absorb = std::min(current_absorb, 0.95);
+    
     tripoint aim = target;
     int curshot = 0;
     int hits = 0; // total shots on target
@@ -458,7 +473,10 @@ static int throw_cost( const player &c, const item &to_throw )
     const int base_move_cost = to_throw.attack_time() / 2;
     const int throw_skill = std::min( MAX_SKILL, c.get_skill_level( skill_throw ) );
     ///\EFFECT_THROW increases throwing speed
-    const int skill_cost = static_cast<int>( ( base_move_cost * ( 20 - throw_skill ) / 20 ) );
+    /*  Tweak by va5h : modified calculation, again.
+        Now MAX_SKILL implicitly considered to be 25.
+        And minimal skill cost (30 - 25 ) / 25 = 0.2 = 20% of original */
+    const int skill_cost = static_cast<int>( ( base_move_cost * ( 30 - throw_skill ) / 30 ) );
     ///\EFFECT_DEX increases throwing speed
     const int dexbonus = c.get_dex();
     const int encumbrance_penalty = c.encumb( bp_torso ) +
@@ -587,6 +605,8 @@ dealt_projectile_attack player::throw_item( const tripoint &target, const item &
     stats_mod = throw_assist ? throw_assist_str / 2.0 : stats_mod;
     // modify strength impact based on skill level, clamped to [0.15 - 1]
     // mod = mod * [ ( ( skill / max_skill ) * 0.85 ) + 0.15 ]
+    /*  TODO Consider another formula.
+        With MAX_SKILL=25 progression is too damn slow( */
     stats_mod *= ( std::min( MAX_SKILL,
                              get_skill_level( skill_throw ) ) /
                    static_cast<double>( MAX_SKILL ) ) * 0.85 + 0.15;
