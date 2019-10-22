@@ -60,12 +60,16 @@
     "components": [
       [
         [ "light_minus_battery_cell", 20 ],
+        [ "light_minus_disposable_cell", 20 ],
         [ "light_battery_cell", 10 ],
         [ "light_plus_battery_cell", 5 ],
+        [ "light_disposable_cell", 10 ],
         [ "medium_battery_cell", 2 ],
         [ "medium_plus_battery_cell", 2 ],
+        [ "medium_disposable_cell", 2 ],
         [ "heavy_battery_cell", 1 ],
-        [ "heavy_plus_battery_cell", 1 ]
+        [ "heavy_plus_battery_cell", 1 ],
+        [ "heavy_disposable_cell", 1 ]
       ]
     ]
   },
