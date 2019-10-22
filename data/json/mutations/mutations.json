@@ -4610,7 +4610,11 @@
     "types": [ "METABOLISM" ],
     "category": [ "CHIMERA" ],
     "metabolism_modifier": 2.0,
-    "stamina_regen_modifier": 0.5
+    "stamina_regen_modifier": 2.5,
+    "healing_awake": 4.0,
+    "healing_resting": 5.5,
+    "fatigue_modifier": -0.2,
+    "fatigue_regen_modifier": 0.75
   },
   {
     "type": "mutation",
