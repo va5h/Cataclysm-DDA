@@ -4041,7 +4041,7 @@
     "name": "mp3 player (on)",
     "name_plural": "mp3 players (on)",
     "description": "This mp3 player is turned on and playing some great tunes, raising your morale steadily while on your person.  It runs through batteries quickly; you can turn it off by using it.  It also obscures your hearing.",
-    "power_draw": 1000,
+    "power_draw": 100,
     "revert_to": "mp3",
     "use_action": "MP3_ON",
     "flags": [ "TRADER_AVOID", "BELT_CLIP" ],
@@ -4877,7 +4877,7 @@
     "name": "reading light (active)",
     "name_plural": "reading lights (active)",
     "description": "A little clip-on LED light, meant for reading books in the dark.  This one is turned on.",
-    "power_draw": 1000,
+    "power_draw": 600,
     "revert_to": "reading_light",
     "use_action": { "target": "reading_light", "msg": "You switch off the reading light.", "menu_text": "Turn off", "type": "transform" },
     "flags": [ "LIGHT_15", "CHARGEDIM" ]
