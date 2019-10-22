@@ -3846,8 +3846,8 @@ void player::update_stamina( int turns )
         bonus = std::min( bonus, 4 * static_cast<int>
                           ( get_option<float>( "PLAYER_BASE_STAMINA_REGEN_RATE" ) ) );
         if( bonus > 0 ) {
-            stamina_recovery += bonus;
-            bonus /= 10;
+            stamina_recovery += bonus * 5;
+            bonus /= 20;
             bonus = std::max( bonus, 1 );
             mod_power_level( units::from_kilojoule( -bonus ) );
         }

@@ -108,6 +108,10 @@ const efftype_id effect_under_op( "under_operation" );
 const efftype_id effect_visuals( "visuals" );
 const efftype_id effect_weed_high( "weed_high" );
 
+const efftype_id effect_smoke( "smoke" );
+const efftype_id effect_teargas( "teargas" );
+const efftype_id effect_badpoison( "badpoison" );
+
 static const trait_id trait_PROF_MED( "PROF_MED" );
 static const trait_id trait_PROF_AUTODOC( "PROF_AUTODOC" );
 
@@ -1076,6 +1080,20 @@ void player::process_bionic( int b )
             add_msg_if_player( m_good,
                                _( "You feel your throat open up and air filling your lungs!" ) );
             remove_effect( effect_asthma );
+        }
+        // Biotic rebreather should actually protect from smoke, teargas and toxic gas
+        if( has_effect( effect_smoke ) ) {
+            remove_effect( effect_smoke );
+            add_msg_if_player( m_good, _( "So much smoke here. Luckily, you have your rebreather augmentation." ) );
+        }
+        if( has_effect( effect_teargas ) ) {
+            remove_effect( effect_teargas );
+            add_msg_if_player( m_good, _( "You're breathing stone. Crying gets done." ) );
+        }
+        if( has_effect( effect_poison ) || has_effect( effect_badpoison ) ) {
+            remove_effect( effect_poison );
+            remove_effect( effect_badpoison );
+            add_msg_if_player( m_good, _( "Your gills kick in, cleansing all the toxic gas." ) );
         }
     } else if( bio.id == "afs_bio_dopamine_stimulators" ) { // Aftershock
         add_morale( MORALE_FEELING_GOOD, 20, 20, 30_minutes, 20_minutes, true );
