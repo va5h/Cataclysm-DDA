@@ -55,7 +55,7 @@
 
 // Items on the map with at most this distance to the player are considered available for crafting,
 // see inventory::form_from_map
-#define PICKUP_RANGE 6
+#define PICKUP_RANGE 12
 
 /** Number of z-levels below 0 (not including 0). */
 #define OVERMAP_DEPTH 10
@@ -74,7 +74,7 @@
 #define VEHICLE_HANDLING_PENALTY 80
 
 /** Amount by which to charge an item for each unit of plutonium cell */
-#define PLUTONIUM_CHARGES 500
+#define PLUTONIUM_CHARGES 1000
 
 /** Temperature constants */
 namespace temperatures
@@ -111,13 +111,13 @@ constexpr time_duration CORPSE_ROT_TIME = 24_hours;
 #define MAX_AIM_COST 10
 
 /** Maximum (effective) level for a skill */
-#define MAX_SKILL 10
+#define MAX_SKILL 25
 
 /** Maximum (effective) level for a stat */
-#define MAX_STAT 20
+#define MAX_STAT 50
 
 /** Maximum range at which ranged attacks can be executed */
-#define RANGE_HARD_CAP 60
+#define RANGE_HARD_CAP 90
 
 /** Accuracy levels which a shots tangent must be below */
 constexpr double accuracy_headshot = 0.1;
