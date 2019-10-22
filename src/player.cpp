@@ -250,6 +250,8 @@ static const bionic_id bio_ups( "bio_ups" );
 static const bionic_id bio_watch( "bio_watch" );
 static const bionic_id bio_synaptic_regen( "bio_synaptic_regen" );
 
+static const bionic_id bio_targeting( "bio_targeting" );
+
 // Aftershock stuff!
 static const bionic_id afs_bio_linguistic_coprocessor( "afs_bio_linguistic_coprocessor" );
 
@@ -9999,6 +10001,12 @@ bool player::sees( const Creature &critter ) const
     if( dist <= 3 && has_active_mutation( trait_ANTENNAE ) ) {
         return true;
     }
+    
+    // Targeting CBM now scans and reveals close-range targets.
+    if( dist <= 5 && has_bionic( bio_targeting ) ) {
+        return true;
+    }    
+    
     if( critter.digging() && has_active_bionic( bio_ground_sonar ) ) {
         // Bypass the check below, the bionic sonar also bypasses the sees(point) check because
         // walls don't block sonar which is transmitted in the ground, not the air.
