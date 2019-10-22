@@ -2057,7 +2057,7 @@
     "autolearn": true,
     "using": [ [ "cordage", 1 ] ],
     "qualities": [ { "id": "CUT", "level": 1 } ],
-    "components": [ [ [ "duct_tape", 50 ] ], [ [ "jug_plastic", 4 ] ] ]
+    "components": [ [ [ "duct_tape", 50 ] ], [ [ "jug_plastic", 3 ] ] ]
   },
   {
     "type": "recipe",
