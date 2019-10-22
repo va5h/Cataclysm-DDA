@@ -2036,10 +2036,15 @@ void activity_handlers::hand_crank_do_turn( player_activity *act, player *p )
     // to 10 watt (suspicious claims from some manufacturers) sustained output.
     // It takes 2.4 minutes to produce 1kj at just slightly under 7 watts (25 kj per hour)
     // time-based instead of speed based because it's a sustained activity
+
+    // TWEAK: now based on speed, at least partly
+    //( player_activities.json still says otherwise =)!
     item &hand_crank_item = p ->i_at( act->position );
 
-    if( calendar::once_every( 144_seconds ) ) {
-        p->mod_fatigue( 1 );
+    int freq = std::max( static_cast<int>( 144 / p->get_speed() ), 1 );
+
+    if( calendar::once_every( time_duration::from_seconds(freq) ) ) {
+        p->mod_fatigue( 1 - ( ((p->get_str() / 20) > 0) ? 1 : 0 ) );
         if( hand_crank_item.ammo_capacity() > hand_crank_item.ammo_remaining() ) {
             hand_crank_item.ammo_set( "battery", hand_crank_item.ammo_remaining() + 1 );
         } else {
