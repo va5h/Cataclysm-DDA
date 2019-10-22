@@ -428,7 +428,7 @@
     "name": "Integrated Dosimeter",
     "description": "Small radiation sensors have been surgically implanted throughout your body, allowing you to analyze your level of absorbed radiation.  They will also alert you whenever exposed to environmental radiation.",
     "occupied_bodyparts": [ [ "TORSO", 2 ], [ "HEAD", 1 ], [ "ARM_L", 1 ], [ "ARM_R", 1 ], [ "LEG_L", 1 ], [ "LEG_R", 1 ] ],
-    "act_cost": "100 J"
+    "act_cost": "10 J"
   },
   {
     "id": "bio_gills",
