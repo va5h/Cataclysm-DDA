@@ -1540,8 +1540,8 @@
     "prereqs": [ "WAKEFUL2" ],
     "threshreq": [ "THRESH_ELFA" ],
     "category": [ "ELFA" ],
-    "fatigue_modifier": -0.5,
-    "fatigue_regen_modifier": 0.5
+    "fatigue_modifier": -0.75,
+    "fatigue_regen_modifier": 0.95
   },
   {
     "type": "mutation",
