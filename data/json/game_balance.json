@@ -18,21 +18,21 @@
     "name": "PLAYER_MAX_STAMINA",
     "info": "Sets max stamina value of the player.",
     "stype": "int",
-    "value": 10000
+    "value": 20000
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "PLAYER_BASE_STAMINA_REGEN_RATE",
     "info": "Sets base stamina regeneration per turn of the player. May be used as an offset in stamina draining effects.",
     "stype": "float",
-    "value": 20
+    "value": 100
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "PLAYER_BASE_STAMINA_BURN_RATE",
     "info": "Sets base stamina burn per 100 moves of the walking player.",
     "stype": "int",
-    "value": 15
+    "value": 5
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -60,7 +60,7 @@
     "name": "PLAYER_HEALING_RATE",
     "info": "Set base player healing rate per turn. Default: 0.0001",
     "stype": "float",
-    "value": 0.0001
+    "value": 0.001
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -102,7 +102,7 @@
     "name": "MANUAL_BIONIC_INSTALLATION",
     "info": "Permits manual self-installation of bionics.",
     "stype": "bool",
-    "value": false
+    "value": true
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -158,14 +158,14 @@
     "name": "SPEEDYDEX_MIN_DEX",
     "info": "The minimum dex required for speedydex mod to add speed",
     "stype": "int",
-    "value": 0
+    "value": 12
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "SPEEDYDEX_DEX_SPEED",
     "info": "The amount of moves gained per dex above SPEEDYDEX_MIN_DEX",
     "stype": "int",
-    "value": 0
+    "value": 2
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -193,6 +193,6 @@
     "name": "STATS_THROUGH_KILLS",
     "info": "Stats through Kills.  A mod that allows your stats to increase by killing zombies.",
     "stype": "bool",
-    "value": false
+    "value": true
   }
 ]
