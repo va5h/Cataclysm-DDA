@@ -183,7 +183,7 @@
     "//": "The swiss army knife is a bit more of a knife than a toolkit.",
     "description": "An iconic pocket knife imported from Europe.  Its red plastic handle conceals many small tools.",
     "weight": "246 g",
-    "volume": 0,
+    "volume": "50 ml",
     "price": 3000,
     "to_hit": -2,
     "cutting": 6,
