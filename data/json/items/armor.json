@@ -1166,7 +1166,8 @@
       "type": "holster",
       "holster_prompt": "Sheath knife",
       "holster_msg": "You sheath your %s",
-      "max_volume": "500 ml",
+      "min_volume": "30 ml",
+	  "max_volume": "500 ml",
       "draw_cost": 30,
       "flags": [ "SHEATH_KNIFE" ]
     },
@@ -5590,6 +5591,7 @@
       "holster_prompt": "Stick what into your belt",
       "holster_msg": "You tuck your %s into your %s",
       "multi": 2,
+	  "min_volume": "20 ml",
       "max_volume": "500 ml",
       "max_weight": 600,
       "draw_cost": 60,
