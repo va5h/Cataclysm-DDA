@@ -161,7 +161,9 @@ size_t avatar::max_memorized_tiles() const
         float map_memory_capacity_multiplier =
             mutation_value( "map_memory_capacity_multiplier" );
         if( has_active_bionic( bio_memory ) ) {
-            map_memory_capacity_multiplier = 50;
+            // Multiply memcap instead of setting to plain number
+            // Oh, and since we're already here - boost your memory twofold FTW!
+            map_memory_capacity_multiplier *= 100;
         }
         current_map_memory_capacity = 2 * SEEX * 2 * SEEY * 100 * map_memory_capacity_multiplier;
     }
