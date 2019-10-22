@@ -2620,12 +2620,13 @@
       "type": "holster",
       "holster_prompt": "Attach what to belt loop?",
       "holster_msg": "You clip your %s to your %s",
-      "max_volume": "2 L",
-      "max_weight": 3600,
+      "multi": 4,
+      "max_volume": "3 L",
+      "max_weight": 4200,
       "draw_cost": 50,
       "flags": [ "BELT_CLIP" ]
     },
-    "flags": [ "FANCY", "WAIST", "NO_QUICKDRAW", "WATER_FRIENDLY" ]
+    "flags": [ "FANCY", "VARSIZE", "WAIST", "NO_QUICKDRAW", "WATER_FRIENDLY" ]
   },
   {
     "id": "fishing_waders",
@@ -5588,8 +5589,9 @@
       "type": "holster",
       "holster_prompt": "Stick what into your belt",
       "holster_msg": "You tuck your %s into your %s",
+      "multi": 2,
       "max_volume": "500 ml",
-      "max_weight": 400,
+      "max_weight": 600,
       "draw_cost": 60,
       "flags": [ "BELT_CLIP" ]
     },
@@ -6878,12 +6880,14 @@
       "type": "holster",
       "holster_prompt": "Attach what to holder?",
       "holster_msg": "You attach your %s to your %s.",
+      "multi": 8,
       "max_volume": "2250 ml",
       "max_weight": 3600,
       "draw_cost": 50,
-      "flags": [ "BELT_CLIP" ]
+      "skills": [ "pistol" ],
+      "flags": [ "BELT_CLIP", "MAG_COMPACT" ]
     },
-    "flags": [ "WAIST", "WATER_FRIENDLY" ]
+    "flags": [ "FANCY", "VARSIZE", "WAIST", "WATER_FRIENDLY" ]
   },
   {
     "id": "polo_shirt",

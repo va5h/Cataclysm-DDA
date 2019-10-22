@@ -191,7 +191,7 @@
     "symbol": ";",
     "color": "red",
     "qualities": [ [ "CUT", 1 ], [ "SAW_W", 1 ], [ "SAW_M", 1 ], [ "SCREW", 1 ], [ "BUTCHER", 8 ] ],
-    "flags": [ "STAB" ]
+    "flags": [ "STAB", "BELT_CLIP" ]
   },
   {
     "id": "knife_trench",

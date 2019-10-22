@@ -748,6 +748,7 @@
     "charges_per_use": 5,
     "revert_to": "camera",
     "use_action": "CAMERA",
+    "flags": [ "BELT_CLIP" ],
     "magazines": [
       [
         "battery",
@@ -780,7 +781,7 @@
     "charges_per_use": 5,
     "revert_to": "camera_pro",
     "use_action": "CAMERA",
-    "flags": [ "CAMERA_PRO", "ALWAYS_TWOHAND" ],
+    "flags": [ "CAMERA_PRO", "ALWAYS_TWOHAND", "BELT_CLIP" ],
     "magazines": [
       [
         "battery",
@@ -1927,7 +1928,7 @@
     "turns_per_charge": 1,
     "revert_to": "e_handcuffs",
     "use_action": "EHANDCUFFS",
-    "flags": [ "ALWAYS_TWOHAND", "UNARMED_WEAPON", "TRADER_AVOID" ]
+    "flags": [ "ALWAYS_TWOHAND", "UNARMED_WEAPON", "TRADER_AVOID", "BELT_CLIP" ]
   },
   {
     "id": "e_tool",
@@ -2793,6 +2794,7 @@
     "ammo": "battery",
     "charges_per_use": 1,
     "use_action": "GEIGER",
+    "flags": [ "BELT_CLIP" ],
     "magazines": [
       [
         "battery",
@@ -2906,7 +2908,7 @@
     "color": "light_gray",
     "techniques": [ "SPIN", "WRAP" ],
     "qualities": [ [ "COOK", 1 ] ],
-    "flags": [ "DURABLE_MELEE", "NONCONDUCTIVE" ]
+    "flags": [ "DURABLE_MELEE", "NONCONDUCTIVE", "BELT_CLIP" ]
   },
   {
     "id": "hacksaw",
@@ -3130,7 +3132,8 @@
     "material": [ "plastic" ],
     "symbol": ",",
     "color": "green",
-    "use_action": "SIPHON"
+    "use_action": "SIPHON",
+    "flags": [ "BELT_CLIP" ]
   },
   {
     "id": "hotplate",
@@ -4014,6 +4017,7 @@
     "ammo": "battery",
     "use_action": "MP3",
     "charges_per_use": 1,
+    "flags": [ "BELT_CLIP" ],
     "magazines": [
       [
         "battery",
@@ -4040,7 +4044,7 @@
     "power_draw": 1000,
     "revert_to": "mp3",
     "use_action": "MP3_ON",
-    "flags": [ "TRADER_AVOID" ],
+    "flags": [ "TRADER_AVOID", "BELT_CLIP" ],
     "magazine_well": 1
   },
   {
@@ -4084,7 +4088,7 @@
     "symbol": ";",
     "color": "light_gray",
     "qualities": [ [ "CUT", 1 ], [ "SAW_W", 1 ], [ "SAW_M", 1 ], [ "WRENCH", 1 ], [ "SCREW", 1 ], [ "SCREW_FINE", 1 ], [ "BUTCHER", 7 ] ],
-    "flags": [ "STAB", "SHEATH_KNIFE" ]
+    "flags": [ "STAB", "SHEATH_KNIFE", "BELT_CLIP" ]
   },
   {
     "id": "needle_bone",
@@ -4481,12 +4485,13 @@
     "name": "locksmith kit",
     "description": "This is a locksmith's set of sturdy steel lock picks and torsion wrenches.  It is essential for silently and quickly opening locks, provided you have some mechanical skill.",
     "weight": "544 g",
-    "volume": 0,
+    "volume": "80 ml",
     "price": 20000,
     "material": "steel",
     "symbol": ";",
     "color": "light_gray",
-    "use_action": { "type": "picklock", "pick_quality": 5 }
+    "use_action": { "type": "picklock", "pick_quality": 5 },
+    "flags": [ "BELT_CLIP" ]
   },
   {
     "id": "pickles_ferment",
@@ -5190,7 +5195,7 @@
       "cost_scaling": 0.1,
       "move_cost": 1000
     },
-    "flags": [ "ALLOWS_REMOTE_USE" ]
+    "flags": [ "ALLOWS_REMOTE_USE", "BELT_CLIP" ]
   },
   {
     "id": "anesthetic_kit",

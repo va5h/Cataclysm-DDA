@@ -65,6 +65,7 @@
       "need_charges": 1,
       "need_charges_msg": "The flashlight's batteries are dead."
     },
+    "flags": [ "BELT_CLIP" ],
     "magazines": [
       [
         "battery",
@@ -90,7 +91,7 @@
     "power_draw": 10000,
     "revert_to": "flashlight",
     "use_action": { "menu_text": "Turn off", "type": "transform", "msg": "You turn the flashlight off.", "target": "flashlight" },
-    "flags": [ "LIGHT_300", "CHARGEDIM", "TRADER_AVOID" ]
+    "flags": [ "LIGHT_300", "CHARGEDIM", "TRADER_AVOID", "BELT_CLIP" ]
   },
   {
     "id": "handflare",
@@ -150,6 +151,7 @@
       "need_charges": 1,
       "need_charges_msg": "The heavy duty flashlight's batteries are dead."
     },
+    "flags": [ "BELT_CLIP" ],
     "magazines": [
       [
         "battery",
@@ -180,7 +182,7 @@
       "msg": "You turn the heavy duty flashlight off.",
       "target": "heavy_flashlight"
     },
-    "flags": [ "LIGHT_500", "CHARGEDIM" ]
+    "flags": [ "LIGHT_500", "CHARGEDIM", "BELT_CLIP" ]
   },
   {
     "id": "oxylamp",

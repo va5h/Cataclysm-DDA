@@ -12,7 +12,7 @@
     "symbol": "!",
     "color": "red",
     "use_action": "DISASSEMBLE",
-    "flags": [ "NO_REPAIR" ]
+    "flags": [ "NO_REPAIR", "BELT_CLIP" ]
   },
   {
     "id": "adderall",
