@@ -647,6 +647,11 @@ endif
 # Global settings for Windows targets (at end)
 ifeq ($(TARGETSYSTEM),WINDOWS)
   LDFLAGS += -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lversion
+  # FIX Additional dependencies for 3rd party libs (at least, on my system)
+  #     setupapi required by libSDL2
+  #     zstd required by libtiff
+  #     librpcrt4 required by harfbuzz
+  LDFLAGS += -lsetupapi -lzstd -lrpcrt4
   ifeq ($(BACKTRACE),1)
     LDFLAGS += -ldbghelp
   endif
