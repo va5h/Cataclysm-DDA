@@ -94,7 +94,8 @@
       { "fuel": 0, "smoke": 0, "burn": 0 },
       { "fuel": 0, "smoke": 1, "burn": 1, "volume_per_turn": "250 ml" },
       { "fuel": 1, "smoke": 1, "burn": 2 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.021 ] ]
   },
   {
     "type": "material",
@@ -189,7 +190,8 @@
       { "fuel": 0, "smoke": 1, "burn": 1, "volume_per_turn": "1250 ml" },
       { "fuel": 1, "smoke": 3, "burn": 1 },
       { "fuel": 1, "smoke": 5, "burn": 5 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.019 ] ]
   },
   {
     "type": "material",
@@ -256,7 +258,8 @@
       { "fuel": 1, "smoke": 1, "burn": 1, "volume_per_turn": "1250 ml" },
       { "fuel": 1, "smoke": 1, "burn": 1 },
       { "fuel": 1, "smoke": 1, "burn": 2 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.015 ] ]
   },
   {
     "type": "material",
@@ -321,7 +324,8 @@
       { "fuel": 1, "smoke": 1, "burn": 1, "volume_per_turn": "2500 ml" },
       { "fuel": 2, "smoke": 3, "burn": 2, "volume_per_turn": "10000 ml" },
       { "fuel": 3, "smoke": 10, "burn": 3 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.011 ] ]
   },
   {
     "type": "material",
@@ -346,7 +350,8 @@
       { "fuel": 1, "smoke": 1, "burn": 1, "volume_per_turn": "2500 ml" },
       { "fuel": 2, "smoke": 3, "burn": 2, "volume_per_turn": "10000 ml" },
       { "fuel": 3, "smoke": 10, "burn": 3 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.011 ] ]
   },
   {
     "type": "material",
@@ -391,7 +396,8 @@
       { "fuel": 1, "smoke": 2, "burn": 1, "volume_per_turn": "1250 ml" },
       { "fuel": 1, "smoke": 1, "burn": 2 },
       { "fuel": 1, "smoke": 1, "burn": 3 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.009 ] ]
   },
   {
     "type": "material",
@@ -417,7 +423,8 @@
       { "fuel": 1, "smoke": 3, "burn": 1, "volume_per_turn": "1250 ml" },
       { "fuel": 1, "smoke": 5, "burn": 2 },
       { "fuel": 1, "smoke": 10, "burn": 4 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.013 ] ]
   },
   {
     "type": "material",
@@ -443,7 +450,8 @@
       { "fuel": 1, "smoke": 2, "burn": 1, "volume_per_turn": "750 ml" },
       { "fuel": 1, "smoke": 3, "burn": 2 },
       { "fuel": 1, "smoke": 5, "burn": 5 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.013 ] ]
   },
   {
     "type": "material",
@@ -534,7 +542,8 @@
       { "fuel": 1, "smoke": 1, "burn": 1, "volume_per_turn": "2500 ml" },
       { "fuel": 2, "smoke": 3, "burn": 2, "volume_per_turn": "10000 ml" },
       { "fuel": 3, "smoke": 10, "burn": 3 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.011 ] ]
   },
   {
     "type": "material",
@@ -605,7 +614,8 @@
       { "fuel": 1, "smoke": 1, "burn": 1, "volume_per_turn": "2500 ml" },
       { "fuel": 2, "smoke": 3, "burn": 2, "volume_per_turn": "10000 ml" },
       { "fuel": 3, "smoke": 10, "burn": 3 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.011 ] ]
   },
   {
     "type": "material",
@@ -646,7 +656,8 @@
     "dmg_adj": [ "lightly damaged", "damaged", "very damaged", "thoroughly damaged" ],
     "bash_dmg_verb": "smashed",
     "cut_dmg_verb": "cut",
-    "burn_data": [ { "fuel": 1, "smoke": 1, "burn": 1 }, { "fuel": 1, "smoke": 1, "burn": 2 }, { "fuel": 1, "smoke": 1, "burn": 3 } ]
+    "burn_data": [ { "fuel": 1, "smoke": 1, "burn": 1 }, { "fuel": 1, "smoke": 1, "burn": 2 }, { "fuel": 1, "smoke": 1, "burn": 3 } ],
+    "burn_products": [ [ "ash", 0.013 ] ]
   },
   {
     "type": "material",
@@ -735,35 +746,8 @@
       { "fuel": 0, "smoke": 0, "burn": 0 },
       { "fuel": 1, "smoke": 3, "burn": 2, "volume_per_turn": "500 ml" },
       { "fuel": 1, "smoke": 3, "burn": 2 }
-    ]
-  },
-  {
-    "type": "material",
-    "ident": "lycra",
-    "name": "Lycra",
-    "//": "not actually pure lycra, but poly/nylon and lycra blend",
-    "density": 2,
-    "specific_heat_liquid": 1.7,
-    "specific_heat_solid": 1.7,
-    "latent_heat": 27,
-    "soft": true,
-    "reinforces": true,
-    "bash_resist": 2,
-    "cut_resist": 2,
-    "acid_resist": 9,
-    "fire_resist": 2,
-    "elec_resist": 2,
-    "chip_resist": 6,
-    "repaired_with": "lycra_patch",
-    "salvaged_into": "lycra_patch",
-    "dmg_adj": [ "ripped", "torn", "shredded", "tattered" ],
-    "bash_dmg_verb": "ripped",
-    "cut_dmg_verb": "cut",
-    "burn_data": [
-      { "fuel": 1, "smoke": 2, "burn": 1, "volume_per_turn": "650 ml" },
-      { "fuel": 1, "smoke": 3, "burn": 3 },
-      { "fuel": 1, "smoke": 5, "burn": 5 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.012 ] ]
   },
   {
     "type": "material",
@@ -815,7 +799,8 @@
       { "fuel": 1, "smoke": 3, "burn": 1, "volume_per_turn": "2500 ml" },
       { "fuel": 1, "smoke": 3, "burn": 2 },
       { "fuel": 1, "smoke": 3, "burn": 3 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.005 ] ]
   },
   {
     "type": "material",
@@ -927,7 +912,8 @@
       { "fuel": 1, "smoke": 2, "burn": 1, "volume_per_turn": "750 ml" },
       { "fuel": 1, "smoke": 3, "burn": 2 },
       { "fuel": 1, "smoke": 5, "burn": 5 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.01 ] ]
   },
   {
     "type": "material",
@@ -1133,34 +1119,6 @@
   },
   {
     "type": "material",
-    "ident": "nylon",
-    "name": "Synthetic Fabric",
-    "//": "blend between nylon 6 and 6,6",
-    "density": 2,
-    "specific_heat_liquid": 1.7,
-    "specific_heat_solid": 1.7,
-    "latent_heat": 42,
-    "soft": true,
-    "reinforces": true,
-    "bash_resist": 3,
-    "cut_resist": 3,
-    "acid_resist": 9,
-    "fire_resist": 2,
-    "elec_resist": 2,
-    "chip_resist": 7,
-    "repaired_with": "nylon",
-    "salvaged_into": "nylon",
-    "dmg_adj": [ "ripped", "torn", "shredded", "tattered" ],
-    "bash_dmg_verb": "ripped",
-    "cut_dmg_verb": "cut",
-    "burn_data": [
-      { "fuel": 1, "smoke": 1, "burn": 1, "volume_per_turn": "650 ml" },
-      { "fuel": 1, "smoke": 1, "burn": 1 },
-      { "fuel": 1, "smoke": 1, "burn": 2 }
-    ]
-  },
-  {
-    "type": "material",
     "ident": "tin",
     "name": "Tin",
     "//": "Tin's density is a little more than half that of silver.",
@@ -1209,7 +1167,8 @@
       { "fuel": 1, "smoke": 1, "burn": 1, "volume_per_turn": "1250 ml" },
       { "fuel": 2, "smoke": 1, "burn": 2, "volume_per_turn": "2500 ml" },
       { "fuel": 2, "smoke": 1, "burn": 3 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.009 ] ]
   },
   {
     "type": "material",
@@ -1235,7 +1194,8 @@
       { "fuel": 1, "smoke": 1, "burn": 1, "volume_per_turn": "1250 ml" },
       { "fuel": 2, "smoke": 1, "burn": 2, "volume_per_turn": "2500 ml" },
       { "fuel": 2, "smoke": 1, "burn": 3 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.009 ] ]
   },
   {
     "type": "material",
@@ -1261,7 +1221,8 @@
       { "fuel": 1, "smoke": 1, "burn": 1, "volume_per_turn": "1250 ml" },
       { "fuel": 2, "smoke": 1, "burn": 2, "volume_per_turn": "2500 ml" },
       { "fuel": 2, "smoke": 1, "burn": 3 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.009 ] ]
   },
   {
     "type": "material",
@@ -1287,7 +1248,8 @@
       { "fuel": 1, "smoke": 1, "burn": 1, "volume_per_turn": "1250 ml" },
       { "fuel": 2, "smoke": 1, "burn": 2, "volume_per_turn": "2500 ml" },
       { "fuel": 2, "smoke": 1, "burn": 3 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.009 ] ]
   },
   {
     "type": "material",
@@ -1313,7 +1275,8 @@
       { "fuel": 1, "smoke": 1, "burn": 1, "volume_per_turn": "1250 ml" },
       { "fuel": 2, "smoke": 1, "burn": 2, "volume_per_turn": "2500 ml" },
       { "fuel": 2, "smoke": 1, "burn": 3 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.009 ] ]
   },
   {
     "type": "material",
@@ -1339,7 +1302,8 @@
       { "fuel": 1, "smoke": 1, "burn": 1, "volume_per_turn": "1250 ml" },
       { "fuel": 2, "smoke": 1, "burn": 2, "volume_per_turn": "2500 ml" },
       { "fuel": 2, "smoke": 1, "burn": 3 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.013 ] ]
   },
   {
     "type": "material",
@@ -1385,7 +1349,8 @@
     "bash_dmg_verb": "squished",
     "cut_dmg_verb": "cut",
     "vitamins": [ [ "vitB", 1 ], [ "iron", 0.1 ] ],
-    "burn_data": [ { "fuel": 1, "smoke": 2, "burn": 1 }, { "fuel": 1, "smoke": 2, "burn": 2 }, { "fuel": 1, "smoke": 1, "burn": 3 } ]
+    "burn_data": [ { "fuel": 1, "smoke": 2, "burn": 1 }, { "fuel": 1, "smoke": 2, "burn": 2 }, { "fuel": 1, "smoke": 1, "burn": 3 } ],
+    "burn_products": [ [ "ash", 0.013 ] ]
   },
   {
     "type": "material",
@@ -1438,7 +1403,8 @@
       { "fuel": 1, "smoke": 1, "burn": 1, "volume_per_turn": "1250 ml" },
       { "fuel": 1, "smoke": 1, "burn": 2 },
       { "fuel": 1, "smoke": 1, "burn": 5 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.013 ] ]
   },
   {
     "type": "material",
@@ -1461,7 +1427,8 @@
       { "fuel": 1, "smoke": 1, "burn": 1, "volume_per_turn": "1250 ml" },
       { "fuel": 2, "smoke": 1, "burn": 2, "volume_per_turn": "2500 ml" },
       { "fuel": 2, "smoke": 1, "burn": 3 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.013 ] ]
   },
   {
     "type": "material",
@@ -1487,7 +1454,8 @@
       { "fuel": 1, "smoke": 2, "burn": 1, "volume_per_turn": "1250 ml" },
       { "fuel": 1, "smoke": 1, "burn": 2 },
       { "fuel": 1, "smoke": 1, "burn": 3 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.013 ] ]
   },
   {
     "type": "material",
@@ -1513,7 +1481,8 @@
       { "fuel": 1, "smoke": 1, "burn": 1, "volume_per_turn": "2500 ml" },
       { "fuel": 2, "smoke": 3, "burn": 2, "volume_per_turn": "10000 ml" },
       { "fuel": 3, "smoke": 10, "burn": 3 }
-    ]
+    ],
+    "burn_products": [ [ "ash", 0.013 ] ]
   },
   {
     "type": "material",
@@ -1534,7 +1503,8 @@
     "dmg_adj": [ "lightly damaged", "damaged", "very damaged", "thoroughly damaged" ],
     "bash_dmg_verb": "smashed",
     "cut_dmg_verb": "cut",
-    "burn_data": [ { "fuel": 1, "smoke": 1, "burn": 1 }, { "fuel": 1, "smoke": 1, "burn": 2 }, { "fuel": 1, "smoke": 1, "burn": 3 } ]
+    "burn_data": [ { "fuel": 1, "smoke": 1, "burn": 1 }, { "fuel": 1, "smoke": 1, "burn": 2 }, { "fuel": 1, "smoke": 1, "burn": 3 } ],
+    "burn_products": [ [ "ash", 0.013 ] ]
   },
   {
     "type": "material",
