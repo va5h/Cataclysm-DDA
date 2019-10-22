@@ -587,12 +587,12 @@
     "subcategory": "CSC_CHEM_CHEMICALS",
     "skill_used": "cooking",
     "difficulty": 4,
-    "time": "3 h",
+    "time": "1 h 30 m",
     "batch_time_factors": [ 80, 4 ],
     "book_learn": [ [ "adv_chemistry", 5 ], [ "textbook_chemistry", 5 ], [ "recipe_labchem", 5 ] ],
     "qualities": [ { "id": "CHEM", "level": 1 } ],
     "tools": [ [ [ "surface_heat", 25, "LIST" ] ] ],
-    "components": [ [ [ "charcoal", 50 ] ], [ [ "water_clean", 2 ], [ "water", 2 ] ] ]
+    "components": [ [ [ "charcoal", 20 ] ], [ [ "water_clean", 2 ], [ "water", 2 ] ] ]
   },
   {
     "type": "recipe",
@@ -602,7 +602,7 @@
     "subcategory": "CSC_CHEM_CHEMICALS",
     "skill_used": "cooking",
     "difficulty": 3,
-    "time": "1 h 30 m",
+    "time": "45 m",
     "autolearn": true,
     "batch_time_factors": [ 80, 4 ],
     "qualities": [ { "id": "BOIL", "level": 1 } ],
@@ -720,7 +720,7 @@
     "autolearn": true,
     "tools": [ [ [ "surface_heat", 18, "LIST" ] ] ],
     "components": [
-      [ [ "tallow", 2 ], [ "lard", 2 ], [ "cooking_oil", 16 ], [ "cooking_oil2", 16 ] ],
+      [ [ "tallow", 2 ], [ "tallow_tainted", 2 ], [ "lard", 2 ], [ "cooking_oil", 16 ], [ "cooking_oil2", 16 ] ],
       [ [ "lye", 2 ], [ "lye_powder", 75 ] ],
       [ [ "water", 2 ], [ "water_clean", 2 ] ]
     ],
@@ -1118,12 +1118,12 @@
     "skill_used": "survival",
     "difficulty": 2,
     "skills_required": [ "cooking", 1 ],
-    "time": "1 h",
+    "time": "30 m",
     "batch_time_factors": [ 99, 1 ],
     "autolearn": true,
     "qualities": [ { "id": "CHEM", "level": 1 } ],
     "tools": [ [ [ "surface_heat", 5, "LIST" ] ] ],
-    "components": [ [ [ "water", 1 ], [ "water_clean", 1 ] ], [ [ "ash", 500 ] ] ]
+    "components": [ [ [ "water", 1 ], [ "water_clean", 1 ] ], [ [ "ash", 200 ] ] ]
   },
   {
     "result": "anesthetic",
