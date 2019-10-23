@@ -300,7 +300,7 @@
     "cut_dmg_verb": "damaged",
     "vitamins": [ [ "vitA", 0.5 ], [ "vitB", 0.5 ], [ "calcium", 0.5 ], [ "iron", 0.5 ] ],
     "burn_data": [ { "fuel": 0, "smoke": 1, "burn": 1 }, { "fuel": 1, "smoke": 3, "burn": 2 }, { "fuel": 1, "smoke": 5, "burn": 5 } ],
-	"burn_products": [ [ "ash", 0.011 ] ]
+    "burn_products": [ [ "ash", 0.011 ] ]
   },
   {
     "type": "material",
@@ -568,7 +568,7 @@
     "cut_dmg_verb": "damaged",
     "vitamins": [ [ "iron", 0.2 ], [ "vitC", 0.1 ], [ "calcium", 0.1 ] ],
     "burn_data": [ { "fuel": 1, "smoke": 1, "burn": 1 }, { "fuel": 1, "smoke": 1, "burn": 2 }, { "fuel": 1, "smoke": 1, "burn": 3 } ],
-	"burn_products": [ [ "ash", 0.009 ] ]
+    "burn_products": [ [ "ash", 0.009 ] ]
   },
   {
     "type": "material",
@@ -944,7 +944,7 @@
       { "fuel": 1, "smoke": 3, "burn": 2 },
       { "fuel": 1, "smoke": 5, "burn": 5 }
     ],
-	"burn_products": [ [ "ash", 0.015 ] ]
+    "burn_products": [ [ "ash", 0.015 ] ]
   },
   {
     "type": "material",
@@ -1362,7 +1362,7 @@
       { "fuel": 2, "smoke": 1, "burn": 2, "volume_per_turn": "2500 ml" },
       { "fuel": 2, "smoke": 1, "burn": 3 }
     ],
-	"burn_products": [ [ "ash", 0.015 ] ]
+    "burn_products": [ [ "ash", 0.015 ] ]
   },
   {
     "type": "material",
