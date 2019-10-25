@@ -107,7 +107,7 @@
     "name": "metal smoking rack",
     "description": "A metal rack designed to smoke food for better preservation and taste.  It is folded for easy transportation.",
     "weight": "5000 g",
-    "volume": "25 L",
+    "volume": "10 L",
     "price": 5000,
     "to_hit": -4,
     "bashing": 7,
