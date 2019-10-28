@@ -3567,8 +3567,8 @@ needs_rates player::calc_needs_rates()
     // Note: intentionally not in metabolic rate
     if( has_recycler ) {
         // Recycler won't help much with mutant metabolism - it is intended for human one
-        rates.hunger = std::min( rates.hunger, std::max( 0.5f, rates.hunger - 0.5f ) );
-        rates.thirst = std::min( rates.thirst, std::max( 0.5f, rates.thirst - 0.5f ) );
+        rates.hunger = std::min( rates.hunger, std::max( 0.25f, rates.hunger - 3.5f ) );
+        rates.thirst = std::min( rates.thirst, std::max( 0.25f, rates.thirst - 3.5f ) );
     }
 
     if( asleep ) {
