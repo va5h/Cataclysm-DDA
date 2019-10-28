@@ -249,6 +249,7 @@ static const bionic_id bio_uncanny_dodge( "bio_uncanny_dodge" );
 static const bionic_id bio_ups( "bio_ups" );
 static const bionic_id bio_watch( "bio_watch" );
 static const bionic_id bio_synaptic_regen( "bio_synaptic_regen" );
+static const bionic_id bio_blood_filter( "bio_blood_filter" );
 
 static const bionic_id bio_targeting( "bio_targeting" );
 
@@ -3347,15 +3348,17 @@ void player::get_sick()
 void player::check_needs_extremes()
 {
     // Check if we've overdosed... in any deadly way.
-    if( get_stim() > 250 ) {
+    // Blood Filter CBM preventively safeguards from any overdose whatsoever.
+    const bool safe_overdose = has_bionic(bio_blood_filter);
+    if( ( get_stim() > 250 ) && !safe_overdose ) {
         add_msg_if_player( m_bad, _( "You have a sudden heart attack!" ) );
         g->events().send<event_type::dies_from_drug_overdose>( getID(), efftype_id() );
         hp_cur[hp_torso] = 0;
-    } else if( get_stim() < -200 || get_painkiller() > 240 ) {
+    } else if( ( get_stim() < -200 || get_painkiller() > 240 ) && !safe_overdose ) {
         add_msg_if_player( m_bad, _( "Your breathing stops completely." ) );
         g->events().send<event_type::dies_from_drug_overdose>( getID(), efftype_id() );
         hp_cur[hp_torso] = 0;
-    } else if( has_effect( effect_jetinjector ) && get_effect_dur( effect_jetinjector ) > 40_minutes ) {
+    } else if( ( has_effect( effect_jetinjector ) && get_effect_dur( effect_jetinjector ) > 40_minutes ) && !safe_overdose ) {
         if( !( has_trait( trait_NOPAIN ) ) ) {
             add_msg_if_player( m_bad, _( "Your heart spasms painfully and stops." ) );
         } else {
@@ -3363,11 +3366,11 @@ void player::check_needs_extremes()
         }
         g->events().send<event_type::dies_from_drug_overdose>( getID(), effect_jetinjector );
         hp_cur[hp_torso] = 0;
-    } else if( get_effect_dur( effect_adrenaline ) > 50_minutes ) {
+    } else if( ( get_effect_dur( effect_adrenaline ) > 50_minutes ) && !safe_overdose ) {
         add_msg_if_player( m_bad, _( "Your heart spasms and stops." ) );
         g->events().send<event_type::dies_from_drug_overdose>( getID(), effect_adrenaline );
         hp_cur[hp_torso] = 0;
-    } else if( get_effect_int( effect_drunk ) > 4 ) {
+    } else if( ( get_effect_int( effect_drunk ) > 4 ) && !safe_overdose ) {
         add_msg_if_player( m_bad, _( "Your breathing slows down to a stop." ) );
         g->events().send<event_type::dies_from_drug_overdose>( getID(), effect_drunk );
         hp_cur[hp_torso] = 0;
