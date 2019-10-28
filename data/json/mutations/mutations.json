@@ -4609,12 +4609,12 @@
     "leads_to": [ "EATHEALTH" ],
     "types": [ "METABOLISM" ],
     "category": [ "CHIMERA" ],
-    "metabolism_modifier": 2.0,
-    "stamina_regen_modifier": 2.5,
-    "healing_awake": 4.0,
-    "healing_resting": 5.5,
-    "fatigue_modifier": -0.2,
-    "fatigue_regen_modifier": 0.75
+    "metabolism_modifier": 1.25,
+    "stamina_regen_modifier": 15.0,
+    "healing_awake": 10.0,
+    "healing_resting": 15.0,
+    "fatigue_modifier": -0.55,
+    "fatigue_regen_modifier": 12.75
   },
   {
     "type": "mutation",
