@@ -1019,44 +1019,15 @@ void player::process_bionic( int b )
         sounds::sound( pos(), 19, sounds::sound_t::activity, _( "HISISSS!" ), false, "bionic",
                        "bio_hydraulics" );
     } else if( bio.id == "bio_nanobots" ) {
-        if( get_power_level() >= 40_J ) {
-            std::forward_list<int> bleeding_bp_parts;
-            for( const body_part bp : all_body_parts ) {
-                if( has_effect( effect_bleed, bp ) ) {
-                    bleeding_bp_parts.push_front( static_cast<int>( bp ) );
-                }
+        for( int i = 0; i < num_hp_parts; i++ ) {
+            if( get_power_level() >= 50_J && hp_cur[i] > 0 && hp_cur[i] < hp_max[i] ) {
+                heal( static_cast<hp_part>( i ), 1 );
+                mod_power_level( -50_J );
             }
-            std::vector<int> damaged_hp_parts;
-            for( int i = 0; i < num_hp_parts; i++ ) {
-                if( hp_cur[i] > 0 && hp_cur[i] < hp_max[i] ) {
-                    damaged_hp_parts.push_back( i );
-                    // only healed and non-hp parts will have a chance of bleeding removal
-                    bleeding_bp_parts.remove( static_cast<int>( hp_to_bp( static_cast<hp_part>( i ) ) ) );
-                }
-            }
-            if( calendar::once_every( 60_turns ) ) {
-                bool try_to_heal_bleeding = true;
-                if( get_stored_kcal() >= 5 && !damaged_hp_parts.empty() ) {
-                    const hp_part part_to_heal = static_cast<hp_part>( damaged_hp_parts[ rng( 0,
-                                                      damaged_hp_parts.size() - 1 ) ] );
-                    heal( part_to_heal, 1 );
-                    mod_stored_kcal( -5 );
-                    const body_part bp_healed = hp_to_bp( part_to_heal );
-                    int hp_percent = float( hp_cur[part_to_heal] ) / hp_max[part_to_heal] * 100;
-                    if( has_effect( effect_bleed, bp_healed ) && rng( 0, 100 ) < hp_percent ) {
-                        remove_effect( effect_bleed, bp_healed );
-                        try_to_heal_bleeding = false;
-                    }
-                }
-
-                // if no bleed was removed, try to remove it on some other part
-                if( try_to_heal_bleeding && !bleeding_bp_parts.empty() && rng( 0, 1 ) == 1 ) {
-                    remove_effect( effect_bleed, static_cast<body_part>( bleeding_bp_parts.front() ) );
-                }
-
-            }
-            if( !damaged_hp_parts.empty() || !bleeding_bp_parts.empty() ) {
-                mod_power_level( -40_J );
+        }
+        for( const body_part bp : all_body_parts ) {
+            if( get_power_level() >= 500_J && remove_effect( effect_bleed, bp ) ) {
+                mod_power_level( -500_J );
             }
         }
     } else if( bio.id == "bio_painkiller" ) {
