@@ -586,7 +586,7 @@
     "description": "An extremely large and powerful compound bow, made with enormous limbs and a thick string to take an immense amount of energy.  Takes incredible strength to draw.",
     "price": 210000,
     "material": [ "steel", "plastic" ],
-    "flags": [ "FIRE_TWOHAND", "RELOAD_AND_SHOOT", "WATER_FRIENDLY"  ],
+    "flags": [ "FIRE_TWOHAND", "RELOAD_AND_SHOOT", "WATER_FRIENDLY" ],
     "skill": "archery",
     "min_strength": 19,
     "ammo": "arrow",
