@@ -653,6 +653,7 @@
     "material": [ "plastic", "aluminum" ],
     "symbol": ";",
     "color": "dark_gray",
+    "flags": [ "BELT_CLIP" ],
     "ammo": "battery",
     "charges_per_use": 100,
     "use_action": "TAZER",
