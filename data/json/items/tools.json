@@ -1503,6 +1503,7 @@
     "color": "yellow",
     "ammo": "battery",
     "qualities": [ [ "DRILL", 3 ], [ "SCREW", 1 ] ],
+    "flags": [ "BELT_CLIP" ],
     "magazines": [
       [
         "battery",
