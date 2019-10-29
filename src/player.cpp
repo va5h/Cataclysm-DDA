@@ -8980,6 +8980,13 @@ bool player::can_sleep()
 // 11.0 is zero light or blindness
 float player::fine_detail_vision_mod( const tripoint &p ) const
 {
+    // why someone with a perfect nightvision can't craft in the dark???
+    if( vision_mode_cache[NV_GOGGLES] || vision_mode_cache[NIGHTVISION_3] ||
+        vision_mode_cache[FULL_ELFA_VISION] || vision_mode_cache[CEPH_VISION] )
+        {
+            return 1.0;
+        }
+        
     // PER_SLIME_OK implies you can get enough eyes around the bile
     // that you can generally see.  There still will be the haze, but
     // it's annoying rather than limiting.
