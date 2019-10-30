@@ -4604,17 +4604,18 @@
     "id": "HUNGER3",
     "name": "Extreme Metabolism",
     "points": -2,
-    "description": "You consume three times as much food as the average human to maintain your truly superhuman endurance.",
+    "description": "You consume 2.5x times as much food as the average human to maintain your truly superhuman endurance. On a plus side, you now have astonishing regeneration capabilities, and can digest pretty much anything without side-effects.",
     "prereqs": [ "HUNGER2" ],
     "leads_to": [ "EATHEALTH" ],
     "types": [ "METABOLISM" ],
     "category": [ "CHIMERA" ],
-    "metabolism_modifier": 1.25,
+    "vitamins_absorb_multi": [ [ "flesh", [ [ "mutant_toxin", 0 ] ] ] ],
+    "metabolism_modifier": 1.5,
     "stamina_regen_modifier": 15.0,
     "healing_awake": 10.0,
     "healing_resting": 15.0,
-    "fatigue_modifier": -0.55,
-    "fatigue_regen_modifier": 12.75
+    "fatigue_modifier": -0.95,
+    "fatigue_regen_modifier": 15.00
   },
   {
     "type": "mutation",
