@@ -194,5 +194,12 @@
     "info": "Stats through Kills.  A mod that allows your stats to increase by killing zombies.",
     "stype": "bool",
     "value": true
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "FILTHY_CRAFTING",
+    "info": "Enable crafting from filthy items. Most definitely will cause various bugs.",
+    "stype": "bool",
+    "value": true
   }
 ]

@@ -1123,6 +1123,10 @@ void player::complete_craft( item &craft, const tripoint &loc )
                 newit.item_tags.insert( "FIT" );
             }
 
+            if( newit.is_filthy() && get_option<bool>( "FILTHY_CRAFTING" ) ) {
+                newit.item_tags.erase( "FILTHY" );
+            }
+
             for( auto &component : used ) {
                 //If item is crafted from poor-fit components, the result is poorly fitted too
                 if( component.has_flag( "VARSIZE" ) ) {

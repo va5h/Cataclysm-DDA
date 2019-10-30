@@ -33,6 +33,8 @@
 #include "gun_mode.h"
 #include "point.h"
 
+#include "options.h"
+
 class item;
 class material_type;
 struct mtype;
@@ -2144,7 +2146,7 @@ item &null_item_reference();
 inline bool is_crafting_component( const item &component )
 {
     return ( component.allow_crafting_component() || component.count_by_charges() ) &&
-           !component.is_filthy();
+           ( !component.is_filthy() || get_option<bool>( "FILTHY_CRAFTING" ) );
 }
 
 #endif
