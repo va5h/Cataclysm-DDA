@@ -416,7 +416,7 @@
     "description": "A small LED display just beneath your dermal layer can be illuminated on command to show patterns of your choice at dim or bright luminosity.  It doesn't provide enough light to comfortably read or craft, but it can suffice if you have nothing else.",
     "act_cost": "1 J",
     "react_cost": "1 J",
-    "time": 1,
+    "time": 7200,
     "flags": [ "BIONIC_TOGGLED" ]
   },
   {
@@ -839,7 +839,7 @@
     "flags": [ "BIONIC_TOGGLED" ],
     "act_cost": "2 J",
     "react_cost": "2 J",
-    "time": 1
+    "time": 3600
   },
   {
     "id": "bio_shakes",
