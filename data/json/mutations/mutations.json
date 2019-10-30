@@ -4615,7 +4615,7 @@
     "healing_awake": 10.0,
     "healing_resting": 15.0,
     "fatigue_modifier": -0.95,
-    "fatigue_regen_modifier": 15.00
+    "fatigue_regen_modifier": 15.0
   },
   {
     "type": "mutation",
