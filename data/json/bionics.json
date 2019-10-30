@@ -84,6 +84,10 @@
     "name": "Battery System",
     "description": "You have a battery draining attachment, and thus can make use of the energy contained in normal, everyday batteries.  Use 'E' to drain charge from a battery.  Can be toggled on and off at will.",
     "occupied_bodyparts": [ [ "TORSO", 1 ] ],
+    "fuel_options": [ "battery" ],
+    "fuel_efficiency": 1,
+    "fuel_capacity": 2000,
+    "time": 1,
     "flags": [ "BIONIC_POWER_SOURCE", "BIONIC_TOGGLED", "BIONIC_NPC_USABLE" ]
   },
   {
@@ -412,7 +416,7 @@
     "description": "A small LED display just beneath your dermal layer can be illuminated on command to show patterns of your choice at dim or bright luminosity.  It doesn't provide enough light to comfortably read or craft, but it can suffice if you have nothing else.",
     "act_cost": "1 J",
     "react_cost": "1 J",
-    "time": 7200,
+    "time": 1,
     "flags": [ "BIONIC_TOGGLED" ]
   },
   {
@@ -835,7 +839,7 @@
     "flags": [ "BIONIC_TOGGLED" ],
     "act_cost": "2 J",
     "react_cost": "2 J",
-    "time": 1200
+    "time": 1
   },
   {
     "id": "bio_shakes",
