@@ -86,8 +86,8 @@
     "occupied_bodyparts": [ [ "TORSO", 1 ] ],
     "fuel_options": [ "battery" ],
     "fuel_efficiency": 1,
-    "fuel_capacity": 2000,
-    "time": 1,
+    "fuel_capacity": 10000,
+    "time": 5,
     "flags": [ "BIONIC_POWER_SOURCE", "BIONIC_TOGGLED", "BIONIC_NPC_USABLE" ]
   },
   {
