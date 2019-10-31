@@ -1556,6 +1556,7 @@ bool game::do_turn()
     u.process_active_items();
 
     if( get_levz() >= 0 && !u.is_underwater() ) {
+        do_rain( weather.weather );
         weather::effect( weather.weather )();
     }
 
@@ -9033,13 +9034,13 @@ bool game::walk_move( const tripoint &dest_loc )
 {
     if( m.has_flag_ter( "THIN_OBSTACLE", dest_loc ) ) {
         if( u.get_size() > MS_MEDIUM ) {
-            add_msg ( m_warning, _( "You can't fit there." ) );
+            add_msg( m_warning, _( "You can't fit there." ) );
             return false; // character too large to fit through a tight passage
         }
         if( u.is_mounted() ) {
-            monster* mount = u.mounted_creature.get();
+            monster *mount = u.mounted_creature.get();
             if( mount->get_size() > MS_MEDIUM ) {
-                add_msg ( m_warning, _( "Your mount can't fit there." ) );
+                add_msg( m_warning, _( "Your mount can't fit there." ) );
                 return false; // char's mount is too large for tight passages
             }
         }
