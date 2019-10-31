@@ -8326,7 +8326,7 @@ int player::adjust_for_focus( int amount ) const
         effective_focus += 15;
     }
     if( has_active_bionic( bio_memory ) ) {
-        effective_focus += 10;
+        effective_focus += 100;
     }
     if( has_trait( trait_SLOWLEARNER ) ) {
         effective_focus -= 15;
@@ -8646,11 +8646,11 @@ bool player::uncanny_dodge()
 {
     bool is_u = this == &g->u;
     bool seen = g->u.sees( *this );
-    if( this->get_power_level() < 74_kJ || !this->has_active_bionic( bio_uncanny_dodge ) ) {
+    if( this->get_power_level() < 74_J || !this->has_active_bionic( bio_uncanny_dodge ) ) {
         return false;
     }
     tripoint adjacent = adjacent_tile();
-    mod_power_level( -75_kJ );
+    mod_power_level( -75_J );
     if( adjacent.x != posx() || adjacent.y != posy() ) {
         position.x = adjacent.x;
         position.y = adjacent.y;
@@ -9048,7 +9048,7 @@ float player::hearing_ability() const
 
     // Mutation/Bionic volume modifiers
     if( has_active_bionic( bio_ears ) && !has_active_bionic( bio_earplugs ) ) {
-        volume_multiplier *= 3.5;
+        volume_multiplier *= 12.5;
     }
     if( has_trait( trait_PER_SLIME ) ) {
         // Random hearing :-/
