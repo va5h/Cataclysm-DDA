@@ -801,12 +801,12 @@ int player::run_cost( int base_cost, bool diag ) const
         }
         if( has_active_bionic( bio_jointservo ) ) {
             if( move_mode == CMM_RUN ) {
-                movecost *= 0.85f;
+                movecost *= 0.35f;
             } else {
-                movecost *= 0.95f;
+                movecost *= 0.45f;
             }
         } else if( has_bionic( bio_jointservo ) ) {
-            movecost *= 1.1f;
+            movecost *= 0.9f;
         }
 
         if( worn_with_flag( "SLOWS_MOVEMENT" ) ) {
