@@ -195,7 +195,16 @@
     "id": "edible_tallow_lard",
     "type": "requirement",
     "//": "Any type of edible rendered fat.",
-    "components": [ [ [ "tallow", 1 ], [ "lard", 1 ], [ "mutant_tallow", 1 ], [ "mutant_lard", 1 ], [ "human_tallow", 1 ], [ "human_lard", 1 ] ] ]
+    "components": [
+      [
+        [ "tallow", 1 ],
+        [ "lard", 1 ],
+        [ "mutant_tallow", 1 ],
+        [ "mutant_lard", 1 ],
+        [ "human_tallow", 1 ],
+        [ "human_lard", 1 ]
+      ]
+    ]
   },
   {
     "id": "any_tallow",
