@@ -183,25 +183,25 @@
     "id": "any_fat",
     "type": "requirement",
     "//": "Any type of raw fat.",
-    "components": [ [ [ "fat", 1 ], [ "mutant_fat", 1 ], [ "fat_tainted", 1 ] ] ]
+    "components": [ [ [ "fat", 1 ], [ "mutant_fat", 1 ], [ "fat_tainted", 1 ], [ "human_fat", 1 ] ] ]
   },
   {
     "id": "edible_fat",
     "type": "requirement",
     "//": "Any type of edible raw fat.",
-    "components": [ [ [ "fat", 1 ], [ "mutant_fat", 1 ] ] ]
+    "components": [ [ [ "fat", 1 ], [ "mutant_fat", 1 ], [ "human_fat", 1 ] ] ]
   },
   {
     "id": "edible_tallow_lard",
     "type": "requirement",
     "//": "Any type of edible rendered fat.",
-    "components": [ [ [ "tallow", 1 ], [ "lard", 1 ], [ "mutant_tallow", 1 ], [ "mutant_lard", 1 ] ] ]
+    "components": [ [ [ "tallow", 1 ], [ "lard", 1 ], [ "mutant_tallow", 1 ], [ "mutant_lard", 1 ], [ "human_tallow", 1 ], [ "human_lard", 1 ] ] ]
   },
   {
     "id": "any_tallow",
     "type": "requirement",
     "//": "Any type of tallow.",
-    "components": [ [ [ "tallow", 1 ], [ "mutant_tallow", 1 ], [ "tallow_tainted", 1 ] ] ]
+    "components": [ [ [ "tallow", 1 ], [ "mutant_tallow", 1 ], [ "tallow_tainted", 1 ], [ "human_tallow", 1 ] ] ]
   },
   {
     "id": "seasoning_mild",
