@@ -2166,6 +2166,9 @@ int game::inventory_item_menu( int pos, int iStartX, int iWidth,
 bool game::handle_mouseview( input_context &ctxt, std::string &action )
 {
     cata::optional<tripoint> liveview_pos;
+    auto &mgr = panel_manager::get_manager();
+    const bool sidebar_right = get_option<std::string>( "SIDEBAR_POSITION" ) == "right";
+    int width = sidebar_right ? mgr.get_width_right() : mgr.get_width_left();
     do {
         action = ctxt.handle_input();
         if( action == "MOUSE_MOVE" ) {
@@ -2173,9 +2176,14 @@ bool game::handle_mouseview( input_context &ctxt, std::string &action )
             if( mouse_pos && ( !liveview_pos || *mouse_pos != *liveview_pos ) ) {
                 liveview_pos = mouse_pos;
                 liveview.show( *liveview_pos );
+                draw_panels( true );
+                const catacurses::window &w = catacurses::newwin( TERMY / 2, width,
+                                              point( sidebar_right ? TERMX - width : 0, 0 ) );
+                liveview.draw( w, TERMY / 2 );
             } else if( !mouse_pos ) {
                 liveview_pos.reset();
                 liveview.hide();
+                draw_panels( true );
             }
         }
     } while( action == "MOUSE_MOVE" ); // Freeze animation when moving the mouse
@@ -11231,6 +11239,13 @@ void game::display_temperature()
     }
 }
 
+void game::display_vehicle_ai()
+{
+    if( use_tiles ) {
+        display_toggle_overlay( ACTION_DISPLAY_VEHICLE_AI );
+    }
+}
+
 void game::display_visibility()
 {
     if( use_tiles ) {
@@ -11702,8 +11717,8 @@ void game::start_calendar()
         calendar::start_of_cataclysm = calendar::turn_zero + 1_days * initial_days;
 
         // Determine the season based off how long the seasons are set to be
-        // First mod by length of season to get number of seasons elapsed, then mod by 4 to force a 0-3 range of values
-        const int season_number = ( initial_days % get_option<int>( "SEASON_LENGTH" ) ) % 4;
+        // First take the number of season elapsed up to the starting date, then mod by 4 to get the season of the current year
+        const int season_number = ( initial_days / get_option<int>( "SEASON_LENGTH" ) ) % 4;
         if( season_number == 0 ) {
             calendar::initial_season = SPRING;
         } else if( season_number == 1 ) {
