@@ -6335,27 +6335,29 @@
     "weight": "226 g",
     "bashing": 3,
     "cutting": 5,
-    "flags": [ "NO_UNWIELD", "UNBREAKABLE_MELEE", "TRADER_AVOID", "USES_BIONIC_POWER" ],
+    "flags": [ "NO_UNWIELD", "UNBREAKABLE_MELEE", "TRADER_AVOID", "USES_BIONIC_POWER", "DIG_TOOL", "POWERED" ],
     "max_charges": 1000,
     "//": "Charges will exceed max charges since they're always equal to the player's bionic power, but this has no adverse effects.",
     "charges_per_use": 1,
     "use_action": [
       "HAMMER",
       "CROWBAR",
+      "JACKHAMMER",
       {
         "type": "repair_item",
         "item_action_type": "repair_metal",
-        "materials": [ "kevlar", "plastic", "iron", "steel", "hardsteel", "aluminum", "copper", "silver", "gold" ],
+        "materials": [ "kevlar", "plastic", "iron", "steel", "hardsteel", "aluminum", "copper", "silver", "gold", "platinum", "superalloy" ],
         "skill": "mechanics",
+        "tool_quality": 20,
         "cost_scaling": 0.1,
-        "move_cost": 1000
+        "move_cost": 100
       },
       { "flame": false, "type": "cauterize" }
     ],
     "qualities": [
       [ "HAMMER", 3 ],
       [ "HAMMER_FINE", 1 ],
-      [ "SAW_W", 1 ],
+      [ "SAW_W", 2 ],
       [ "SAW_M", 2 ],
       [ "SAW_M_FINE", 1 ],
       [ "WRENCH", 2 ],
@@ -6364,10 +6366,12 @@
       [ "SCREW_FINE", 1 ],
       [ "CUT", 2 ],
       [ "PRY", 1 ],
-      [ "DRILL", 1 ],
+      [ "DRILL", 3 ],
       [ "BUTCHER", -38 ],
       [ "FILE", 2 ],
-      [ "REAM", 1 ]
+      [ "REAM", 2 ],
+      [ "SMOOTH", 2 ],
+      [ "WELD", 2 ]
     ]
   },
   {
