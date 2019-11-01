@@ -765,12 +765,12 @@ void avatar::do_read( item &book )
             int min_ex = std::max( 1, reading->time / 10 + learner->get_int() / 4 );
             int max_ex = reading->time /  5 + learner->get_int() / 2 - originalSkillLevel;
             if( has_active_bionic( bio_memory ) ) {
-                min_ex += 2;
+                min_ex *= 2;
             }
             if( max_ex < 2 ) {
                 max_ex = 2;
             }
-            if( max_ex > 10 ) {
+            if( (max_ex > 10) && !has_active_bionic( bio_memory ) ) {
                 max_ex = 10;
             }
             if( max_ex < min_ex ) {
@@ -1031,6 +1031,10 @@ int avatar::calc_focus_equilibrium( bool ignore_pain ) const
     if( focus_equilibrium < 1 ) {
         focus_equilibrium = 1;
     } else if( focus_equilibrium > 400 ) {
+        focus_equilibrium = 400;
+    }
+    
+    if( has_active_bionic( bio_memory ) ) {
         focus_equilibrium = 400;
     }
     return focus_equilibrium;

@@ -1438,7 +1438,7 @@ void player::perform_technique( const ma_technique &technique, Creature &t, dama
     if( has_active_bionic( bio_cqb ) && !martial_arts_data.knows_selected_style() ) {
         /** @EFFECT_INT slightly increases chance to learn techniques when using CQB bionic */
         // Enhanced Memory Banks bionic doubles chance to learn martial art
-        const int bionic_boost = has_active_bionic( bionic_id( bio_memory ) ) ? 2 : 1;
+        const int bionic_boost = has_active_bionic( bionic_id( bio_memory ) ) ? 10 : 1;
         if( one_in( ( 1400 - ( get_int() * 50 ) ) / bionic_boost ) ) {
             martial_arts_data.learn_current_style_CQB( is_player() );
         }

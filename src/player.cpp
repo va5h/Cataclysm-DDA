@@ -8327,7 +8327,7 @@ int player::adjust_for_focus( int amount ) const
         effective_focus += 15;
     }
     if( has_active_bionic( bio_memory ) ) {
-        effective_focus += 100;
+        effective_focus += 150;
     }
     if( has_trait( trait_SLOWLEARNER ) ) {
         effective_focus -= 15;
