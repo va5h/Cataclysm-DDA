@@ -83,10 +83,17 @@ bool game::grabbed_veh_move( const tripoint &dp )
 
     // Vehicle just too big to grab & move; 41-45 lets folks have a bit of a window
     // (Roughly 1.1K kg = danger zone; cube vans are about the max)
+    // EDIT DISREGARD THAT
     if( str_req > 45 ) {
-        add_msg( m_info, _( "The %s is too bulky for you to move by hand." ),
-                 grabbed_vehicle->name );
-        return true; // No shoving around an RV.
+        if ( u.get_str() > ( str_req + 10 ) ) {
+            add_msg( m_info, _( "It takes an enormous amount of force, but the %s finally moves!" ),
+                    grabbed_vehicle->name );
+        }
+        else {
+            add_msg( m_info, _( "The %s is too bulky for you to move by hand." ),
+                    grabbed_vehicle->name );
+            return true; // No shoving around an RV.
+        }
     }
 
     const auto &wheel_indices = grabbed_vehicle->wheelcache;
