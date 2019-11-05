@@ -2892,7 +2892,7 @@
       "holster_msg": "You clip your %s to your %s",
       "multi": 4,
       "max_volume": "3 L",
-      "max_weight": 4200,
+      "max_weight": 6200,
       "draw_cost": 50,
       "flags": [ "BELT_CLIP" ]
     },

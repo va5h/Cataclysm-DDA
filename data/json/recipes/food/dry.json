@@ -9,7 +9,7 @@
     "time": "18 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ] ],
     "components": [ [ [ "fish", 1 ] ] ]
   },
   {
@@ -23,7 +23,7 @@
     "time": "20 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
     "components": [ [ [ "fish", 1 ] ] ]
   },
   {
@@ -37,7 +37,7 @@
     "time": "18 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ] ],
     "components": [ [ [ "raw_beans", 1 ] ] ]
   },
   {
@@ -52,7 +52,7 @@
     "time": "20 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
     "components": [ [ [ "raw_beans", 1 ] ] ]
   },
   {
@@ -65,7 +65,7 @@
     "time": "18 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ] ],
     "components": [ [ [ "tofu", 1 ] ] ]
   },
   {
@@ -79,7 +79,7 @@
     "time": "20 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
     "components": [ [ [ "tofu", 1 ] ] ]
   },
   {
@@ -92,7 +92,7 @@
     "time": "18 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ] ],
     "components": [ [ [ "sweet_fruit", 1, "LIST" ], [ "coconut", 1 ], [ "can_coconut", 1 ] ] ]
   },
   {
@@ -106,7 +106,7 @@
     "time": "20 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
     "components": [ [ [ "sweet_fruit", 1, "LIST" ], [ "coconut", 1 ], [ "can_coconut", 1 ] ] ]
   },
   {
@@ -119,7 +119,7 @@
     "time": "18 m",
     "batch_time_factors": [ 67, 5 ],
     "book_learn": [ [ "cookbook_human", 4 ] ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ] ],
     "components": [ [ [ "human_flesh", 1 ] ] ]
   },
   {
@@ -133,7 +133,7 @@
     "time": "20 m",
     "batch_time_factors": [ 67, 5 ],
     "book_learn": [ [ "cookbook_human", 4 ] ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
     "components": [ [ [ "human_flesh", 1 ] ] ]
   },
   {
@@ -146,7 +146,7 @@
     "time": "18 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ] ],
     "components": [ [ [ "meat_red_raw", 1, "LIST" ] ] ]
   },
   {
@@ -160,7 +160,7 @@
     "time": "20 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
     "components": [ [ [ "meat_red_raw", 1, "LIST" ] ] ]
   },
   {
@@ -173,7 +173,7 @@
     "time": "18 m",
     "batch_time_factors": [ 67, 5 ],
     "autolearn": true,
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ] ],
     "components": [ [ [ "meat_tainted", 1 ] ] ]
   },
   {
@@ -187,7 +187,7 @@
     "time": "20 m",
     "batch_time_factors": [ 67, 5 ],
     "autolearn": true,
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
     "components": [ [ [ "meat_tainted", 1 ] ] ]
   },
   {
@@ -200,7 +200,7 @@
     "time": "18 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ] ],
     "components": [ [ [ "mushroom", 1 ], [ "mushroom_morel", 1 ] ] ]
   },
   {
@@ -214,7 +214,7 @@
     "time": "20 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
     "components": [ [ [ "mushroom", 1 ], [ "mushroom_morel", 1 ] ] ]
   },
   {
@@ -228,7 +228,7 @@
     "time": "18 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ] ],
     "components": [ [ [ "veggy_any_uncooked", 1, "LIST" ], [ "dandelion_cooked", 1 ], [ "wild_herbs", 40 ] ] ]
   },
   {
@@ -243,7 +243,7 @@
     "time": "20 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
     "components": [ [ [ "veggy_any_uncooked", 1, "LIST" ], [ "dandelion_cooked", 1 ], [ "wild_herbs", 40 ] ] ]
   },
   {
@@ -257,7 +257,7 @@
     "time": "18 m",
     "batch_time_factors": [ 67, 5 ],
     "autolearn": true,
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ] ],
     "components": [ [ [ "veggy_tainted", 1 ] ] ]
   },
   {
@@ -272,7 +272,7 @@
     "time": "20 m",
     "batch_time_factors": [ 67, 5 ],
     "autolearn": true,
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
     "components": [ [ [ "veggy_tainted", 1 ] ] ]
   },
   {
@@ -317,7 +317,7 @@
     "time": "18 m",
     "batch_time_factors": [ 67, 5 ],
     "autolearn": true,
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ] ],
     "components": [ [ [ "milk", 1 ] ] ]
   },
   {
@@ -332,7 +332,7 @@
     "time": "20 m",
     "batch_time_factors": [ 67, 5 ],
     "autolearn": true,
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
     "components": [ [ [ "milk", 1 ] ] ]
   },
   {
@@ -346,7 +346,7 @@
     "time": "18 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ] ],
     "components": [ [ [ "eggs_bird", 12, "LIST" ], [ "egg_reptile", 12 ], [ "spider_egg", 4 ], [ "ant_egg", 1 ] ] ]
   },
   {
@@ -361,7 +361,7 @@
     "time": "20 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
     "components": [ [ [ "eggs_bird", 12, "LIST" ], [ "egg_reptile", 12 ], [ "spider_egg", 4 ], [ "ant_egg", 1 ] ] ]
   },
   {
@@ -406,7 +406,7 @@
     "time": "18 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ] ],
     "components": [ [ [ "raw_lentils", 1 ] ] ]
   },
   {
@@ -421,7 +421,7 @@
     "time": "20 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
-    "tools": [ [ [ "dehydrator", 25 ], [ "char_smoker", 25 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
+    "tools": [ [ [ "dehydrator", 5 ], [ "char_smoker", 5 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
     "components": [ [ [ "raw_lentils", 1 ] ] ]
   }
 ]
