@@ -309,8 +309,11 @@ class Character : public Creature, public visitable<Character>
         /**Get bonus to max_hp from excess stored fat*/
         int get_fat_to_hp() const;
 
-        /** Returns either "you" or the player's name */
-        std::string disp_name( bool possessive = false ) const override;
+        /** Returns either "you" or the player's name. capitalize_first assumes
+            that the character's name is already upper case and uses it only for
+            possessive "your" and "you"
+        **/
+        std::string disp_name( bool possessive = false, bool capitalize_first = false ) const override;
         /** Returns the name of the player's outer layer, e.g. "armor plates" */
         std::string skin_name() const override;
 
@@ -453,6 +456,7 @@ class Character : public Creature, public visitable<Character>
         // any side effects that might happen when the Character hits a Creature
         void did_hit( Creature &target );
 
+        void cough( bool harmful = false, int loudness = 4 );
         /**
          * Check for relevant passive, non-clothing that can absorb damage, and reduce by specified
          * damage unit.  Only flat bonuses are checked here.  Multiplicative ones are checked in
