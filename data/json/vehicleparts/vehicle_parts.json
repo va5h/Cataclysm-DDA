@@ -2209,13 +2209,13 @@
     "color": "light_cyan",
     "broken_symbol": ")",
     "broken_color": "light_cyan",
-    "durability": 660,
+    "durability": 1320,
     "item": "steel_plate",
     "difficulty": 2,
     "location": "armor",
     "flags": [ "ARMOR" ],
     "breaks_into": "ig_vp_steel_plate",
-    "damage_reduction": { "all": 56 }
+    "damage_reduction": { "all": 112 }
   },
   {
     "type": "vehicle_part",
@@ -2225,7 +2225,7 @@
     "color": "dark_gray",
     "broken_symbol": ")",
     "broken_color": "dark_gray",
-    "durability": 600,
+    "durability": 1400,
     "item": "alloy_plate",
     "difficulty": 4,
     "location": "armor",
@@ -2235,7 +2235,7 @@
       { "item": "steel_chunk", "count": [ 4, 6 ] },
       { "item": "scrap", "count": [ 4, 6 ] }
     ],
-    "damage_reduction": { "all": 56 }
+    "damage_reduction": { "all": 118 }
   },
   {
     "type": "vehicle_part",
@@ -2246,7 +2246,7 @@
     "broken_symbol": ")",
     "broken_color": "red",
     "damage_modifier": 150,
-    "durability": 620,
+    "durability": 1240,
     "description": "A spiked plate that will increase the damage delivered to someone else in collisions.",
     "item": "spiked_plate",
     "difficulty": 3,
@@ -2258,7 +2258,7 @@
       { "item": "scrap", "count": [ 4, 6 ] },
       { "item": "spike", "count": [ 0, 2 ] }
     ],
-    "damage_reduction": { "all": 58 }
+    "damage_reduction": { "all": 116 }
   },
   {
     "type": "vehicle_part",
@@ -2268,7 +2268,7 @@
     "color": "cyan",
     "broken_symbol": ")",
     "broken_color": "cyan",
-    "durability": 780,
+    "durability": 2560,
     "item": "hard_plate",
     "difficulty": 4,
     "location": "armor",
@@ -2278,7 +2278,7 @@
       { "item": "steel_chunk", "count": [ 4, 6 ] },
       { "item": "scrap", "count": [ 4, 6 ] }
     ],
-    "damage_reduction": { "all": 75 }
+    "damage_reduction": { "all": 250 }
   },
   {
     "type": "vehicle_part",
@@ -2288,7 +2288,7 @@
     "color": "green",
     "broken_symbol": ")",
     "broken_color": "green",
-    "durability": 700,
+    "durability": 2700,
     "item": "mil_plate",
     "difficulty": 6,
     "location": "armor",
@@ -2299,7 +2299,7 @@
       { "item": "scrap", "count": [ 4, 6 ] },
       { "item": "ceramic_armor", "count": [ 0, 4 ] }
     ],
-    "damage_reduction": { "all": 70, "cut": 95, "stab": 88 }
+    "damage_reduction": { "all": 270, "cut": 395, "stab": 388 }
   },
   {
     "type": "vehicle_part",
@@ -2311,14 +2311,14 @@
     "broken_symbol": "0",
     "broken_color": "light_gray",
     "damage_modifier": 80,
-    "durability": 250,
+    "durability": 350,
     "description": "A sheet of glass that lets you see outside the vehicle.  Reinforced with wire to make it harder to break than normal glass.",
     "item": "reinforced_glass_sheet",
     "difficulty": 4,
     "location": "center",
     "flags": [ "WINDSHIELD", "OBSTACLE", "WINDOW" ],
     "breaks_into": [ { "item": "glass_shard", "count": [ 25, 50 ] }, { "item": "wire", "count": [ 4, 8 ] } ],
-    "damage_reduction": { "all": 16 }
+    "damage_reduction": { "all": 32 }
   },
   {
     "type": "vehicle_part",
@@ -2661,7 +2661,7 @@
     "broken_symbol": "*",
     "broken_color": "dark_gray",
     "damage_modifier": 10,
-    "epower": 1,
+    "epower": 3,
     "//": "Epower for POWER_TRANSFER stuff is how much percentage-wise loss there is in transmission",
     "durability": 120,
     "description": "Thick copper cable with leads on either end.  Attach one end to one vehicle and the other to another, and you can transfer electrical power between the two.",
@@ -2681,7 +2681,7 @@
     "damage_modifier": 10,
     "durability": 120,
     "description": "Very thick copper cable with leads on either end.  Attach one end to one vehicle and the other to another, and you can transfer electrical power between the two.",
-    "epower": 5,
+    "epower": 1,
     "//": "Epower for POWER_TRANSFER stuff is how much percentage-wise loss there is in transmission",
     "item": "jumper_cable_heavy",
     "requirements": { "removal": { "time": 500 } },

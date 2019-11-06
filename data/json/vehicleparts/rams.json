@@ -19,13 +19,13 @@
     "color": "dark_gray",
     "broken_color": "dark_gray",
     "difficulty": 4,
-    "durability": 650,
+    "durability": 1550,
     "breaks_into": [
       { "item": "steel_lump", "count": [ 4, 6 ] },
       { "item": "steel_chunk", "count": [ 4, 6 ] },
       { "item": "scrap", "count": [ 4, 6 ] }
     ],
-    "damage_reduction": { "all": 120 }
+    "damage_reduction": { "all": 240 }
   },
   {
     "id": "ram_hardsteel",
@@ -35,14 +35,15 @@
     "item": "hard_plate",
     "color": "cyan",
     "broken_color": "cyan",
-    "durability": 860,
+    "durability": 3260,
     "difficulty": 4,
+    "damage_modifier": 600,
     "breaks_into": [
       { "item": "steel_lump", "count": [ 4, 6 ] },
       { "item": "steel_chunk", "count": [ 4, 6 ] },
       { "item": "scrap", "count": [ 4, 6 ] }
     ],
-    "damage_reduction": { "all": 200 }
+    "damage_reduction": { "all": 330 }
   },
   {
     "id": "ram_military_horizontal",
@@ -52,15 +53,16 @@
     "item": "mil_plate",
     "color": "green",
     "broken_color": "green",
-    "durability": 800,
+    "durability": 8800,
     "difficulty": 6,
+    "damage_modifier": 780,
     "breaks_into": [
       { "item": "steel_lump", "count": [ 4, 6 ] },
       { "item": "steel_chunk", "count": [ 4, 6 ] },
       { "item": "scrap", "count": [ 4, 6 ] },
       { "item": "ceramic_armor", "count": [ 0, 4 ] }
     ],
-    "damage_reduction": { "all": 180, "cut": 210, "stab": 280 }
+    "damage_reduction": { "all": 480, "cut": 610, "stab": 680 }
   },
   {
     "id": "ram_spiked",
@@ -157,12 +159,12 @@
     "color": "dark_gray",
     "broken_color": "dark_gray",
     "difficulty": 5,
-    "durability": 450,
+    "durability": 1450,
     "power": -1750,
-    "damage_modifier": 500,
+    "damage_modifier": 1500,
     "breaks_into": [  ],
     "description": "A circular blade, powered by the vehicle's engine.  It will dramatically increase the damage the vehicle delivers in collisions.  Mount on the edges of the vehicle, preferably the front.",
     "flags": [ "UNMOUNT_ON_DAMAGE", "SHARP", "PROTRUSION" ],
-    "damage_reduction": { "all": 82 }
+    "damage_reduction": { "all": 264 }
   }
 ]

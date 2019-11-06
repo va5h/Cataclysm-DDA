@@ -157,7 +157,7 @@
     "difficulty": 5,
     "durability": 7500,
     "description": "A strong metal wheel.",
-    "damage_modifier": 500,
+    "damage_modifier": 600,
     "breaks_into": [
       { "item": "steel_lump", "count": [ 25, 75 ] },
       { "item": "steel_chunk", "count": [ 30, 90 ] },
@@ -167,7 +167,7 @@
     "flags": [ "ARMOR", "OBSTACLE", "WHEEL", "NEEDS_JACKING", "STEERABLE" ],
     "wheel_type": "rigid",
     "contact_area": 400,
-    "damage_reduction": { "all": 280 }
+    "damage_reduction": { "all": 460 }
   },
   {
     "id": "wheel",
