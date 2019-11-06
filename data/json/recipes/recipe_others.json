@@ -4455,6 +4455,7 @@
     "qualities": [ { "id": "HAMMER", "level": 2 }, { "id": "SAW_W", "level": 2 } ],
     "components": [ [ [ "2x4", 4 ] ], [ [ "nail", 20 ] ], [ [ "hinge", 2 ] ] ]
   },
+  {
     "type": "recipe",
     "result": "pouch_autoclave",
     "category": "CC_OTHER",
