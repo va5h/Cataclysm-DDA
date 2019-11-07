@@ -51,7 +51,7 @@
     "name": "Protective Lenses",
     "description": "Your eye sockets have been surgically sealed with highly protective mirrored lenses and your tear ducts have been re-routed to your mouth.  When you cry, you must spit out or swallow your tears.",
     "occupied_bodyparts": [ [ "EYES", 1 ] ],
-    "env_protec": [ [ "EYES", 7 ] ],
+    "env_protec": [ [ "EYES", 12 ] ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   },
   {
@@ -763,7 +763,7 @@
     "name": "Air Filtration System",
     "description": "Surgically implanted in your trachea is an advanced filtration system.  If toxins, or airborne diseases find their way into your windpipe, the filter will attempt to remove them.",
     "occupied_bodyparts": [ [ "TORSO", 4 ], [ "MOUTH", 2 ] ],
-    "env_protec": [ [ "MOUTH", 7 ] ],
+    "env_protec": [ [ "MOUTH", 12 ] ],
     "flags": [ "BIONIC_NPC_USABLE" ]
   },
   {
@@ -865,7 +865,7 @@
     "name": "Shockwave Generator",
     "description": "You generate a powerful shockwave, knocking back all nearby creatures.  Targets are stunned briefly, take damage and additional stun upon impact with impassable terrain, and knockback any creatures they collide with.",
     "occupied_bodyparts": [ [ "TORSO", 20 ] ],
-    "act_cost": 250
+    "act_cost": "25 kJ"
   },
   {
     "id": "bio_sleepy",
