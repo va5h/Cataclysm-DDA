@@ -6296,7 +6296,7 @@ void player::practice( const skill_id &id, int amount, int cap, bool suppress_wa
         amount *= 2;
     }
 
-    if( has_trait( trait_PRED4 ) && skill.is_combat_skill() ) {
+    if( ( has_trait( trait_PRED4 ) || has_active_bionic( bio_cqb ) ) && skill.is_combat_skill() ) {
         amount *= 3;
     }
 
@@ -6305,9 +6305,14 @@ void player::practice( const skill_id &id, int amount, int cap, bool suppress_wa
     }
 
     if( amount > 0 && get_skill_level( id ) > cap ) { //blunt grinding cap implementation for crafting
-        amount = 0;
-        if( !suppress_warning ) {
-            handle_skill_warning( id, false );
+        if ( !has_active_bionic( bio_memory ) ) {
+            amount = 0;
+            if( !suppress_warning ) {
+                handle_skill_warning( id, false );
+            }
+        }
+        else {
+            amount /= 2;
         }
     }
     if( amount > 0 && level.isTraining() ) {
