@@ -84,11 +84,11 @@
     "looks_like": "board",
     "color": "dark_gray",
     "difficulty": 1,
-    "durability": 450,
+    "durability": 1250,
     "description": "A strong metal wall.  Keeps zombies outside the vehicle and prevents people from seeing through it.",
     "breaks_into": "ig_vp_steel_plate",
     "flags": [ "OPAQUE", "OBSTACLE", "FULL_BOARD", "NO_ROOF_NEEDED" ],
-    "damage_reduction": { "all": 75, "cut": 80, "stab": 80 }
+    "damage_reduction": { "all": 95, "cut": 100, "stab": 100 }
   },
   {
     "abstract": "hdhalfboard",
@@ -99,7 +99,7 @@
     "proportional": { "durability": 0.8 },
     "extend": { "flags": [ "HALF_BOARD" ] },
     "delete": { "flags": [ "OPAQUE", "FULL_BOARD" ] },
-    "damage_reduction": { "all": 75, "cut": 80, "stab": 80 }
+    "damage_reduction": { "all": 95, "cut": 100, "stab": 100 }
   },
   {
     "abstract": "woodboard",

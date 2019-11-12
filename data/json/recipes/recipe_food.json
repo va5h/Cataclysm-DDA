@@ -300,6 +300,7 @@
     "skill_used": "cooking",
     "difficulty": 2,
     "time": "10 m",
+    "batch_time_factors": [ 90, 5 ],
     "charges": 6,
     "autolearn": true,
     "qualities": [ { "id": "CUT", "level": 1 }, { "id": "COOK", "level": 2 } ],
