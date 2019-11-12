@@ -1053,8 +1053,12 @@ int avatar::calc_focus_change() const
 
     // for every 100 points, we have a flat gain of 1 focus.
     // for every n points left over, we have an n% chance of 1 focus
-    int gain = focus_gap / 100;
-    if( rng( 1, 100 ) <= focus_gap % 100 ) {
+    // EDIT bio-memory greatly helps in regaining concentration
+    bool isAugmentedMemory = has_active_bionic( bio_memory );
+    int focusGainDivisor = isAugmentedMemory ? 5 : 100;
+    
+    int gain = focus_gap / focusGainDivisor;
+    if( rng( 1, focusGainDivisor ) <= focus_gap % focusGainDivisor ) {
         gain++;
     }
 
