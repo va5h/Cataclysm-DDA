@@ -7,6 +7,9 @@
 #include "units.h"
 #include "game.h"
 #include "itype.h"
+#include "bionics.h"
+
+const bionic_id bio_digestion( "bio_digestion" );
 
 stomach_contents::stomach_contents() = default;
 
@@ -68,6 +71,9 @@ units::volume stomach_contents::capacity( const Character &owner ) const
     }
     if( owner.has_trait( trait_id( "SLIMESPAWNER" ) ) ) {
         max_mod *= 3;
+    }
+    if( owner.has_bionic( bio_digestion ) ) {
+        max_mod *=4;
     }
     return max_volume * max_mod;
 }

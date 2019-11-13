@@ -6312,6 +6312,8 @@ void player::practice( const skill_id &id, int amount, int cap, bool suppress_wa
             }
         }
         else {
+            add_msg( m_info, _( "...your Bio-Memory still nets you %d exp from this trivial task." ),
+                     amount );
             amount /= 2;
         }
     }
