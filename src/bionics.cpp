@@ -396,10 +396,13 @@ bool player::activate_bionic( int b, bool eff_only )
             add_msg_if_player( m_info, _( "You cannot activate that while mounted." ) );
             return false;
         }
-        mod_moves( units::to_kilojoule( get_power_level() ) );
+        
+        int power =  units::to_kilojoule( get_power_level() );
+        
+        mod_moves( power * 10 );
         set_power_level( 0_kJ );
         add_msg_if_player( m_good, _( "Your speed suddenly increases!" ) );
-        if( one_in( 3 ) ) {
+        if( one_in( 3 * ( get_str() + get_dex() ) ) ) {
             add_msg_if_player( m_bad, _( "Your muscles tear with the strain." ) );
             apply_damage( nullptr, bp_arm_l, rng( 5, 10 ) );
             apply_damage( nullptr, bp_arm_r, rng( 5, 10 ) );
@@ -407,8 +410,9 @@ bool player::activate_bionic( int b, bool eff_only )
             apply_damage( nullptr, bp_leg_r, rng( 7, 12 ) );
             apply_damage( nullptr, bp_torso, rng( 5, 15 ) );
         }
-        if( one_in( 5 ) ) {
-            add_effect( effect_teleglow, rng( 5_minutes, 40_minutes ) );
+        if( one_in( 3 ) ) {
+            add_msg_if_player( m_bad, _( "You feel that the very space-time fabric tears around you..." ) );
+            add_effect( effect_teleglow, power * rng( 10_minutes, 20_minutes ) );
         }
     } else if( bio.id == "bio_teleport" ) {
         if( mounted ) {

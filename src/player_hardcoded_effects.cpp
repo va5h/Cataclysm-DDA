@@ -602,6 +602,9 @@ void player::hardcoded_effects( effect &it )
         // depending on the source).
         // TODO: Include a chance to teleport to the nether realm.
         // TODO: This with regards to NPCS
+        bool isSpaceShifter = has_trait( trait_id( "THRESH_CHIMERA" ) );
+        // Reveling in chaos has its advantages
+        
         if( !is_player() ) {
             // NO, no teleporting around the player because an NPC has teleglow!
             return;
@@ -633,7 +636,7 @@ void player::hardcoded_effects( effect &it )
                     it.set_duration( 0_turns );
                 }
             }
-            if( one_in( 7200 - ( ( dur - 600_minutes ) / 30_seconds ) ) && one_in( 20 ) ) {
+            if( one_in( 7200 - ( ( dur - 600_minutes ) / 30_seconds ) ) && one_in( 20 ) && !isSpaceShifter ) {
                 if( !is_npc() ) {
                     add_msg( m_bad, _( "You pass out." ) );
                 }
@@ -677,7 +680,7 @@ void player::hardcoded_effects( effect &it )
                     }
                 }
             }
-            if( one_in( 21000 - ( dur - 360_minutes ) / 4_turns ) ) {
+            if( one_in( 21000 - ( dur - 360_minutes ) / 4_turns ) && !isSpaceShifter ) {
                 add_msg_if_player( m_bad, _( "You shudder suddenly." ) );
                 mutate();
                 if( one_in( 4 ) ) {
@@ -688,10 +691,10 @@ void player::hardcoded_effects( effect &it )
         }
         if( dur > 4_hours ) {
             // 8 teleports
-            if( one_in( 10000 - to_turns<int>( dur ) ) && !has_effect( effect_valium ) ) {
+            if( one_in( 10000 - to_turns<int>( dur ) ) && !has_effect( effect_valium ) && !isSpaceShifter ) {
                 add_effect( effect_shakes, rng( 4_minutes, 8_minutes ) );
             }
-            if( one_in( 12000 - to_turns<int>( dur ) ) ) {
+            if( one_in( 12000 - to_turns<int>( dur ) ) && !isSpaceShifter ) {
                 add_msg_if_player( m_bad, _( "Your vision is filled with bright lights…" ) );
                 add_effect( effect_blind, rng( 1_minutes, 2_minutes ) );
                 if( one_in( 8 ) ) {
@@ -699,7 +702,7 @@ void player::hardcoded_effects( effect &it )
                     it.set_duration( 0_turns );
                 }
             }
-            if( one_in( 5000 ) && !has_effect( effect_hallu ) ) {
+            if( one_in( 5000 ) && !has_effect( effect_hallu ) && !isSpaceShifter ) {
                 add_effect( effect_hallu, 6_hours );
                 if( one_in( 5 ) ) {
                     // Set ourselves up for removal
@@ -707,7 +710,7 @@ void player::hardcoded_effects( effect &it )
                 }
             }
         }
-        if( one_in( 4000 ) ) {
+        if( one_in( 4000 ) && !isSpaceShifter ) {
             add_msg_if_player( m_bad, _( "You're suddenly covered in ectoplasm." ) );
             add_effect( effect_boomered, 10_minutes );
             if( one_in( 4 ) ) {
@@ -715,7 +718,7 @@ void player::hardcoded_effects( effect &it )
                 it.set_duration( 0_turns );
             }
         }
-        if( one_in( 10000 ) ) {
+        if( one_in( 10000 ) && !isSpaceShifter ) {
             if( !has_trait( trait_id( "M_IMMUNE" ) ) ) {
                 add_effect( effect_fungus, 1_turns, num_bp, true );
             } else {
