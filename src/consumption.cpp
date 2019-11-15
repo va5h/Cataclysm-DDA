@@ -85,19 +85,25 @@ const std::map<itype_id, int> plut_charges = {
 
 int player::stomach_capacity() const
 {
+    int cap = -20;
+    
     if( has_trait( trait_id( "GIZZARD" ) ) ) {
-        return 0;
+        cap += 20;
     }
 
     if( has_active_mutation( trait_id( "HIBERNATE" ) ) ) {
-        return -620;
+        cap += -620;
     }
 
     if( has_trait( trait_id( "GOURMAND" ) ) || has_trait( trait_id( "HIBERNATE" ) ) ) {
-        return -60;
+        cap += -60;
+    }
+    
+    if ( has_bionic( bio_digestion ) ) {
+        cap += -930;
     }
 
-    return -20;
+    return cap;
 }
 
 // TODO: Move pizza scraping here.
