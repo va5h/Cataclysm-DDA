@@ -150,6 +150,7 @@ static const bionic_id bio_sleepy( "bio_sleepy" );
 static const bionic_id bio_soporific( "bio_soporific" );
 static const bionic_id bio_spasm( "bio_spasm" );
 static const bionic_id bio_trip( "bio_trip" );
+static const bionic_id bio_blood_filter( "bio_blood_filter" );
 
 static const trait_id trait_ADDICTIVE( "ADDICTIVE" );
 static const trait_id trait_ALBINO( "ALBINO" );
@@ -1299,64 +1300,71 @@ void Character::suffer_from_artifacts()
 void Character::suffer_from_stimulants( const int current_stim )
 {
     // Stim +250 kills
-    if( current_stim > 210 ) {
-        if( one_turn_in( 2_minutes ) && !has_effect( effect_downed ) ) {
-            add_msg_if_player( m_bad, _( "Your muscles spasm!" ) );
-            if( !has_effect( effect_downed ) ) {
-                add_msg_if_player( m_bad, _( "You fall to the ground!" ) );
-                add_effect( effect_downed, rng( 6_turns, 20_turns ) );
+    // As in terminal cases (i.e. death),
+    // Blood Filter CBM preventively safeguards from any overdose whatsoever.
+    const bool safe_overdose = has_bionic(bio_blood_filter);
+    
+    if (!safe_overdose) {
+        if( current_stim > 210 ) {
+            if( one_turn_in( 2_minutes ) && !has_effect( effect_downed ) ) {
+                add_msg_if_player( m_bad, _( "Your muscles spasm!" ) );
+                if( !has_effect( effect_downed ) ) {
+                    add_msg_if_player( m_bad, _( "You fall to the ground!" ) );
+                    add_effect( effect_downed, rng( 6_turns, 20_turns ) );
+                }
             }
         }
-    }
-    if( current_stim > 170 ) {
-        if( !has_effect( effect_winded ) && calendar::once_every( 10_minutes ) ) {
-            add_msg( m_bad, _( "You feel short of breath." ) );
-            add_effect( effect_winded, 10_minutes + 1_turns );
+        if( current_stim > 170 ) {
+            if( !has_effect( effect_winded ) && calendar::once_every( 10_minutes ) ) {
+                add_msg( m_bad, _( "You feel short of breath." ) );
+                add_effect( effect_winded, 10_minutes + 1_turns );
+            }
         }
-    }
-    if( current_stim > 110 ) {
-        if( !has_effect( effect_shakes ) && calendar::once_every( 10_minutes ) ) {
-            add_msg( _( "You shake uncontrollably." ) );
-            add_effect( effect_shakes, 15_minutes + 1_turns );
+        if( current_stim > 110 ) {
+            if( !has_effect( effect_shakes ) && calendar::once_every( 10_minutes ) ) {
+                add_msg( _( "You shake uncontrollably." ) );
+                add_effect( effect_shakes, 15_minutes + 1_turns );
+            }
         }
-    }
-    if( current_stim > 75 ) {
-        if( !one_turn_in( 2_minutes ) && !has_effect( effect_nausea ) ) {
-            add_msg( _( "You feel nauseous…" ) );
-            add_effect( effect_nausea, 5_minutes );
+        if( current_stim > 75 ) {
+            if( !one_turn_in( 2_minutes ) && !has_effect( effect_nausea ) ) {
+                add_msg( _( "You feel nauseous…" ) );
+                add_effect( effect_nausea, 5_minutes );
+            }
         }
-    }
 
-    //stim -200 or painkillers 240 kills
-    if( current_stim < -160 || get_painkiller() > 200 ) {
-        if( one_turn_in( 3_minutes ) && !in_sleep_state() ) {
-            add_msg_if_player( m_bad, _( "You black out!" ) );
-            const time_duration dur = rng( 30_minutes, 60_minutes );
-            add_effect( effect_downed, dur );
-            add_effect( effect_blind, dur );
-            fall_asleep( dur );
-        }
-    }
-    if( current_stim < -120 || get_painkiller() > 160 ) {
-        if( !has_effect( effect_winded ) && calendar::once_every( 10_minutes ) ) {
-            add_msg( m_bad, _( "Your breathing slows down." ) );
-            add_effect( effect_winded, 10_minutes + 1_turns );
-        }
-    }
-    if( current_stim < -85 || get_painkiller() > 145 ) {
-        if( one_turn_in( 15_seconds ) && !has_effect( effect_sleep ) ) {
-            add_msg_if_player( m_bad, _( "You feel dizzy for a moment." ) );
-            mod_moves( -rng( 10, 30 ) );
-            if( one_in( 3 ) && !has_effect( effect_downed ) ) {
-                add_msg_if_player( m_bad, _( "You stumble and fall over!" ) );
-                add_effect( effect_downed, rng( 3_turns, 10_turns ) );
+        //stim -200 or painkillers 240 kills
+        if( current_stim < -160 || get_painkiller() > 200 ) {
+            if( one_turn_in( 3_minutes ) && !in_sleep_state() ) {
+                add_msg_if_player( m_bad, _( "You black out!" ) );
+                const time_duration dur = rng( 30_minutes, 60_minutes );
+                add_effect( effect_downed, dur );
+                add_effect( effect_blind, dur );
+                fall_asleep( dur );
             }
         }
-    }
-    if( current_stim < -60 || get_painkiller() > 130 ) {
-        if( calendar::once_every( 10_minutes ) ) {
-            add_msg( m_warning, _( "You feel tired…" ) );
-            mod_fatigue( rng( 1, 2 ) );
+        if( current_stim < -120 || get_painkiller() > 160 ) {
+            if( !has_effect( effect_winded ) && calendar::once_every( 10_minutes ) ) {
+                add_msg( m_bad, _( "Your breathing slows down." ) );
+                add_effect( effect_winded, 10_minutes + 1_turns );
+            }
+        }
+        if( current_stim < -85 || get_painkiller() > 145 ) {
+            if( one_turn_in( 15_seconds ) && !has_effect( effect_sleep ) ) {
+                add_msg_if_player( m_bad, _( "You feel dizzy for a moment." ) );
+                mod_moves( -rng( 10, 30 ) );
+                if( one_in( 3 ) && !has_effect( effect_downed ) ) {
+                    add_msg_if_player( m_bad, _( "You stumble and fall over!" ) );
+                    add_effect( effect_downed, rng( 3_turns, 10_turns ) );
+                }
+            }
+        }
+        if( current_stim < -60 || get_painkiller() > 130 ) {
+
+            if( calendar::once_every( 10_minutes ) ) {
+                add_msg( m_warning, _( "You feel tired…" ) );
+                mod_fatigue( rng( 1, 2 ) );
+            }
         }
     }
 }
