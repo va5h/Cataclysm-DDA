@@ -104,12 +104,7 @@
     "autolearn": true,
     "tools": [ [ [ "rep_compcrossbow", -1 ] ], [ [ "mold_plastic", -1 ] ], [ [ "surface_heat", 15, "LIST" ] ] ],
     "qualities": [ { "id": "HAMMER", "level": 2 }, { "id": "SAW_M", "level": 1 }, { "id": "SCREW_FINE", "level": 1 } ],
-    "components": [
-      [ [ "plastic_chunk", 4 ] ],
-      [ [ "spring", 1 ] ],
-      [ [ "sheet_metal_small", 1 ] ],
-      [ [ "superglue", 4 ] ]
-    ]
+    "components": [ [ [ "plastic_chunk", 4 ] ], [ [ "spring", 1 ] ], [ [ "sheet_metal_small", 1 ] ], [ [ "superglue", 4 ] ] ]
   },
   {
     "result": "pressurized_tank_chem",
