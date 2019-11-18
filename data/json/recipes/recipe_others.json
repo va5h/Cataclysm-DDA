@@ -3850,8 +3850,9 @@
     "batch_time_factors": [ 75, 4 ],
     "components": [
       [ [ "water", 1 ], [ "water_clean", 1 ] ],
-      [ [ "material_soil", 2 ] ],
+      [ [ "material_soil", 4 ] ],
       [
+        [ "material_soil", 4 ],
         [ "withered", 2 ],
         [ "straw_pile", 2 ],
         [ "feces_cow", 1 ],
