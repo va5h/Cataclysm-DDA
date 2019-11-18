@@ -931,6 +931,29 @@
   },
   {
     "type": "recipe",
+    "result": "solar_cell",
+    "category": "CC_ELECTRONIC",
+    "subcategory": "CSC_ELECTRONIC_PARTS",
+    "skill_used": "electronics",
+    "difficulty": 12,
+    "time": "90 m",
+    "reversible": true,
+    "decomp_learn": 8,
+    "book_learn": [ [ "textbook_robots", 8 ] ],
+    "using": [ [ "soldering_standard", 50 ] ],
+    "qualities": [ { "id": "SCREW", "level": 1 } ],
+    "components": [
+      [ [ "power_supply", 1 ] ],
+      [ [ "amplifier", 1 ] ],
+      [ [ "processor", 2 ], [ "RAM", 3 ] ],
+      [ [ "lens", 2 ], [ "lens_small", 4 ] ],
+      [ [ "small_lcd_screen", 2 ] ],
+      [ [ "gold_small", 20 ] ],
+      [ [ "e_scrap", 5 ] ]
+    ]
+  },
+  {
+    "type": "recipe",
     "result": "kitchen_unit",
     "category": "CC_ELECTRONIC",
     "subcategory": "CSC_ELECTRONIC_PARTS",
