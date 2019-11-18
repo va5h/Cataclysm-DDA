@@ -458,5 +458,43 @@
       [ "underbarrel", 1 ],
       [ "dampening", 1 ]
     ]
+  },
+  {
+    "id": "rep_compcrossbow",
+    "looks_like": "rep_crossbow",
+    "type": "GUN",
+    "reload_noise_volume": 8,
+    "symbol": "(",
+    "color": "green",
+    "name": "repeating compound crossbow",
+    "description": "A modern take on ancient design, this highly advanced crossbow takes the zombie-eviscerating to a whole new level.",
+    "price": 454000,
+    "material": [ "steel", "plastic" ],
+    "flags": [ "FIRE_TWOHAND", "PRIMITIVE_RANGED_WEAPON", "TRADER_AVOID" ],
+    "skill": "smg",
+    "ammo": "bolt",
+    "weight": "2554 g",
+    "volume": "1900 ml",
+    "bashing": 12,
+    "to_hit": -1,
+    "ranged_damage": 24,
+    "range": 21,
+    "dispersion": 130,
+    "recoil": 10,
+    "durability": 7,
+    "clip_size": 6,
+    "reload": 20,
+    "valid_mod_locations": [
+      [ "accessories", 4 ],
+      [ "grip", 1 ],
+      [ "mechanism", 4 ],
+      [ "rail", 2 ],
+      [ "sights", 1 ],
+      [ "sling", 1 ],
+      [ "stock", 1 ],
+      [ "underbarrel", 2 ],
+      [ "dampening", 1 ]
+    ],
+    "magazines": [ [ "bolt", [ "rcxbowmag" ] ] ]
   }
 ]

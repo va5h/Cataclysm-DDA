@@ -1,0 +1,20 @@
+[
+  {
+    "id": "rcxbowmag",
+    "looks_like": "calicomag",
+    "type": "MAGAZINE",
+    "name": "Repeating crossbow magazine",
+    "description": "A detachable magazine for modern repeating crossbows. Capable of holding up to six bolts.",
+    "weight": "390 g",
+    "volume": "470 ml",
+    "price": 6920,
+    "material": "plastic",
+    "symbol": "#",
+    "color": "light_gray",
+    "ammo_type": "bolt",
+    "capacity": 6,
+    "reliability": 8,
+    "reload_time": 160,
+    "flags": [ "MAG_COMPACT" ]
+  }
+]
