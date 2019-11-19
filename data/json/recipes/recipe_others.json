@@ -2587,7 +2587,12 @@
     "book_learn": [ [ "textbook_firstaid", 8 ], [ "textbook_chemistry", 7 ], [ "adv_chemistry", 6 ], [ "emergency_book", 8 ] ],
     "qualities": [ { "id": "CHEM", "level": 1 } ],
     "tools": [ [ [ "surface_heat", 18, "LIST" ] ] ],
-    "components": [ [ [ "iodine", 2 ] ], [ [ "aspirin", 4 ] ], [ [ "oxy_powder", 50 ], [ "chitin_piece", 10 ], [ "meal_chitin_piece", 5 ] ], [ [ "salt_water", 1 ], [ "saline", 5 ] ] ]
+    "components": [
+      [ [ "iodine", 2 ] ],
+      [ [ "aspirin", 4 ] ],
+      [ [ "oxy_powder", 50 ], [ "chitin_piece", 10 ], [ "meal_chitin_piece", 5 ] ],
+      [ [ "salt_water", 1 ], [ "saline", 5 ] ]
+    ]
   },
   {
     "type": "recipe",
@@ -3691,7 +3696,11 @@
       { "id": "CONTAIN", "level": 1 }
     ],
     "tools": [ [ [ "surface_heat", 10, "LIST" ] ] ],
-    "components": [ [ [ "water_clean", 2 ], [ "water", 2 ] ], [ [ "lye_powder", 10 ], [ "aspirin", 10 ], [ "meal_chitin_piece", 6 ] ], [ [ "cured_hide", 6 ] ] ]
+    "components": [
+      [ [ "water_clean", 2 ], [ "water", 2 ] ],
+      [ [ "lye_powder", 10 ], [ "aspirin", 10 ], [ "meal_chitin_piece", 6 ] ],
+      [ [ "cured_hide", 6 ] ]
+    ]
   },
   {
     "type": "recipe",
@@ -3712,7 +3721,11 @@
       { "id": "CONTAIN", "level": 1 }
     ],
     "tools": [ [ [ "surface_heat", 10, "LIST" ] ] ],
-    "components": [ [ [ "water_clean", 2 ], [ "water", 2 ] ], [ [ "lye_powder", 10 ], [ "aspirin", 10 ], [ "chitin_piece", 12 ], [ "meal_chitin_piece", 6 ] ], [ [ "cured_pelt", 6 ] ] ]
+    "components": [
+      [ [ "water_clean", 2 ], [ "water", 2 ] ],
+      [ [ "lye_powder", 10 ], [ "aspirin", 10 ], [ "chitin_piece", 12 ], [ "meal_chitin_piece", 6 ] ],
+      [ [ "cured_pelt", 6 ] ]
+    ]
   },
   {
     "type": "recipe",

@@ -1412,14 +1412,27 @@
     "type": "uncraft",
     "time": "30 s",
     "qualities": [ { "id": "SCREW", "level": 1 } ],
-    "components": [ [ [ "scrap", 1 ] ], [ [ "aluminum_foil", 25 ] ], [ [ "small_lcd_screen", 1 ] ], [ [ "RAM", 1 ] ], [ [ "processor", 1 ] ] ]
+    "components": [
+      [ [ "scrap", 1 ] ],
+      [ [ "aluminum_foil", 25 ] ],
+      [ [ "small_lcd_screen", 1 ] ],
+      [ [ "RAM", 1 ] ],
+      [ [ "processor", 1 ] ]
+    ]
   },
   {
     "result": "smart_phone",
     "type": "uncraft",
     "time": "30 s",
     "qualities": [ { "id": "SCREW", "level": 1 } ],
-    "components": [ [ [ "scrap", 1 ] ], [ [ "aluminum_foil", 25 ] ], [ [ "small_lcd_screen", 1 ] ], [ [ "RAM", 1 ] ], [ [ "processor", 1 ] ], [ [ "lens_small", 1 ] ] ]
+    "components": [
+      [ [ "scrap", 1 ] ],
+      [ [ "aluminum_foil", 25 ] ],
+      [ [ "small_lcd_screen", 1 ] ],
+      [ [ "RAM", 1 ] ],
+      [ [ "processor", 1 ] ],
+      [ [ "lens_small", 1 ] ]
+    ]
   },
   {
     "result": "ceramic_bowl",
@@ -3083,5 +3096,5 @@
     "time": "2 m",
     "qualities": [ { "id": "CUT", "level": 1 } ],
     "components": [ [ [ "plastic_chunk", 3 ] ], [ [ "scrap", 1 ] ], [ [ "aluminum_foil", 5 ] ], [ [ "wire", 5 ] ] ]
-  },
+  }
 ]
