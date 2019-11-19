@@ -273,7 +273,7 @@
     "batch_time_factors": [ 83, 3 ],
     "flags": [ "BLIND_EASY" ],
     "tools": [ [ [ "rock_quern", -1 ], [ "clay_quern", -1 ] ] ],
-    "components": [ [ [ "chitin_piece", 1 ], [ "acidchitin_piece", 1 ] ] ]
+    "components": [ [ [ "chitin_piece", 2 ], [ "acidchitin_piece", 2 ] ] ]
   },
   {
     "type": "recipe",
@@ -289,7 +289,7 @@
     "batch_time_factors": [ 83, 3 ],
     "flags": [ "BLIND_EASY" ],
     "tools": [ [ [ "mortar_pestle", -1 ] ] ],
-    "components": [ [ [ "chitin_piece", 1 ] ] ]
+    "components": [ [ [ "chitin_piece", 2 ] ] ]
   },
   {
     "type": "recipe",
@@ -2573,7 +2573,7 @@
     "book_learn": [ [ "textbook_firstaid", 3 ], [ "adv_chemistry", 4 ], [ "emergency_book", 4 ] ],
     "qualities": [ { "id": "CHEM", "level": 1 } ],
     "tools": [ [ [ "surface_heat", 18, "LIST" ] ] ],
-    "components": [ [ [ "chitin_piece", 6 ], [ "meal_chitin_piece", 6 ] ], [ [ "ammonia", 1 ], [ "lye_powder", 100 ] ] ]
+    "components": [ [ [ "chitin_piece", 12 ], [ "meal_chitin_piece", 6 ] ], [ [ "ammonia", 1 ], [ "lye_powder", 100 ] ] ]
   },
   {
     "type": "recipe",
@@ -2587,7 +2587,7 @@
     "book_learn": [ [ "textbook_firstaid", 8 ], [ "textbook_chemistry", 7 ], [ "adv_chemistry", 6 ], [ "emergency_book", 8 ] ],
     "qualities": [ { "id": "CHEM", "level": 1 } ],
     "tools": [ [ [ "surface_heat", 18, "LIST" ] ] ],
-    "components": [ [ [ "iodine", 2 ] ], [ [ "aspirin", 4 ] ], [ [ "oxy_powder", 50 ] ], [ [ "salt_water", 1 ], [ "saline", 5 ] ] ]
+    "components": [ [ [ "iodine", 2 ] ], [ [ "aspirin", 4 ] ], [ [ "oxy_powder", 50 ], [ "chitin_piece", 10 ], [ "meal_chitin_piece", 5 ] ], [ [ "salt_water", 1 ], [ "saline", 5 ] ] ]
   },
   {
     "type": "recipe",
@@ -2935,7 +2935,7 @@
     "book_learn": [ [ "glassblowing_book", 5 ] ],
     "qualities": [ { "id": "CHISEL", "level": 3 } ],
     "tools": [ [ [ "tongs", -1 ] ], [ [ "pipe", -1 ] ], [ [ "crucible", -1 ], [ "crucible_clay", -1 ] ], [ [ "forge", 150 ] ] ],
-    "components": [ [ [ "glass_shard", 5 ], [ "flask_glass", 6 ], [ "jar_glass", 4 ] ] ]
+    "components": [ [ [ "glass_shard", 15 ], [ "flask_glass", 6 ], [ "jar_glass", 4 ] ] ]
   },
   {
     "type": "recipe",
@@ -3691,7 +3691,7 @@
       { "id": "CONTAIN", "level": 1 }
     ],
     "tools": [ [ [ "surface_heat", 10, "LIST" ] ] ],
-    "components": [ [ [ "water_clean", 2 ], [ "water", 2 ] ], [ [ "lye_powder", 10 ], [ "aspirin", 10 ] ], [ [ "cured_hide", 6 ] ] ]
+    "components": [ [ [ "water_clean", 2 ], [ "water", 2 ] ], [ [ "lye_powder", 10 ], [ "aspirin", 10 ], [ "meal_chitin_piece", 6 ] ], [ [ "cured_hide", 6 ] ] ]
   },
   {
     "type": "recipe",
@@ -3712,7 +3712,7 @@
       { "id": "CONTAIN", "level": 1 }
     ],
     "tools": [ [ [ "surface_heat", 10, "LIST" ] ] ],
-    "components": [ [ [ "water_clean", 2 ], [ "water", 2 ] ], [ [ "lye_powder", 10 ], [ "aspirin", 10 ] ], [ [ "cured_pelt", 6 ] ] ]
+    "components": [ [ [ "water_clean", 2 ], [ "water", 2 ] ], [ [ "lye_powder", 10 ], [ "aspirin", 10 ], [ "chitin_piece", 12 ], [ "meal_chitin_piece", 6 ] ], [ [ "cured_pelt", 6 ] ] ]
   },
   {
     "type": "recipe",
@@ -4212,7 +4212,7 @@
     "difficulty": 1,
     "time": "1 m",
     "autolearn": true,
-    "using": [ [ "filament", 8 ] ],
+    "using": [ [ "filament", 4 ] ],
     "qualities": [ { "id": "SEW", "level": 1 } ],
     "components": [ [ [ "rag", 10 ] ] ],
     "flags": [ "BLIND_HARD" ]
@@ -4227,7 +4227,7 @@
     "difficulty": 1,
     "time": "1 m",
     "autolearn": true,
-    "using": [ [ "filament", 8 ] ],
+    "using": [ [ "filament", 4 ] ],
     "qualities": [ { "id": "SEW", "level": 1 } ],
     "components": [ [ [ "leather", 10 ] ] ],
     "flags": [ "BLIND_HARD" ]
@@ -4242,7 +4242,7 @@
     "difficulty": 1,
     "time": "1 m",
     "autolearn": true,
-    "using": [ [ "filament", 8 ] ],
+    "using": [ [ "filament", 4 ] ],
     "qualities": [ { "id": "SEW", "level": 1 } ],
     "components": [ [ [ "felt_patch", 10 ] ] ],
     "flags": [ "BLIND_HARD" ]
