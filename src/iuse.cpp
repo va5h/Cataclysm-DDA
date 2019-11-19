@@ -8738,7 +8738,7 @@ int iuse::multicooker( player *p, item *it, bool t, const tripoint &pos )
                 const recipe *meal = dishes[choice];
                 int mealtime;
                 if( it->get_var( "MULTI_COOK_UPGRADE" ) == "UPGRADE" ) {
-                    mealtime = meal->time;
+                    mealtime = meal->time * 0.75;
                 } else {
                     mealtime = meal->time * 2 ;
                 }
