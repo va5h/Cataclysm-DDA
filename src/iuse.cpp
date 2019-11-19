@@ -4112,7 +4112,8 @@ static std::string get_music_description()
     // of snippets {a, b, c}, but only a 50% chance
     // Actual chance = 24.5% of being selected
     if( one_in( 2 ) ) {
-        return SNIPPET.random_from_category( "music_description" );
+        return SNIPPET.expand( SNIPPET.random_from_category( "<music_description>" ).value_or(
+                                   translation() ).translated() );
     }
 
     return _( "a sweet guitar solo!" );
@@ -8737,7 +8738,7 @@ int iuse::multicooker( player *p, item *it, bool t, const tripoint &pos )
                 const recipe *meal = dishes[choice];
                 int mealtime;
                 if( it->get_var( "MULTI_COOK_UPGRADE" ) == "UPGRADE" ) {
-                    mealtime = meal->time;
+                    mealtime = meal->time * 0.75;
                 } else {
                     mealtime = meal->time * 2 ;
                 }
@@ -9328,7 +9329,7 @@ int iuse::capture_monster_act( player *p, item *it, bool, const tripoint &pos )
                 return 0;
             }
             // TODO: replace this with some kind of melee check.
-            int chance = f.hp_percentage() / 10;
+            int chance = std::max( f.hp_percentage() / 10 - p->get_dex() / 2, 1 );
             // A weaker monster is easier to capture.
             // If the monster is friendly, then put it in the item
             // without checking if it rolled a success.
@@ -9377,7 +9378,7 @@ int iuse::ladder( player *p, item *, bool, const tripoint & )
 washing_requirements washing_requirements_for_volume( const units::volume vol )
 {
     int water = divide_round_up( vol, 125_ml );
-    int cleanser = divide_round_up( vol, 1000_ml );
+    int cleanser = divide_round_up( vol, 1_liter );
     int time = to_moves<int>( 10_seconds * ( vol / 250_ml ) );
     return { water, cleanser, time };
 }

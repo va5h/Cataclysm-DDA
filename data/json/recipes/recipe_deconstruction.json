@@ -1412,14 +1412,27 @@
     "type": "uncraft",
     "time": "30 s",
     "qualities": [ { "id": "SCREW", "level": 1 } ],
-    "components": [ [ [ "scrap", 1 ] ], [ [ "small_lcd_screen", 1 ] ], [ [ "RAM", 1 ] ], [ [ "processor", 1 ] ] ]
+    "components": [
+      [ [ "scrap", 1 ] ],
+      [ [ "aluminum_foil", 25 ] ],
+      [ [ "small_lcd_screen", 1 ] ],
+      [ [ "RAM", 1 ] ],
+      [ [ "processor", 1 ] ]
+    ]
   },
   {
     "result": "smart_phone",
     "type": "uncraft",
     "time": "30 s",
     "qualities": [ { "id": "SCREW", "level": 1 } ],
-    "components": [ [ [ "scrap", 1 ] ], [ [ "small_lcd_screen", 1 ] ], [ [ "RAM", 1 ] ], [ [ "processor", 1 ] ], [ [ "lens_small", 1 ] ] ]
+    "components": [
+      [ [ "scrap", 1 ] ],
+      [ [ "aluminum_foil", 25 ] ],
+      [ [ "small_lcd_screen", 1 ] ],
+      [ [ "RAM", 1 ] ],
+      [ [ "processor", 1 ] ],
+      [ [ "lens_small", 1 ] ]
+    ]
   },
   {
     "result": "ceramic_bowl",
@@ -1680,7 +1693,7 @@
     "difficulty": 4,
     "time": "12 h 30 m",
     "qualities": [ { "id": "SAW_M", "level": 1 } ],
-    "tools": [ [ [ "welder", 500 ], [ "toolset", 750 ] ] ],
+    "tools": [ [ [ "welder", 500 ], [ "toolset", 50 ] ] ],
     "components": [ [ [ "steel_plate", 10 ] ], [ [ "steel_lump", 70 ] ] ]
   },
   {
@@ -1758,6 +1771,7 @@
       [ [ "cable", 6 ] ],
       [ [ "amplifier", 1 ] ],
       [ [ "plastic_chunk", 6 ] ],
+      [ [ "material_aluminium_ingot", 2 ] ],
       [ [ "small_lcd_screen", 1 ] ],
       [ [ "small_storage_battery", 2 ] ]
     ]
@@ -1790,7 +1804,7 @@
     "type": "uncraft",
     "time": "2 m",
     "qualities": [ { "id": "CUT", "level": 1 } ],
-    "components": [ [ [ "plastic_chunk", 3 ] ], [ [ "scrap", 1 ] ], [ [ "wire", 5 ] ] ]
+    "components": [ [ [ "plastic_chunk", 3 ] ], [ [ "scrap", 1 ] ], [ [ "aluminum_foil", 5 ] ], [ [ "wire", 5 ] ] ]
   },
   {
     "result": "lawnmower",
@@ -2137,7 +2151,7 @@
   {
     "result": "rag",
     "type": "uncraft",
-    "time": "1 h",
+    "time": "6 m",
     "qualities": [ { "id": "CUT", "level": 1 } ],
     "components": [ [ [ "thread", 80 ] ] ]
   },
@@ -2315,7 +2329,7 @@
     "result": "sunglasses",
     "type": "uncraft",
     "time": "6 s",
-    "components": [ [ [ "glass_tinted", 1 ] ] ],
+    "components": [ [ [ "glass_tinted", 1 ] ], [ [ "plastic_chunk", 1 ] ] ],
     "flags": [ "BLIND_EASY" ]
   },
   {
@@ -3075,5 +3089,12 @@
     "time": "30 s",
     "qualities": [ { "id": "HAMMER", "level": 1 } ],
     "components": [ [ [ "platinum_small", 2 ] ] ]
+  },
+  {
+    "result": "umbrella",
+    "type": "uncraft",
+    "time": "2 m",
+    "qualities": [ { "id": "CUT", "level": 1 } ],
+    "components": [ [ [ "plastic_chunk", 3 ] ], [ [ "scrap", 1 ] ], [ [ "aluminum_foil", 5 ] ], [ [ "wire", 5 ] ] ]
   }
 ]
