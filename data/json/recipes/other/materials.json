@@ -111,5 +111,18 @@
     "charges": 3,
     "batch_time_factors": [ 30, 2 ],
     "components": [ [ [ "rolling_paper", 1 ] ], [ [ "chem_black_powder", 3 ], [ "chem_match_head_powder", 3 ], [ "gunpowder", 3 ] ] ]
+  },
+  {
+    "type": "recipe",
+    "result": "material_aluminium_ingot",
+    "category": "CC_OTHER",
+    "subcategory": "CSC_OTHER_MATERIALS",
+    "skill_used": "fabrication",
+    "difficulty": 3,
+    "time": "1 h",
+    "autolearn": true,
+    "qualities": [ { "id": "ANVIL", "level": 1 }, { "id": "HAMMER", "level": 2 } ],
+    "tools": [ [ [ "swage", -1 ] ] ],
+    "components": [ [ [ "aluminum_foil", 40 ] ] ]
   }
 ]
