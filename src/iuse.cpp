@@ -9329,7 +9329,7 @@ int iuse::capture_monster_act( player *p, item *it, bool, const tripoint &pos )
                 return 0;
             }
             // TODO: replace this with some kind of melee check.
-            int chance = f.hp_percentage() / 10;
+            int chance = std::max( f.hp_percentage() / 10 - p->get_dex() / 2, 1 );
             // A weaker monster is easier to capture.
             // If the monster is friendly, then put it in the item
             // without checking if it rolled a success.
