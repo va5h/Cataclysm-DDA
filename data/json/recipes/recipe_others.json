@@ -3460,6 +3460,7 @@
     "difficulty": 4,
     "time": "20 m",
     "autolearn": true,
+    "reversible": true,
     "using": [ [ "soldering_standard", 25 ] ],
     "qualities": [ { "id": "CUT", "level": 1 } ],
     "components": [ [ [ "cable", 100 ] ], [ [ "scrap", 4 ] ], [ [ "duct_tape", 50 ] ] ]
@@ -3474,6 +3475,7 @@
     "difficulty": 5,
     "time": "2 h",
     "autolearn": true,
+    "reversible": true,
     "using": [ [ "soldering_standard", 60 ] ],
     "qualities": [ { "id": "CUT", "level": 1 } ],
     "components": [ [ [ "cable", 650 ] ], [ [ "scrap", 10 ] ], [ [ "duct_tape", 30 ] ], [ [ "hose", 2 ] ] ]
@@ -4482,5 +4484,23 @@
     "qualities": [ { "id": "CUT_FINE", "level": 3 }, { "id": "SEW", "level": 4 }, { "id": "SEW_CURVED", "level": 1 } ],
     "tools": [ [ [ "mold_plastic", -1 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
     "components": [ [ [ "plastic_chunk", 10 ] ], [ [ "paper", 10 ] ] ]
+  },
+  {
+    "type": "recipe",
+    "result": "fertilizer_liquid",
+    "byproducts": [ [ "clay_lump", 10 ], [ "material_sand", 10 ] ],
+    "//": "Actually, the byproducts are the main goals of this recipe",
+    "category": "CC_OTHER",
+    "subcategory": "CSC_OTHER_MATERIALS",
+    "skill_used": "fabrication",
+    "skills_required": [ "survival", 1 ],
+    "difficulty": 2,
+    "time": "30 m",
+    "batch_time_factors": [ 95, 4 ],
+    "flags": [ "BLIND_HARD" ],
+    "autolearn": true,
+    "qualities": [ { "id": "BOIL", "level": 1 }, { "id": "CONTAIN", "level": 1 } ],
+    "tools": [ [ [ "sieve_steel", -1 ], [ "sieve_primitive", -1 ] ], [ [ "surface_heat", 10, "LIST" ] ] ],
+    "components": [ [ [ "water", 4 ], [ "water_clean", 4 ] ], [ [ "material_soil", 1 ] ] ]
   }
 ]

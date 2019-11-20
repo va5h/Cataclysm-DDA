@@ -146,11 +146,11 @@
     "broken_symbol": "*",
     "broken_color": "red",
     "damage_modifier": 60,
-    "durability": 100,
+    "durability": 280,
     "description": "A place to sit, and the backrest reclines to make it an uncomfortable bed.",
     "item": "seat",
     "difficulty": 2,
-    "size": 25,
+    "size": 75,
     "floor_bedding_warmth": 250,
     "comfort": 3,
     "location": "center",
@@ -347,7 +347,7 @@
     "color": "light_cyan",
     "broken_symbol": "#",
     "broken_color": "light_cyan",
-    "durability": 30,
+    "durability": 50,
     "description": "A pair of handles.  You can mount other items on top of it.",
     "folded_volume": 3,
     "item": "pipe",
@@ -359,7 +359,7 @@
       { "item": "steel_chunk", "count": [ 4, 6 ] },
       { "item": "scrap", "count": [ 4, 6 ] }
     ],
-    "damage_reduction": { "all": 5 }
+    "damage_reduction": { "all": 8 }
   },
   {
     "type": "vehicle_part",
@@ -886,9 +886,9 @@
     "damage_modifier": 80,
     "durability": 580,
     "description": "A small nuclear reactor.  When loaded with plutonium cells and turned on, will generate a lot of electrical power.",
-    "power": 100,
-    "//": "Here it is a multiplier on power efficiency - 1 unit of plutonium is 100 units of battery",
-    "epower": 149200,
+    "power": 5000,
+    "//": "Here it is a multiplier on power efficiency - 1 unit of plutonium is 5000 units of battery",
+    "epower": 746000,
     "fuel_type": "plut_cell",
     "item": "minireactor",
     "difficulty": 6,
@@ -915,7 +915,7 @@
     "description": "A small fridge.  When turned on, it will cool the food inside, extended the time until the food spoils.",
     "//": "Use average consumption, not the max on the appliance rating plate. 30W ~ 260kWh per annum",
     "epower": -30,
-    "size": 600,
+    "size": 800,
     "item": "minifridge",
     "difficulty": 3,
     "location": "center",
@@ -1019,7 +1019,7 @@
     "durability": 100,
     "description": "This is an autoclave.  It's useful for sterilizing things like CBMs.  'e'xamine the tile with the autoclave to use it.",
     "epower": -1500,
-    "size": 11,
+    "size": 22,
     "item": "vh_autoclave",
     "difficulty": 3,
     "location": "center",
@@ -1241,7 +1241,7 @@
       { "item": "splinter", "count": [ 4, 6 ] },
       { "item": "nail", "charges": [ 4, 7 ] }
     ],
-    "workbench": { "multiplier": 1.1, "mass": 150000, "volume": "20L" },
+    "workbench": { "multiplier": 1.1, "mass": 150000, "volume": "200L" },
     "damage_reduction": { "all": 24 }
   },
   {
@@ -1265,7 +1265,7 @@
       { "item": "splinter", "count": [ 4, 6 ] },
       { "item": "nail", "charges": [ 4, 7 ] }
     ],
-    "workbench": { "multiplier": 1.1, "mass": 150000, "volume": "20L" },
+    "workbench": { "multiplier": 1.1, "mass": 150000, "volume": "200L" },
     "damage_reduction": { "all": 16 }
   },
   {
@@ -1291,7 +1291,7 @@
       { "item": "steel_chunk", "count": [ 4, 8 ] },
       { "item": "scrap", "count": [ 12, 24 ] }
     ],
-    "workbench": { "multiplier": 1.2, "mass": 300000, "volume": "30L" },
+    "workbench": { "multiplier": 1.2, "mass": 300000, "volume": "300L" },
     "damage_reduction": { "all": 29 }
   },
   {
