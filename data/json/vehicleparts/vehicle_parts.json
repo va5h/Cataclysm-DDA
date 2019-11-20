@@ -347,7 +347,7 @@
     "color": "light_cyan",
     "broken_symbol": "#",
     "broken_color": "light_cyan",
-    "durability": 30,
+    "durability": 50,
     "description": "A pair of handles.  You can mount other items on top of it.",
     "folded_volume": 3,
     "item": "pipe",
@@ -359,7 +359,7 @@
       { "item": "steel_chunk", "count": [ 4, 6 ] },
       { "item": "scrap", "count": [ 4, 6 ] }
     ],
-    "damage_reduction": { "all": 5 }
+    "damage_reduction": { "all": 8 }
   },
   {
     "type": "vehicle_part",
