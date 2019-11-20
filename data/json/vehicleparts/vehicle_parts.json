@@ -1019,7 +1019,7 @@
     "durability": 100,
     "description": "This is an autoclave.  It's useful for sterilizing things like CBMs.  'e'xamine the tile with the autoclave to use it.",
     "epower": -1500,
-    "size": 11,
+    "size": 22,
     "item": "vh_autoclave",
     "difficulty": 3,
     "location": "center",
