@@ -2742,6 +2742,8 @@ needs_rates player::calc_needs_rates() const
         }
         rates.recovery -= static_cast<float>( get_perceived_pain() ) / 60;
 
+    } else if( has_trait( trait_EATHEALTH ) ) {
+        rates.recovery = 1.0f + mutation_value( "fatigue_regen_modifier" );
     } else {
         rates.recovery = 0;
     }
