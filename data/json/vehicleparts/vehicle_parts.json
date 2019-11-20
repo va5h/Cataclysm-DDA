@@ -1241,7 +1241,7 @@
       { "item": "splinter", "count": [ 4, 6 ] },
       { "item": "nail", "charges": [ 4, 7 ] }
     ],
-    "workbench": { "multiplier": 1.1, "mass": 150000, "volume": "20L" },
+    "workbench": { "multiplier": 1.1, "mass": 150000, "volume": "200L" },
     "damage_reduction": { "all": 24 }
   },
   {
@@ -1265,7 +1265,7 @@
       { "item": "splinter", "count": [ 4, 6 ] },
       { "item": "nail", "charges": [ 4, 7 ] }
     ],
-    "workbench": { "multiplier": 1.1, "mass": 150000, "volume": "20L" },
+    "workbench": { "multiplier": 1.1, "mass": 150000, "volume": "200L" },
     "damage_reduction": { "all": 16 }
   },
   {
@@ -1291,7 +1291,7 @@
       { "item": "steel_chunk", "count": [ 4, 8 ] },
       { "item": "scrap", "count": [ 12, 24 ] }
     ],
-    "workbench": { "multiplier": 1.2, "mass": 300000, "volume": "30L" },
+    "workbench": { "multiplier": 1.2, "mass": 300000, "volume": "300L" },
     "damage_reduction": { "all": 29 }
   },
   {
