@@ -195,6 +195,43 @@
     "damage_reduction": { "all": 30, "stab": 12 }
   },
   {
+    "id": "tank_30gal_drum_internal",
+    "type": "vehicle_part",
+    "name": "steel drum (100L, internal)",
+    "item": "30gal_drum",
+    "location": "fuel_source",
+    "symbol": "0",
+    "color": "dark_gray",
+    "broken_color": "red",
+    "durability": 160,
+    "difficulty": 4,
+    "description": "A storage space for holding liquids, mounted inside the regular fuel storage space.  If filled with the appropriate fuel for the vehicle's engine, the engine will automatically draw fuel from the tank when the engine is on.  If filled with water, you can access the water from a water faucet, if one is installed in the vehicle.  You can also use a rubber hose to siphon liquids out of a tank.",
+    "size": 100000,
+    "breaks_into": [
+      { "item": "steel_lump", "count": [ 2, 2 ] },
+      { "item": "steel_chunk", "count": [ 1, 2 ] },
+      { "item": "scrap", "count": [ 1, 5 ] }
+    ],
+    "flags": [ "FLUIDTANK" ],
+    "damage_reduction": { "all": 30, "stab": 12 }
+  },
+  {
+    "id": "tank_55gal_drum_internal",
+    "copy-from": "tank_30gal_drum_internal",
+    "type": "vehicle_part",
+    "name": "steel drum (200L, internal)",
+    "item": "55gal_drum",
+    "difficulty": 6,
+    "size": 200000,
+    "breaks_into": [
+      { "item": "steel_lump", "count": [ 4, 4 ] },
+      { "item": "steel_chunk", "count": [ 2, 4 ] },
+      { "item": "scrap", "count": [ 2, 10 ] }
+    ],
+    "flags": [ "FLUIDTANK" ],
+    "damage_reduction": { "all": 30, "stab": 12 }
+  },
+  {
     "id": "fuel_bunker",
     "type": "vehicle_part",
     "name": "fuel bunker",
