@@ -1803,7 +1803,15 @@ bool player::install_bionics( const itype &type, player &installer, bool autodoc
     }
     for( const auto &elem : bionics[bioid].occupied_bodyparts ) {
         activity.values.push_back( elem.first );
-        add_effect( effect_under_op, difficulty * 20_minutes, elem.first, true, difficulty );
+        if( installer.has_trait( trait_MASOCHIST ) ||
+            installer.has_trait( trait_MASOCHIST_MED ) ||
+            installer.has_trait( trait_CENOBITE ) ) {
+            add_msg_if_player( m_good,
+                           _( "No pain - no gain." ) );
+            add_effect( effect_under_op, difficulty * 7_seconds, elem.first, true, difficulty );
+        } else {
+            add_effect( effect_under_op, difficulty * 20_minutes, elem.first, true, difficulty );
+        }
     }
     for( const trait_id &mid : bioid->canceled_mutations ) {
         if( has_trait( mid ) ) {
