@@ -2859,7 +2859,21 @@ void player::update_needs( int rate_multiplier )
                 }
             }
         }
+    // final touch to our Battery Rabbit^^
+    } else if( has_trait( trait_EATHEALTH ) ) {
+        if( rates.recovery > 0.0f ) {
+            int recovered = roll_remainder( rates.recovery * rate_multiplier );
+
+            if( has_effect( effect_recently_coughed ) ) {
+                recovered *= .5;
+            }
+            
+            mod_fatigue( -recovered );
+            add_msg( m_good, _( "...eat, kill zeds, repeat. Why bother sleeping? You recovered %d fatigue." ),
+                     recovered );
+        }
     }
+
     if( is_player() && wasnt_fatigued && get_fatigue() > DEAD_TIRED && !lying ) {
         if( !activity ) {
             add_msg_if_player( m_warning, _( "You're feeling tired.  %s to lie down for sleep." ),
@@ -6315,7 +6329,7 @@ void player::practice( const skill_id &id, int amount, int cap, bool suppress_wa
             }
         }
         else {
-            add_msg( m_info, _( "...your Bio-Memory still nets you %d exp from this trivial task." ),
+            add_msg( m_good, _( "...your Bio-Memory still nets you %d exp from this trivial task." ),
                      amount );
             amount /= 2;
         }
