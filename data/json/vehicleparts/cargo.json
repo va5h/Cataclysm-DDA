@@ -46,7 +46,7 @@
     "color": "light_gray",
     "broken_color": "dark_gray",
     "difficulty": 3,
-    "durability": 250,
+    "durability": 2150,
     "description": "Storage space, mounted outside your vehicle's armor and vulnerable to damage.",
     "size": 1000,
     "breaks_into": [  ],
