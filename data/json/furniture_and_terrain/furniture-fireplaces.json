@@ -11,6 +11,7 @@
     "required_str": -1,
     "flags": [ "TRANSPARENT", "CONTAINER", "FIRE_CONTAINER", "SUPPRESS_SMOKE", "PLACE_ITEM", "MINEABLE" ],
     "examine_action": "fireplace",
+    "max_volume": 7000,
     "bash": {
       "str_min": 30,
       "str_max": 210,

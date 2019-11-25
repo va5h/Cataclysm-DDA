@@ -256,7 +256,7 @@
     "deconstruct": {
       "items": [ { "item": "2x4", "count": 6 }, { "item": "wood_panel", "count": [ 0, 1 ] }, { "item": "nail", "charges": [ 6, 8 ] } ]
     },
-    "max_volume": 32000,
+    "max_volume": 12000,
     "bash": {
       "str_min": 12,
       "str_max": 40,
@@ -311,7 +311,7 @@
     "move_cost_mod": -1,
     "coverage": 30,
     "required_str": 14,
-    "max_volume": 1000,
+    "max_volume": 9000,
     "flags": [ "TRANSPARENT", "CONTAINER", "SEALED", "PLACE_ITEM", "MOUNTABLE", "MINEABLE" ],
     "examine_action": "gunsafe_ml",
     "bash": {
@@ -360,7 +360,7 @@
     "move_cost_mod": -1,
     "coverage": 30,
     "required_str": 14,
-    "max_volume": 1000,
+    "max_volume": 9000,
     "flags": [ "TRANSPARENT", "CONTAINER", "SEALED", "PLACE_ITEM", "MOUNTABLE", "MINEABLE" ],
     "examine_action": "gunsafe_el",
     "bash": {
@@ -394,7 +394,7 @@
         { "item": "pipe", "count": [ 4, 8 ] }
       ]
     },
-    "max_volume": 2000,
+    "max_volume": 20000,
     "bash": {
       "str_min": 12,
       "str_max": 40,
@@ -454,7 +454,7 @@
         { "item": "sheet_metal_small", "count": [ 0, 4 ] }
       ]
     },
-    "max_volume": 7000,
+    "max_volume": 16000,
     "bash": {
       "str_min": 6,
       "str_max": 30,
@@ -735,7 +735,7 @@
     "required_str": -1,
     "flags": [ "NOITEM", "SEALED", "ALLOW_FIELD_EFFECT", "TRANSPARENT", "FLAMMABLE", "CONTAINER", "LIQUIDCONT" ],
     "examine_action": "keg",
-    "keg_capacity": 500,
+    "keg_capacity": 1000,
     "deconstruct": {
       "items": [
         { "item": "2x4", "count": 18 },
@@ -812,9 +812,9 @@
     "coverage": 90,
     "required_str": -1,
     "flags": [ "BASHABLE", "CONTAINER", "DECONSTRUCT", "LIQUIDCONT", "NOITEM", "SEALED", "TRANSPARENT" ],
-    "deconstruct": { "items": [ { "item": "metal_tank", "count": 4 }, { "item": "water_faucet", "count": 1 } ] },
+    "deconstruct": { "items": [ { "item": "metal_tank", "count": 15 }, { "item": "water_faucet", "count": 1 } ] },
     "examine_action": "keg",
-    "keg_capacity": 1200,
+    "keg_capacity": 4000,
     "bash": {
       "str_min": 10,
       "str_max": 20,

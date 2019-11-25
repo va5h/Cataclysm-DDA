@@ -2862,7 +2862,7 @@
     "time": "42 m",
     "autolearn": true,
     "using": [ [ "welding_standard", 15 ] ],
-    "components": [ [ [ "sheet_metal", 3 ], [ "sheet_metal_small", 72 ] ] ]
+    "components": [ [ [ "sheet_metal", 3 ], [ "sheet_metal_small", 72 ], [ "metal_tank", 3 ] ] ]
   },
   {
     "type": "recipe",
