@@ -2859,8 +2859,9 @@ void player::update_needs( int rate_multiplier )
                 }
             }
         }
+    }
     // final touch to our Battery Rabbit^^
-    } else if( has_trait( trait_EATHEALTH ) ) {
+    if( has_trait( trait_EATHEALTH ) ) {
         if( rates.recovery > 0.0f ) {
             int recovered = roll_remainder( rates.recovery * rate_multiplier );
 
