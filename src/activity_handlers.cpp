@@ -3222,9 +3222,9 @@ void activity_handlers::operation_do_turn( player_activity *act, player *p )
     }
 
     // Makes sure NPC is still under anesthesia
-    if( !( p->has_trait( trait_MASOCHIST ) ||
-        p->has_trait( trait_MASOCHIST_MED ) ||
-        p->has_trait( trait_CENOBITE ) ) ) {
+    if( !( p->has_trait( trait_id( "MASOCHIST" ) ) ||
+        p->has_trait( trait_id( "MASOCHIST_MED" ) ) ||
+        p->has_trait( trait_id( "CENOBITE" ) ) ) ) {
         if( p->has_effect( effect_narcosis ) ) {
             const time_duration remaining_time = p->get_effect_dur( effect_narcosis );
             if( remaining_time <= time_left ) {
