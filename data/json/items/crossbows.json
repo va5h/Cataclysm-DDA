@@ -482,7 +482,6 @@
     "dispersion": 130,
     "recoil": 10,
     "durability": 7,
-    "clip_size": 6,
     "reload": 20,
     "valid_mod_locations": [
       [ "accessories", 4 ],

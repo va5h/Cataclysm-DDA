@@ -3096,5 +3096,33 @@
     "time": "2 m",
     "qualities": [ { "id": "CUT", "level": 1 } ],
     "components": [ [ [ "plastic_chunk", 3 ] ], [ [ "scrap", 1 ] ], [ [ "aluminum_foil", 5 ] ], [ [ "wire", 5 ] ] ]
+  },
+  {
+    "result": "baton",
+    "type": "uncraft",
+    "skill_used": "fabrication",
+    "difficulty": 2,
+    "time": "5 m",
+    "qualities": [ { "id": "SAW_M", "level": 1 } ],
+    "components": [ [ [ "material_aluminium_ingot", 1 ] ] ]
+  },
+  {
+    "result": "baton-extended",
+    "type": "uncraft",
+    "copy-from": "baton"
+  },
+  {
+    "result": "PR24-retracted",
+    "type": "uncraft",
+    "skill_used": "fabrication",
+    "difficulty": 2,
+    "time": "5 m",
+    "qualities": [ { "id": "SAW_M", "level": 1 } ],
+    "components": [ [ [ "material_aluminium_ingot", 1 ] ], [ [ "plastic_chunk", 1 ] ] ]
+  },
+  {
+    "result": "PR24-extended",
+    "type": "uncraft",
+    "copy-from": "PR24-retracted"
   }
 ]

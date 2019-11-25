@@ -2551,5 +2551,37 @@
       [ [ "washing_machine", 1 ] ],
       [ [ "dishwasher", 1 ] ]
     ]
+  },
+  {
+    "type": "recipe",
+    "result": "effective_emitter",
+    "category": "CC_ELECTRONIC",
+    "subcategory": "CSC_ELECTRONIC_COMPONENTS",
+    "skill_used": "electronics",
+    "difficulty": 6,
+    "time": "45 m",
+    "reversible": true,
+    "decomp_learn": 4,
+    "autolearn": true,
+    "book_learn": [ [ "advanced_electronics", 4 ], [ "recipe_lab_elec", 4 ] ],
+    "using": [ [ "soldering_standard", 36 ] ],
+    "qualities": [ { "id": "SCREW", "level": 1 } ],
+    "components": [ [ [ "power_supply", 6 ] ], [ [ "amplifier", 3 ] ], [ [ "scrap", 5 ] ], [ [ "cable", 8 ] ] ]
+  },
+  {
+    "type": "recipe",
+    "result": "high_density_capacitor",
+    "category": "CC_ELECTRONIC",
+    "subcategory": "CSC_ELECTRONIC_COMPONENTS",
+    "skill_used": "electronics",
+    "difficulty": 7,
+    "time": "60 m",
+    "reversible": true,
+    "decomp_learn": 5,
+    "autolearn": true,
+    "book_learn": [ [ "advanced_electronics", 4 ], [ "recipe_lab_elec", 4 ] ],
+    "using": [ [ "soldering_standard", 48 ] ],
+    "qualities": [ { "id": "SCREW", "level": 1 } ],
+    "components": [ [ [ "power_supply", 8 ] ], [ [ "amplifier", 8 ] ], [ [ "scrap", 6 ] ], [ [ "cable", 10 ] ] ]
   }
 ]
