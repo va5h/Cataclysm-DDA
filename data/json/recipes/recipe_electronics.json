@@ -579,6 +579,7 @@
     "skills_required": [ "computer", 1 ],
     "difficulty": 4,
     "time": "35 m",
+    "autolearn": [ [ "electronics", 6 ] ],
     "reversible": true,
     "decomp_learn": 4,
     "book_learn": [ [ "textbook_anarch", 3 ], [ "advanced_electronics", 5 ] ],
