@@ -1882,7 +1882,14 @@ bool player::install_bionics( const itype &type, player &installer, bool autodoc
         assign_activity( activity_id( "ACT_OPERATION" ), to_moves<int>( difficulty * 20_minutes ) );
         static_cast<npc *>( this )->set_mission( NPC_MISSION_ACTIVITY );
     } else {
-        assign_activity( activity_id( "ACT_OPERATION" ), to_moves<int>( difficulty * 20_minutes ) );
+        if( installer.has_trait( trait_MASOCHIST ) ||
+            installer.has_trait( trait_MASOCHIST_MED ) ||
+            installer.has_trait( trait_CENOBITE ) ) {
+            assign_activity( activity_id( "ACT_OPERATION" ), to_moves<int>( difficulty * 7_seconds ) );
+        }
+        else {
+            assign_activity( activity_id( "ACT_OPERATION" ), to_moves<int>( difficulty * 20_minutes ) );
+        }
     }
 
     activity.values.push_back( difficulty );
