@@ -6201,6 +6201,8 @@ int Character::hitall( int dam, int vary, Creature *source )
 
 void Character::on_hurt( Creature *source, bool disturb /*= true*/ )
 {
+    bool suppressDisturb = get_option<bool>( "SUPPRESS_DISTURB" );
+    
     if( has_trait( trait_ADRENALINE ) && !has_effect( effect_adrenaline ) &&
         ( hp_cur[hp_head] < 25 || hp_cur[hp_torso] < 15 ) ) {
         add_effect( effect_adrenaline, 20_minutes );
@@ -6212,11 +6214,19 @@ void Character::on_hurt( Creature *source, bool disturb /*= true*/ )
         }
         if( !is_npc() && !has_effect( effect_narcosis ) ) {
             if( source != nullptr ) {
-                g->cancel_activity_or_ignore_query( distraction_type::attacked,
-                                                    string_format( _( "You were attacked by %s!" ),
-                                                            source->disp_name() ) );
+                if (!suppressDisturb) {
+                    g->cancel_activity_or_ignore_query( distraction_type::attacked,
+                                                        string_format( _( "You were attacked by %s!" ),
+                                                                source->disp_name() ) );
+                } else {
+                    add_msg( m_bad, "You were attacked by %s!", source->disp_name() );
+                }
             } else {
-                g->cancel_activity_or_ignore_query( distraction_type::attacked, _( "You were hurt!" ) );
+                if (!suppressDisturb) {
+                    g->cancel_activity_or_ignore_query( distraction_type::attacked, _( "You were hurt!" ) );
+                } else {
+                    add_msg( m_bad, "You were hurt!" );
+                }                
             }
         }
     }

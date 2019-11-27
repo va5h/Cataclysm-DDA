@@ -201,5 +201,12 @@
     "info": "Enable crafting from filthy items. Most definitely will cause various bugs.",
     "stype": "bool",
     "value": true
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "SUPPRESS_DISTURB",
+    "info": "Suppress disturbing dialogs and outuput them to message log instead.",
+    "stype": "bool",
+    "value": true
   }
 ]
