@@ -273,7 +273,7 @@
     "connects_to": "WALL",
     "bash": {
       "str_min": 60,
-      "str_max": 260,
+      "str_max": 280,
       "sound": "crash!",
       "sound_fail": "bash!",
       "ter_set": "t_null",
@@ -377,7 +377,7 @@
     "connects_to": "WALL",
     "bash": {
       "str_min": 40,
-      "str_max": 120,
+      "str_max": 220,
       "sound": "crash!",
       "sound_fail": "bash!",
       "ter_set": "t_null",
