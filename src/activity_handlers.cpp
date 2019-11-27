@@ -3103,8 +3103,12 @@ void activity_handlers::operation_do_turn( player_activity *act, player *p )
                        !g->u.has_effect( effect_narcosis );
 
     const int difficulty = act->values.front();
+    
+    bool isPainTolerant = p->has_trait( trait_id( "MASOCHIST" ) ) ||
+                          p->has_trait( trait_id( "MASOCHIST_MED" ) ) ||
+                          p->has_trait( trait_id( "CENOBITE" ) );
 
-    const time_duration half_op_duration = difficulty * 10_minutes;
+    const time_duration half_op_duration = isPainTolerant ? difficulty * 30_seconds : difficulty * 10_minutes;
     time_duration time_left = time_duration::from_turns( act->moves_left / 100 ) ;
 
     if( autodoc && g->m.inbounds( p->pos() ) ) {
@@ -3222,9 +3226,7 @@ void activity_handlers::operation_do_turn( player_activity *act, player *p )
     }
 
     // Makes sure NPC is still under anesthesia
-    if( !( p->has_trait( trait_id( "MASOCHIST" ) ) ||
-        p->has_trait( trait_id( "MASOCHIST_MED" ) ) ||
-        p->has_trait( trait_id( "CENOBITE" ) ) ) ) {
+    if( !isPainTolerant ) {
         if( p->has_effect( effect_narcosis ) ) {
             const time_duration remaining_time = p->get_effect_dur( effect_narcosis );
             if( remaining_time <= time_left ) {

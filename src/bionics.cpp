@@ -1840,6 +1840,10 @@ bool player::install_bionics( const itype &type, player &installer, bool autodoc
         debugmsg( "Tried to install NULL bionic" );
         return false;
     }
+    
+    bool isPainTolerant = installer.has_trait( trait_MASOCHIST ) ||
+                          installer.has_trait( trait_MASOCHIST_MED ) ||
+                          installer.has_trait( trait_CENOBITE );
 
     int assist_bonus = installer.get_effect_int( effect_assisted );
 
@@ -1882,10 +1886,8 @@ bool player::install_bionics( const itype &type, player &installer, bool autodoc
         assign_activity( activity_id( "ACT_OPERATION" ), to_moves<int>( difficulty * 20_minutes ) );
         static_cast<npc *>( this )->set_mission( NPC_MISSION_ACTIVITY );
     } else {
-        if( installer.has_trait( trait_MASOCHIST ) ||
-            installer.has_trait( trait_MASOCHIST_MED ) ||
-            installer.has_trait( trait_CENOBITE ) ) {
-            assign_activity( activity_id( "ACT_OPERATION" ), to_moves<int>( difficulty * 7_seconds ) );
+        if( isPainTolerant ) {
+            assign_activity( activity_id( "ACT_OPERATION" ), to_moves<int>( difficulty * 1_minutes ) );
         }
         else {
             assign_activity( activity_id( "ACT_OPERATION" ), to_moves<int>( difficulty * 20_minutes ) );
@@ -1918,12 +1920,10 @@ bool player::install_bionics( const itype &type, player &installer, bool autodoc
     }
     for( const auto &elem : bionics[bioid].occupied_bodyparts ) {
         activity.values.push_back( elem.first );
-        if( installer.has_trait( trait_MASOCHIST ) ||
-            installer.has_trait( trait_MASOCHIST_MED ) ||
-            installer.has_trait( trait_CENOBITE ) ) {
+        if( isPainTolerant ) {
             add_msg_if_player( m_good,
                            _( "No pain - no gain." ) );
-            add_effect( effect_under_op, difficulty * 7_seconds, elem.first, true, difficulty );
+            add_effect( effect_under_op, difficulty * 1_minutes, elem.first, true, difficulty );
         } else {
             add_effect( effect_under_op, difficulty * 20_minutes, elem.first, true, difficulty );
         }
