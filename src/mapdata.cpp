@@ -507,6 +507,10 @@ ter_id t_null,
        t_wall_glass,
        t_wall_glass_alarm,
        t_reinforced_glass, t_reinforced_glass_shutter, t_reinforced_glass_shutter_open,
+       //
+       t_xreinforced_glass_shutter, t_xreinforced_glass_shutter_open,
+       t_superxreinforced_glass_shutter, t_superxreinforced_glass_shutter_open,
+       //
        t_laminated_glass, t_ballistic_glass,
        t_reinforced_door_glass_o, t_reinforced_door_glass_c,
        t_bars,
@@ -661,6 +665,12 @@ void set_ter_ids()
     t_reinforced_glass = ter_id( "t_reinforced_glass" );
     t_reinforced_glass_shutter = ter_id( "t_reinforced_glass_shutter" );
     t_reinforced_glass_shutter_open = ter_id( "t_reinforced_glass_shutter_open" );
+    
+    t_xreinforced_glass_shutter = ter_id( "t_xreinforced_glass_shutter" );
+    t_xreinforced_glass_shutter_open = ter_id( "t_xreinforced_glass_shutter_open" );
+    t_superxreinforced_glass_shutter = ter_id( "t_superxreinforced_glass_shutter" );
+    t_superxreinforced_glass_shutter_open = ter_id( "t_superxreinforced_glass_shutter_open" );
+    
     t_laminated_glass = ter_id( "t_laminated_glass" );
     t_ballistic_glass = ter_id( "t_ballistic_glass" ),
     t_reinforced_door_glass_c = ter_id( "t_reinforced_door_glass_c" );

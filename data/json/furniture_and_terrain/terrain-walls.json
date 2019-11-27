@@ -273,7 +273,7 @@
     "connects_to": "WALL",
     "bash": {
       "str_min": 60,
-      "str_max": 160,
+      "str_max": 260,
       "sound": "crash!",
       "sound_fail": "bash!",
       "ter_set": "t_null",
@@ -1021,6 +1021,114 @@
     "bash": {
       "str_min": 40,
       "str_max": 210,
+      "sound": "glass breaking!",
+      "sound_fail": "whack!",
+      "sound_vol": 20,
+      "sound_fail_vol": 14,
+      "ter_set": "t_floor",
+      "items": [
+        { "item": "glass_shard", "count": [ 42, 84 ] },
+        { "item": "wire", "prob": 20 },
+        { "item": "scrap", "count": [ 3, 5 ] }
+      ]
+    }
+  },
+  {
+    "type": "terrain",
+    "id": "t_xreinforced_glass_shutter",
+    "name": "extra-reinforced glass with closed shutters",
+    "looks_like": "t_reinforced_glass_shutter",
+    "description": "Near-ultimate means to protect from the outside world while being able to look at it at the same time. Too bad, it still cannot support roof...",
+    "symbol": "LINE_OXOX",
+    "color": "light_gray",
+    "move_cost": 0,
+    "roof": "t_flat_roof",
+    "flags": [ "NOITEM", "WALL", "AUTO_WALL_SYMBOL", "OPENCLOSE_INSIDE", "MINEABLE", "BLOCK_WIND" ],
+    "open": "t_xreinforced_glass_shutter_open",
+    "bash": {
+      "str_min": 260,
+      "str_max": 420,
+      "sound": "glass breaking!",
+      "sound_fail": "whack!",
+      "sound_vol": 20,
+      "sound_fail_vol": 14,
+      "ter_set": "t_floor",
+      "items": [
+        { "item": "glass_shard", "count": [ 42, 84 ] },
+        { "item": "wire", "prob": 20 },
+        { "item": "scrap", "count": [ 3, 5 ] }
+      ]
+    }
+  },
+  {
+    "type": "terrain",
+    "id": "t_xreinforced_glass_shutter_open",
+    "name": "extra-reinforced glass with open shutters",
+    "looks_like": "t_reinforced_glass_shutter_open",
+    "description": "Hanging metal shutters that haven't been deployed, exposing the nearly-impenetrable reinforced glass.  It appears as though the metal shutters can only be activated from the inside.",
+    "symbol": "LINE_OXOX",
+    "color": "light_cyan",
+    "move_cost": 0,
+    "roof": "t_flat_roof",
+    "flags": [ "TRANSPARENT", "NOITEM", "WALL", "AUTO_WALL_SYMBOL", "OPENCLOSE_INSIDE", "MINEABLE", "BLOCK_WIND" ],
+    "close": "t_xreinforced_glass_shutter",
+    "bash": {
+      "str_min": 240,
+      "str_max": 420,
+      "sound": "glass breaking!",
+      "sound_fail": "whack!",
+      "sound_vol": 20,
+      "sound_fail_vol": 14,
+      "ter_set": "t_floor",
+      "items": [
+        { "item": "glass_shard", "count": [ 42, 84 ] },
+        { "item": "wire", "prob": 20 },
+        { "item": "scrap", "count": [ 3, 5 ] }
+      ]
+    }
+  },
+  {
+    "type": "terrain",
+    "id": "t_superxreinforced_glass_shutter",
+    "name": "super-reinforced glass with closed shutters",
+    "looks_like": "t_reinforced_glass_shutter",
+    "description": "THE ultimate means to protect from the outside world while being able to look at it at the same time. With roof support, you won't find anything better to build",
+    "symbol": "LINE_OXOX",
+    "color": "light_gray",
+    "move_cost": 0,
+    "roof": "t_flat_roof",
+    "flags": [ "NOITEM", "SUPPORTS_ROOF", "WALL", "AUTO_WALL_SYMBOL", "OPENCLOSE_INSIDE", "MINEABLE", "BLOCK_WIND" ],
+    "open": "t_superxreinforced_glass_shutter_open",
+    "bash": {
+      "str_min": 320,
+      "str_max": 640,
+      "sound": "glass breaking!",
+      "sound_fail": "whack!",
+      "sound_vol": 20,
+      "sound_fail_vol": 14,
+      "ter_set": "t_floor",
+      "items": [
+        { "item": "glass_shard", "count": [ 42, 84 ] },
+        { "item": "wire", "prob": 20 },
+        { "item": "scrap", "count": [ 3, 5 ] }
+      ]
+    }
+  },
+  {
+    "type": "terrain",
+    "id": "t_superxreinforced_glass_shutter_open",
+    "name": "super-reinforced glass with open shutters",
+    "looks_like": "t_reinforced_glass_shutter_open",
+    "description": "Your hand-crafted apocalypse vault window, exposing you to your pleasant surroundings",
+    "symbol": "LINE_OXOX",
+    "color": "light_cyan",
+    "move_cost": 0,
+    "roof": "t_flat_roof",
+    "flags": [ "TRANSPARENT", "SUPPORTS_ROOF", "NOITEM", "WALL", "AUTO_WALL_SYMBOL", "OPENCLOSE_INSIDE", "MINEABLE", "BLOCK_WIND" ],
+    "close": "t_superxreinforced_glass_shutter",
+    "bash": {
+      "str_min": 310,
+      "str_max": 640,
       "sound": "glass breaking!",
       "sound_fail": "whack!",
       "sound_vol": 20,

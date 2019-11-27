@@ -2693,6 +2693,31 @@
   },
   {
     "type": "construction",
+    "description": "Build Reinforced Glass Window",
+    "//": "Step 4 : Additional layers of glass. Now surpassing ballistic glass",
+    "category": "CONSTRUCT",
+    "required_skills": [ [ "fabrication", 9 ] ],
+    "time": "180 m",
+    "qualities": [ [ { "id": "HAMMER", "level": 2 } ], [ { "id": "SAW_M", "level": 1 } ] ],
+    "components": [ [ [ "reinforced_glass_sheet", 4 ] ] ],
+    "pre_terrain": "t_reinforced_glass_shutter",
+    "post_terrain": "t_xreinforced_glass_shutter"
+  },
+  {
+    "type": "construction",
+    "description": "Build Reinforced Glass Window",
+    "//": "Step 5 : Metal frame, super-sturdy shutters. Roof support. Surpassing factory metal wall AND transparent on demand.",
+    "category": "CONSTRUCT",
+    "required_skills": [ [ "fabrication", 10 ] ],
+    "time": "200 m",
+    "qualities": [ [ { "id": "HAMMER", "level": 2 } ], [ { "id": "SAW_M", "level": 1 } ] ],
+    "using": [ [ "welding_standard", 25 ] ],
+    "components": [ [ [ "steel_plate", 2 ] ], [ [ "hdframe", 2 ] ] ],
+    "pre_terrain": "t_xreinforced_glass_shutter",
+    "post_terrain": "t_superxreinforced_glass_shutter"
+  },
+  {
+    "type": "construction",
     "description": "Build Root Cellar",
     "category": "CONSTRUCT",
     "required_skills": [ [ "survival", 4 ], [ "fabrication", 4 ] ],

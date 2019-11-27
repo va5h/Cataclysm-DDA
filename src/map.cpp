@@ -3755,6 +3755,31 @@ void map::shoot( const tripoint &p, projectile &proj, const bool hit_items )
                 ter_set( p, t_floor );
             }
         }
+    } else if( terrain == t_xreinforced_glass_shutter ||
+               terrain == t_xreinforced_glass_shutter_open ||
+               terrain == t_superxreinforced_glass_shutter ||
+               terrain ==  t_superxreinforced_glass_shutter_open ) {
+        bool super = ( terrain == t_superxreinforced_glass_shutter ||
+                     terrain ==  t_superxreinforced_glass_shutter_open );
+        if( ammo_effects.count( "LASER" ) ) {
+            if( !super ) {
+                dam -= rng( 8, 12 );
+            } else {
+                dam -= rng( 12, 16 );
+            }
+        } else {
+            if( !super ) {
+                dam -= 60;
+            } else {
+                dam -= 80;
+            }
+            if( dam <= 0 && g->u.sees( p ) ) {
+                add_msg( _( "Bite me, suckers" ) );
+            } else if( dam >= 80 ) {
+                break_glass( p, 16 );
+                ter_set( p, t_floor );
+            }
+        }
     } else if( terrain == t_paper ) {
         dam -= rng( 4, 16 );
         if( dam > 0 ) {
