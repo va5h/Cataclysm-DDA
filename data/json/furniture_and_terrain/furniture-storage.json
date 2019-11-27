@@ -394,7 +394,7 @@
         { "item": "pipe", "count": [ 4, 8 ] }
       ]
     },
-    "max_volume": 20000,
+    "max_volume": 32000,
     "bash": {
       "str_min": 12,
       "str_max": 40,
@@ -598,7 +598,7 @@
     "move_cost_mod": -1,
     "coverage": 30,
     "required_str": 14,
-    "max_volume": 1000,
+    "max_volume": 12000,
     "flags": [ "TRANSPARENT", "CONTAINER", "PLACE_ITEM", "MOUNTABLE", "MINEABLE" ],
     "close": "f_safe_c",
     "bash": {
