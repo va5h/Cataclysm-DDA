@@ -203,6 +203,36 @@
   },
   {
     "type": "recipe",
+    "result": "wristrocket",
+    "category": "CC_WEAPON",
+    "subcategory": "CSC_WEAPON_RANGED",
+    "skill_used": "fabrication",
+    "skills_required": [ "archery", 4 ],
+    "difficulty": 7,
+    "time": "60 m",
+    "autolearn": true,
+    "book_learn": [ [ "manual_archery", 6 ], [ "recipe_bows", 5 ], [ "book_archery", 7 ] ],
+    "using": [ [ "blacksmithing_standard", 12 ] ],
+    "qualities": [
+      { "id": "CUT", "level": 1 },
+      { "id": "HAMMER_FINE", "level": 1 },
+      { "id": "SCREW", "level": 1 },
+      { "id": "DRILL", "level": 1 },
+      { "id": "SAW_M_FINE", "level": 1 },
+      { "id": "CHISEL", "level": 3 }
+    ],
+    "tools": [ [ [ "swage", -1 ] ] ],
+    "components": [
+      [ [ "steel_tiny", 2, "LIST" ] ],
+      [ [ "wire", 2 ] ],
+      [ [ "plastic_chunk", 4 ] ],
+      [ [ "hose", 2 ] ],
+      [ [ "duct_tape", 50 ] ],
+      [ [ "superglue", 4 ] ]
+    ]
+  },
+  {
+    "type": "recipe",
     "result": "bullwhip",
     "category": "CC_WEAPON",
     "subcategory": "CSC_WEAPON_RANGED",

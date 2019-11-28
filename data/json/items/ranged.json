@@ -112,7 +112,7 @@
     "dispersion": 75,
     "durability": 6,
     "clip_size": 1,
-    "valid_mod_locations": [ [ "grip mount", 1 ], [ "underbarrel mount", 1 ] ]
+    "valid_mod_locations": [ [ "grip mount", 1 ] ]
   },
   {
     "id": "wristrocket",
@@ -130,12 +130,12 @@
     "weight": "322 g",
     "volume": "500 ml",
     "to_hit": -2,
-    "ranged_damage": 5,
+    "ranged_damage": 8,
     "range": 8,
     "dispersion": 45,
     "durability": 7,
     "clip_size": 1,
-    "valid_mod_locations": [ [ "grip mount", 1 ], [ "underbarrel mount", 1 ] ]
+    "valid_mod_locations": [ [ "grip", 1 ], [ "sights mount", 1 ], [ "underbarrel mount", 1 ] ]
   },
   {
     "id": "bullet_crossbow",
