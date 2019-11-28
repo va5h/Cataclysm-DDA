@@ -316,6 +316,42 @@
     "flags": [ "NEVER_JAMS" ]
   },
   {
+    "id": "vepr_12",
+    "copy-from": "shotgun_base",
+    "looks_like": "saiga_12",
+    "type": "GUN",
+    "name": "Vepr-12",
+    "description": "Further development of AK-style automatic shotguns, Vepr is a sturdier, heavier and generally more menacing Saiga's cousin.",
+    "weight": "4150 g",
+    "volume": "2870 ml",
+    "price": 329000,
+    "to_hit": -1,
+    "bashing": 12,
+    "material": [ "steel", "plastic" ],
+    "dispersion": 335,
+    "durability": 9,
+    "barrel_length": 3,
+    "magazine_well": 2,
+    "built_in_mods": [ "grip", "folding_stock" ],
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 3 ] ],
+    "magazines": [ [ "shot", [ "saiga10mag", "saiga30mag" ] ] ],
+    "valid_mod_locations": [
+      [ "accessories", 4 ],
+      [ "barrel", 1 ],
+      [ "bore", 1 ],
+      [ "brass catcher", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 4 ],
+      [ "muzzle", 1 ],
+      [ "rail", 2 ],
+      [ "sights", 1 ],
+      [ "sling", 1 ],
+      [ "stock", 1 ],
+      [ "underbarrel", 2 ]
+    ]
+    "flags": [ "NEVER_JAMS" ]
+  },
+  {
     "id": "shotgun_d",
     "copy-from": "shotgun_s",
     "type": "GUN",

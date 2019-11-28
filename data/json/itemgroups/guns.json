@@ -309,6 +309,7 @@
       { "item": "rm228", "prob": 30, "charges-min": 0, "charges-max": 10 },
       { "item": "l_def_12", "prob": 20, "charges-min": 0, "charges-max": 8 },
       { "item": "saiga_12", "prob": 50, "charges-min": 0, "charges-max": 10 },
+      { "item": "vepr_12", "prob": 30, "charges-min": 0, "charges-max": 10 },
       { "item": "saiga_410", "prob": 40, "charges-min": 0, "charges-max": 10 }
     ]
   },
@@ -318,6 +319,7 @@
     "//": "Military specification shotguns only ever found at military sites.",
     "items": [
       { "item": "rm20", "prob": 20, "charges-min": 0, "charges-max": 20 },
+      { "item": "vepr_12", "prob": 25, "charges-min": 0, "charges-max": 10 },
       { "item": "m1014", "prob": 100, "charges-min": 0, "charges-max": 8 }
     ]
   },
