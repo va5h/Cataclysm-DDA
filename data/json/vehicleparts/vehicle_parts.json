@@ -1966,7 +1966,7 @@
       "repair": {
         "skills": [ [ "electronics", 6 ] ],
         "time": "50 m",
-        "using": [ [ "vehicle_screw", 1 ], [ "solar_panel", 1 ], [ "soldering_standard", 8 ] ]
+        "using": [ [ "vehicle_screw", 1 ], [ "solar_cell", 1 ], [ "soldering_standard", 8 ] ]
       }
     },
     "flags": [ "SOLAR_PANEL" ],
@@ -2050,7 +2050,7 @@
       "repair": {
         "skills": [ [ "electronics", 6 ] ],
         "time": "50 m",
-        "using": [ [ "vehicle_screw", 1 ], [ "solar_panel", 1 ], [ "soldering_standard", 8 ], [ "welding_standard", 1 ] ]
+        "using": [ [ "vehicle_screw", 1 ], [ "solar_cell", 1 ], [ "soldering_standard", 8 ], [ "welding_standard", 1 ] ]
       }
     },
     "breaks_into": [
@@ -2076,7 +2076,7 @@
       "repair": {
         "skills": [ [ "electronics", 8 ] ],
         "time": "75 m",
-        "using": [ [ "vehicle_screw", 1 ], [ "solar_panel_v2", 1 ], [ "soldering_standard", 16 ] ]
+        "using": [ [ "vehicle_screw", 1 ], [ "solar_cell", 2 ], [ "soldering_standard", 16 ] ]
       }
     },
     "breaks_into": [
@@ -2103,7 +2103,7 @@
       "repair": {
         "skills": [ [ "electronics", 8 ] ],
         "time": "75 m",
-        "using": [ [ "vehicle_screw", 1 ], [ "solar_panel_v2", 1 ], [ "soldering_standard", 16 ], [ "welding_standard", 1 ] ]
+        "using": [ [ "vehicle_screw", 1 ], [ "solar_cell", 2 ], [ "soldering_standard", 16 ], [ "welding_standard", 1 ] ]
       }
     },
     "breaks_into": [
@@ -2126,9 +2126,13 @@
     "description": "An extremely high performance solar panel.  Will recharge the vehicle's electrical power when exposed to the sun.  Clouds will slow the recharge speed.  Extremely fragile and cannot be armored.",
     "requirements": {
       "install": { "skills": [ [ "mechanics", 8 ] ], "time": "60 m", "using": [ [ "vehicle_bolt", 1 ] ] },
-      "removal": { "skills": [ [ "mechanics", 6 ] ], "time": "30 m", "using": [ [ "vehicle_bolt", 1 ] ] }
+      "removal": { "skills": [ [ "mechanics", 6 ] ], "time": "30 m", "using": [ [ "vehicle_bolt", 1 ] ] },
+      "repair": {
+        "skills": [ [ "electronics", 10 ] ],
+        "time": "100 m",
+        "using": [ [ "vehicle_screw", 1 ], [ "solar_cell", 3 ], [ "soldering_standard", 32 ] ]
+      }
     },
-    "extend": { "flags": [ "NO_REPAIR" ] },
     "breaks_into": [
       { "item": "steel_lump", "count": [ 4, 4 ] },
       { "item": "steel_chunk", "count": [ 4, 4 ] },
