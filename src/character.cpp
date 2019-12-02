@@ -2393,7 +2393,8 @@ void Character::reset_stats()
 {
     // Bionic buffs
     if( has_active_bionic( bionic_id( "bio_hydraulics" ) ) ) {
-        mod_str_bonus( 20 );
+        int bonus = std::max( 20, std::floor( get_str_base() * .8 ) );
+        mod_str_bonus( bonus );
     }
 
     mod_str_bonus( get_mod_stat_from_bionic( STRENGTH ) );
