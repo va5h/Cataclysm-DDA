@@ -192,6 +192,14 @@
         ]
       },
       {
+        "item": "sunglasses",
+        "sub": [ [ [ "HYPEROPIC" ], "fitover_sunglasses" ], [ [ "MYOPIC" ], "fitover_sunglasses" ] ]
+      },
+      {
+        "item": "fancy_sunglasses",
+        "sub": [ [ [ "HYPEROPIC" ], "fitover_sunglasses" ], [ [ "MYOPIC" ], "fitover_sunglasses" ] ]
+      },
+      {
         "item": "hardtack",
         "sub": [ [ [ "ANTIWHEAT" ], [ "MEATARIAN" ], "cornbread" ], [ [ "ANTIWHEAT", "MEATARIAN" ], "meat_cooked", 0.72 ] ]
       },
@@ -797,10 +805,10 @@
     ],
     "items": {
       "both": {
-        "items": [ "survivor_vest", "wsurvivor_suit", "socks", "boots_wsurvivor", "hood_wsurvivor", "gloves_wsurvivor", "wristwatch" ],
+        "items": [ "wsurvivor_suit", "socks", "boots_wsurvivor", "hood_wsurvivor", "gloves_wsurvivor", "wristwatch" ],
         "entries": [
           { "item": "knife_combat", "container-item": "sheath" },
-          { "item": "m4a1", "ammo-item": "556", "contents-item": "shoulder_strap" }
+          { "item": "m4a1", "ammo-item": "556", "charges": 30, "container-item": "survivor_vest" }
         ]
       },
       "male": [ "boxer_shorts" ],
@@ -1368,7 +1376,7 @@
         "entries": [
           { "group": "charged_cell_phone" },
           { "item": "ear_plugs", "custom-flags": [ "no_auto_equip" ] },
-          { "item": "shotgun_d", "ammo-item": "shot_00", "charges": 2, "contents-item": "shoulder_strap" },
+          { "item": "remington_870", "ammo-item": "shot_00", "charges": 5, "contents-item": "shoulder_strap" },
           { "item": "bandolier_shotgun", "contents-group": "bandolier_shotgun_hunter" },
           { "item": "sheath", "contents-item": "knife_hunting" }
         ]

@@ -3504,7 +3504,7 @@ int vehicle::total_power_w( const bool fueled, const bool safe ) const
     pwr = std::max( 0, pwr );
 
     if( cnt > 1 ) {
-        pwr = pwr * 4 / ( 4 + cnt - 1 );
+        pwr = pwr * 8 / ( 8 + cnt - 1 );
     }
     return pwr;
 }

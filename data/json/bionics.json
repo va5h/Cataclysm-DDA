@@ -86,7 +86,7 @@
     "occupied_bodyparts": [ [ "TORSO", 1 ] ],
     "fuel_options": [ "battery" ],
     "fuel_efficiency": 1,
-    "fuel_capacity": 10000,
+    "capacity": "5000 kJ",
     "time": 5,
     "flags": [ "BIONIC_POWER_SOURCE", "BIONIC_TOGGLED", "BIONIC_NPC_USABLE" ]
   },
@@ -372,6 +372,7 @@
     "id": "bio_faraday",
     "type": "bionic",
     "name": "Dielectric Capacitance System",
+    "capacity": "25000 kJ",
     "description": "Throughout your body lies a network of miniature piezoelectric capacitors which can be charged with bionic power to temporarily protect you from external electrical discharge.",
     "occupied_bodyparts": [
       [ "TORSO", 8 ],
@@ -505,11 +506,11 @@
     "id": "bio_hydraulics",
     "type": "bionic",
     "name": "Hydraulic Muscles",
-    "description": "While activated, your muscles will be greatly enhanced, increasing your strength by 20.",
+    "description": "While activated, your muscles will be greatly enhanced, increasing your strength by about 80% of original ( but not less than 20 ).",
     "occupied_bodyparts": [ [ "TORSO", 4 ], [ "ARM_L", 8 ], [ "ARM_R", 8 ], [ "LEG_L", 14 ], [ "LEG_R", 14 ] ],
     "flags": [ "BIONIC_TOGGLED", "BIONIC_NPC_USABLE" ],
-    "act_cost": "10 kJ",
-    "react_cost": "10 kJ",
+    "act_cost": "2 kJ",
+    "react_cost": "2 kJ",
     "time": 1
   },
   {
@@ -1109,7 +1110,7 @@
     "name": "Titanium Skeletal Bracing",
     "description": "Titanium bracing has been installed onto your elbows, knees, and spine, making them far better at handling strain.  Your carrying capacity is increased by 20 kilograms, or about 44 pounds.",
     "occupied_bodyparts": [ [ "TORSO", 8 ], [ "ARM_L", 3 ], [ "ARM_R", 3 ], [ "LEG_L", 3 ], [ "LEG_R", 3 ] ],
-    "weight_capacity_bonus": "20 kg",
+    "weight_capacity_modifier": 2.5,
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   },
   {

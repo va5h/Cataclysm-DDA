@@ -157,7 +157,7 @@
     "flags": [ "ARMOR", "OBSTACLE", "WHEEL", "NEEDS_JACKING", "STEERABLE" ],
     "wheel_type": "rigid",
     "contact_area": 400,
-    "damage_reduction": { "all": 460 }
+    "damage_reduction": { "all": 660, "bash": 950 }
   },
   {
     "id": "wheel",
