@@ -66,7 +66,7 @@
     "color": "green",
     "broken_color": "green",
     "durability": 8800,
-    "damage_modifier": 780,
+    "damage_modifier": 980,
     "breaks_into": [
       { "item": "steel_lump", "count": [ 4, 6 ] },
       { "item": "steel_chunk", "count": [ 4, 6 ] },
@@ -78,7 +78,7 @@
       "removal": { "skills": [ [ "mechanics", 4 ] ], "time": "30 m", "using": [ [ "vehicle_weld_removal", 1 ] ] },
       "repair": { "skills": [ [ "mechanics", 7 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] }
     },
-    "damage_reduction": { "all": 480, "cut": 610, "stab": 680 }
+    "damage_reduction": { "all": 880, "cut": 910, "stab": 930, "bash": 990 }
   },
   {
     "id": "ram_spiked",
