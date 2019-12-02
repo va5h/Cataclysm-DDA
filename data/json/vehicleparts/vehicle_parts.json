@@ -946,7 +946,7 @@
     "flags": [ "NO_REPAIR" ],
     "requirements": {
       "install": { "skills": [ [ "mechanics", 2 ] ], "qualities": [ { "id": "SCREW", "level": 3 }, { "id": "WRENCH", "level": 3 } ] },
-      "removal": { "skills": [ [ "mechanics", 2 ] ], "qualities": [ { "id": "SCREW", "level": 1 } ] }
+      "removal": { "skills": [ [ "mechanics", 2 ] ], "using": [ [ "vehicle_screw", 1 ] ] }
     },
     "breaks_into": [
       { "item": "steel_lump", "count": [ 0, 2 ] },
@@ -1966,7 +1966,7 @@
       "repair": {
         "skills": [ [ "electronics", 6 ] ],
         "time": "50 m",
-        "using": [ [ "vehicle_screw", 1 ], [ "solar_cell", 1 ], [ "soldering_standard", 8 ] ]
+        "using": [ [ "vehicle_screw", 1 ], [ "solar_panel", 1 ], [ "soldering_standard", 8 ] ]
       }
     },
     "flags": [ "SOLAR_PANEL" ],
@@ -2050,7 +2050,7 @@
       "repair": {
         "skills": [ [ "electronics", 6 ] ],
         "time": "50 m",
-        "using": [ [ "vehicle_screw", 1 ], [ "solar_cell", 1 ], [ "soldering_standard", 8 ], [ "welding_standard", 1 ] ]
+        "using": [ [ "vehicle_screw", 1 ], [ "solar_panel", 1 ], [ "soldering_standard", 8 ], [ "welding_standard", 1 ] ]
       }
     },
     "breaks_into": [
@@ -2076,7 +2076,7 @@
       "repair": {
         "skills": [ [ "electronics", 8 ] ],
         "time": "75 m",
-        "using": [ [ "vehicle_screw", 1 ], [ "solar_cell", 2 ], [ "soldering_standard", 16 ] ]
+        "using": [ [ "vehicle_screw", 1 ], [ "solar_panel_v2", 1 ], [ "soldering_standard", 16 ] ]
       }
     },
     "breaks_into": [
@@ -2103,7 +2103,7 @@
       "repair": {
         "skills": [ [ "electronics", 8 ] ],
         "time": "75 m",
-        "using": [ [ "vehicle_screw", 1 ], [ "solar_cell", 2 ], [ "soldering_standard", 16 ], [ "welding_standard", 1 ] ]
+        "using": [ [ "vehicle_screw", 1 ], [ "solar_panel_v2", 1 ], [ "soldering_standard", 16 ], [ "welding_standard", 1 ] ]
       }
     },
     "breaks_into": [
@@ -2130,7 +2130,7 @@
       "repair": {
         "skills": [ [ "electronics", 10 ] ],
         "time": "100 m",
-        "using": [ [ "vehicle_screw", 1 ], [ "solar_cell", 3 ], [ "soldering_standard", 32 ] ]
+        "using": [ [ "vehicle_screw", 1 ], [ "solar_panel_v2", 2 ], [ "soldering_standard", 32 ] ]
       }
     },
     "breaks_into": [
@@ -2227,7 +2227,6 @@
     "description": "A welding rig mounted in the vehicle, that draws power from the vehicle's batteries.  You still need glare protection.  'e'xamine the tile with the rig to use it to repair items in your inventory.  If you attempt to craft an item or perform a repair that requires a welder, you will be given the option of using the welding rig.",
     "size": 200,
     "item": "weldrig",
-    "difficulty": 3,
     "location": "center",
     "requirements": {
       "install": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "vehicle_bolt", 1 ] ] },

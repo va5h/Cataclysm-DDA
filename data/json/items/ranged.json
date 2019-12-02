@@ -135,7 +135,7 @@
     "dispersion": 45,
     "durability": 7,
     "clip_size": 1,
-    "valid_mod_locations": [ [ "grip", 1 ], [ "sights mount", 1 ], [ "underbarrel mount", 1 ] ]
+    "valid_mod_locations": [ [ "grip", 1 ], [ "sights mount", 1 ], [ "underbarrel mount", 1 ], [ "dampening", 1 ] ]
   },
   {
     "id": "bullet_crossbow",
