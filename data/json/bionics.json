@@ -86,7 +86,7 @@
     "occupied_bodyparts": [ [ "TORSO", 1 ] ],
     "fuel_options": [ "battery" ],
     "fuel_efficiency": 1,
-    "fuel_capacity": 10000,
+    "capacity": "5000 kJ",
     "time": 5,
     "flags": [ "BIONIC_POWER_SOURCE", "BIONIC_TOGGLED", "BIONIC_NPC_USABLE" ]
   },
@@ -372,6 +372,7 @@
     "id": "bio_faraday",
     "type": "bionic",
     "name": "Dielectric Capacitance System",
+    "capacity": "25000 kJ",
     "description": "Throughout your body lies a network of miniature piezoelectric capacitors which can be charged with bionic power to temporarily protect you from external electrical discharge.",
     "occupied_bodyparts": [
       [ "TORSO", 8 ],
