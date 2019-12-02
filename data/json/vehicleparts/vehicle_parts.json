@@ -2412,7 +2412,7 @@
     "color": "dark_gray",
     "broken_symbol": ")",
     "broken_color": "dark_gray",
-    "durability": 1400,
+    "durability": 3400,
     "item": "alloy_plate",
     "location": "armor",
     "requirements": {
@@ -2426,7 +2426,7 @@
       { "item": "steel_chunk", "count": [ 4, 6 ] },
       { "item": "scrap", "count": [ 4, 6 ] }
     ],
-    "damage_reduction": { "all": 118 }
+    "damage_reduction": { "all": 488 }
   },
   {
     "type": "vehicle_part",
@@ -2437,7 +2437,7 @@
     "broken_symbol": ")",
     "broken_color": "red",
     "damage_modifier": 150,
-    "durability": 1240,
+    "durability": 1740,
     "description": "A spiked plate that will increase the damage delivered to someone else in collisions.",
     "item": "spiked_plate",
     "location": "armor",
@@ -2453,7 +2453,7 @@
       { "item": "scrap", "count": [ 4, 6 ] },
       { "item": "spike", "count": [ 0, 2 ] }
     ],
-    "damage_reduction": { "all": 116 }
+    "damage_reduction": { "all": 216 }
   },
   {
     "type": "vehicle_part",
@@ -2477,7 +2477,7 @@
       { "item": "steel_chunk", "count": [ 4, 6 ] },
       { "item": "scrap", "count": [ 4, 6 ] }
     ],
-    "damage_reduction": { "all": 250 }
+    "damage_reduction": { "all": 450 }
   },
   {
     "type": "vehicle_part",
@@ -2487,13 +2487,13 @@
     "color": "green",
     "broken_symbol": ")",
     "broken_color": "green",
-    "durability": 2700,
+    "durability": 6700,
     "item": "mil_plate",
     "location": "armor",
     "requirements": {
-      "install": { "skills": [ [ "mechanics", 6 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] },
-      "removal": { "skills": [ [ "mechanics", 4 ] ], "time": "30 m", "using": [ [ "vehicle_weld_removal", 1 ] ] },
-      "repair": { "skills": [ [ "mechanics", 7 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] }
+      "install": { "skills": [ [ "mechanics", 7 ] ], "time": "60 m", "using": [ [ "welding_standard", 25 ] ] },
+      "removal": { "skills": [ [ "mechanics", 5 ] ], "time": "30 m", "using": [ [ "vehicle_weld_removal", 5 ] ] },
+      "repair": { "skills": [ [ "mechanics", 8 ] ], "time": "60 m", "using": [ [ "welding_standard", 25 ] ] }
     },
     "flags": [ "ARMOR" ],
     "breaks_into": [
@@ -2502,7 +2502,7 @@
       { "item": "scrap", "count": [ 4, 6 ] },
       { "item": "ceramic_armor", "count": [ 0, 4 ] }
     ],
-    "damage_reduction": { "all": 270, "cut": 395, "stab": 388 }
+    "damage_reduction": { "all": 670, "cut": 695, "stab": 688 }
   },
   {
     "type": "vehicle_part",
