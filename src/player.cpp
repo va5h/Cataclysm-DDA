@@ -6320,7 +6320,15 @@ void player::practice( const skill_id &id, int amount, int cap, bool suppress_wa
     if( ( has_trait( trait_PRED4 ) || has_active_bionic( bio_cqb ) ) && skill.is_combat_skill() ) {
         amount *= 3;
     }
-
+    
+    // Synergy bonus from having both cqb and targeting system
+    if( has_bionic( bio_cqb ) && has_bionic( bio_targeting ) && skill.is_combat_skill() ) {
+        amount *= 5;
+    }
+    if( has_active_bionic( bio_cqb ) && has_bionic( bio_targeting ) && skill.is_combat_skill() ) {
+        amount *= 8;
+    }
+    
     if( isSavant && id != savantSkill ) {
         amount /= 2;
     }
@@ -6352,6 +6360,12 @@ void player::practice( const skill_id &id, int amount, int cap, bool suppress_wa
         }
 
         int chance_to_drop = focus_pool;
+        
+        // Targeting module and active CQB prevent losing focus
+        if ( ( has_active_bionic( bio_cqb ) || has_bionic( bio_targeting ) ) && skill.is_combat_skill() ) {
+            chance_to_drop = 0;
+        }
+        
         focus_pool -= chance_to_drop / 100;
         // Apex Predators don't think about much other than killing.
         // They don't lose Focus when practicing combat skills.
