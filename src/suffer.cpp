@@ -110,6 +110,7 @@ static const bionic_id bio_soporific( "bio_soporific" );
 static const bionic_id bio_spasm( "bio_spasm" );
 static const bionic_id bio_trip( "bio_trip" );
 static const bionic_id bio_blood_filter( "bio_blood_filter" );
+static const bionic_id bio_nanobots( "bio_nanobots" );
 
 static const trait_id trait_ADDICTIVE( "ADDICTIVE" );
 static const trait_id trait_ALBINO( "ALBINO" );
@@ -1635,6 +1636,11 @@ void Character::mend( int rate_multiplier )
         healing_factor *= 0.5;
     }
 
+    if( has_active_bionic( bio_nanobots ) ) {
+        healing_factor *= 25;
+        needs_splint = false;
+    }
+        
     add_msg( m_debug, "Limb mend healing factor: %.2f", healing_factor );
     if( healing_factor <= 0.0f ) {
         // The section below assumes positive healing rate
