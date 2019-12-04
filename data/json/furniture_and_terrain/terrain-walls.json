@@ -1097,10 +1097,10 @@
     "color": "light_gray",
     "move_cost": 0,
     "roof": "t_flat_roof",
-    "flags": [ "NOITEM", "SUPPORTS_ROOF", "WALL", "AUTO_WALL_SYMBOL", "OPENCLOSE_INSIDE", "MINEABLE", "BLOCK_WIND" ],
+    "flags": [ "NOITEM", "SUPPORTS_ROOF", "WALL", "AUTO_WALL_SYMBOL", "OPENCLOSE_INSIDE", "BLOCK_WIND" ],
     "open": "t_superxreinforced_glass_shutter_open",
     "bash": {
-      "str_min": 320,
+      "str_min": 460,
       "str_max": 640,
       "sound": "glass breaking!",
       "sound_fail": "whack!",
@@ -1127,7 +1127,7 @@
     "flags": [ "TRANSPARENT", "SUPPORTS_ROOF", "NOITEM", "WALL", "AUTO_WALL_SYMBOL", "OPENCLOSE_INSIDE", "MINEABLE", "BLOCK_WIND" ],
     "close": "t_superxreinforced_glass_shutter",
     "bash": {
-      "str_min": 310,
+      "str_min": 450,
       "str_max": 640,
       "sound": "glass breaking!",
       "sound_fail": "whack!",

@@ -1002,7 +1002,9 @@
         [
           "light_plus_battery_cell",
           "light_minus_battery_cell",
+          "light_minus_disposable_cell",
           "light_battery_cell",
+          "light_disposable_cell",
           "light_atomic_battery_cell",
           "light_minus_atomic_battery_cell"
         ]
@@ -1447,7 +1449,12 @@
     "ammo": "battery",
     "charges_per_use": 2,
     "use_action": "ROBOTCONTROL",
-    "magazines": [ [ "battery", [ "medium_battery_cell", "medium_plus_battery_cell", "medium_atomic_battery_cell" ] ] ],
+    "magazines": [
+      [
+        "battery",
+        [ "medium_battery_cell", "medium_plus_battery_cell", "medium_atomic_battery_cell", "medium_disposable_cell" ]
+      ]
+    ],
     "magazine_well": 2
   },
   {
@@ -1967,6 +1974,60 @@
     }
   },
   {
+    "id": "milk_cream_rising",
+    "type": "GENERIC",
+    "category": "food",
+    "name": "rising cream jar",
+    "description": "This jar contains raw milk separating into cream.  You can seal up the jar once the process is completed.",
+    "weight": "3461 g",
+    "volume": "3000 ml",
+    "price": 10,
+    "bashing": 8,
+    "material": "glass",
+    "symbol": "%",
+    "looks_like": "jar_sauerkraut_pickled",
+    "color": "white",
+    "use_action": {
+      "target": "milk_cream_jar",
+      "msg": "You examine the batch and see that the cream has risen to the top, so you seal the jar up for storage.",
+      "moves": 50,
+      "type": "delayed_transform",
+      "transform_age": 21600,
+      "not_ready_msg": "The cream has not risen yet."
+    }
+  },
+  {
+    "id": "milk_cream_jar",
+    "type": "GENERIC",
+    "category": "food",
+    "name": "milk cream jar",
+    "looks_like": "jar_sauerkraut_pickled",
+    "description": "This jar contains raw milk separated into cream.  It is sealed until you are ready to use it.",
+    "weight": "3461 g",
+    "volume": "3000 ml",
+    "price": 10,
+    "bashing": 8,
+    "material": "glass",
+    "symbol": "%",
+    "color": "white"
+  },
+  {
+    "id": "butter_churn",
+    "type": "TOOL",
+    "name": "pseudo butter churn",
+    "description": "This is a crafting_pseudo_item if you have it something is wrong.",
+    "weight": "6464 g",
+    "volume": "9 L",
+    "price": 20000,
+    "to_hit": -2,
+    "bashing": 9,
+    "material": "wood",
+    "qualities": [ [ "CHURN", 1 ] ],
+    "symbol": "H",
+    "color": "light_cyan",
+    "flags": [ "ALLOWS_REMOTE_USE" ]
+  },
+  {
     "id": "eink_tablet_pc",
     "type": "TOOL",
     "name": "e-ink tablet PC",
@@ -1990,7 +2051,9 @@
           "light_battery_cell",
           "light_minus_battery_cell",
           "light_atomic_battery_cell",
-          "light_minus_atomic_battery_cell"
+          "light_minus_atomic_battery_cell",
+          "light_minus_disposable_cell",
+          "light_disposable_cell"
         ]
       ]
     ],
@@ -6846,8 +6909,10 @@
         [
           "light_battery_cell",
           "light_plus_battery_cell",
-          "light_minus_battery_cell",
+          "light_disposable_cell",
           "light_atomic_battery_cell",
+          "light_minus_battery_cell",
+          "light_minus_disposable_cell",
           "light_minus_atomic_battery_cell"
         ]
       ]
