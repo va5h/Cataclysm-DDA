@@ -309,7 +309,11 @@ void Item_factory::finalize_pre( itype &obj )
 
     if( obj.comestible ) {
         if( get_option<bool>( "NO_VITAMINS" ) ) {
-            obj.comestible->vitamins.clear();
+            for( auto &vit : obj.comestible->vitamins ) {
+                if( vit.first->type() == vitamin_type::VITAMIN ) {
+                    vit.second = 0;
+                }
+            }
         } else if( obj.comestible->vitamins.empty() && obj.comestible->healthy >= 0 ) {
             // Default vitamins of healthy comestibles to their edible base materials if none explicitly specified.
             auto healthy = std::max( obj.comestible->healthy, 1 ) * 10;
@@ -2184,6 +2188,22 @@ void Item_factory::load_basic_info( JsonObject &jo, itype &def, const std::strin
 
     if( jo.has_string( "looks_like" ) ) {
         def.looks_like = jo.get_string( "looks_like" );
+    }
+
+    if( jo.has_member( "conditional_names" ) ) {
+        def.conditional_names.clear();
+        JsonArray jarr = jo.get_array( "conditional_names" );
+        while( jarr.has_more() ) {
+            JsonObject curr = jarr.next_object();
+            conditional_name cname;
+            cname.type = curr.get_enum_value<condition_type>( "type" );
+            cname.condition = curr.get_string( "condition" );
+            cname.name = translation( translation::plural_tag() );
+            if( !curr.read( "name", cname.name ) ) {
+                curr.throw_error( "name unspecified for conditional name" );
+            }
+            def.conditional_names.push_back( cname );
+        }
     }
 
     load_slot_optional( def.container, jo, "container_data", src );

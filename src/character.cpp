@@ -530,6 +530,59 @@ double Character::aim_per_move( const item &gun, double recoil ) const
     return std::min( aim_speed, recoil - limit );
 }
 
+void Character::cancel_stashed_activity()
+{
+    stashed_outbounds_activity = player_activity();
+    stashed_outbounds_backlog = player_activity();
+}
+
+player_activity Character::get_stashed_activity() const
+{
+    return stashed_outbounds_activity;
+}
+
+void Character::set_stashed_activity( player_activity act, player_activity act_back )
+{
+    stashed_outbounds_activity = act;
+    stashed_outbounds_backlog = act_back;
+}
+
+bool Character::has_stashed_activity() const
+{
+    if( stashed_outbounds_activity ) {
+        return true;
+    }
+    return false;
+}
+
+void Character::assign_stashed_activity()
+{
+    activity = stashed_outbounds_activity;
+    backlog.push_front( stashed_outbounds_backlog );
+    cancel_stashed_activity();
+}
+
+bool Character::check_outbounds_activity( player_activity act, bool check_only )
+{
+    if( ( act.placement != tripoint_zero && act.placement != tripoint_min &&
+          !g->m.inbounds( g->m.getlocal( act.placement ) ) ) || ( !act.coords.empty() &&
+                  !g->m.inbounds( g->m.getlocal( act.coords.back() ) ) ) ) {
+        if( is_npc() && !check_only ) {
+            // stash activity for when reloaded.
+            stashed_outbounds_activity = act;
+            if( !backlog.empty() ) {
+                stashed_outbounds_backlog = backlog.front();
+            }
+            activity = player_activity();
+        }
+        add_msg( m_debug,
+                 "npc %s at pos %d %d, activity target is not inbounds at %d %d therefore activity was stashed",
+                 disp_name(), pos().x, pos().y, act.placement.x, act.placement.y );
+        return true;
+    }
+    return false;
+}
+
 void Character::set_destination_activity( const player_activity &new_destination_activity )
 {
     destination_activity = new_destination_activity;
@@ -1335,7 +1388,7 @@ void Character::set_max_power_level( units::energy npower_max )
 
 void Character::mod_power_level( units::energy npower )
 {
-    int new_power = units::to_millijoule( power_level ) + units::to_millijoule( npower );
+    std::int64_t new_power = units::to_millijoule( power_level ) + units::to_millijoule( npower );
     // An integer overflow has occurred - the sum of two positive things (power_level is always positive)
     // cannot be negative, so if it is, we know integer overflow has occured
     if( npower >= 0_mJ && new_power < 0 ) {
@@ -7106,7 +7159,7 @@ std::list<item> Character::use_charges( const itype_id &what, int qty,
             return res;
         }
         if( has_power() && has_active_bionic( bio_ups ) ) {
-            int bio = std::min( units::to_kilojoule( get_power_level() ), qty );
+            int bio = std::min<std::int64_t>( units::to_kilojoule( get_power_level() ), qty );
             mod_power_level( units::from_kilojoule( -bio ) );
             qty -= std::min( qty, bio );
         }
