@@ -1019,6 +1019,20 @@
   },
   {
     "type": "vehicle_part",
+    "id": "minifridge_floor",
+	"copy-from": "minifridge",
+	"looks_like": "f_glass_fridge",
+    "name": "minifridge (on floor)",
+    "description": "A small fridge.  When turned on, it will cool the food inside, extended the time until the food spoils. With some skill, this unit can be placed on floor, allowing to walk over the place freely.",
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 5 ] ], "time": "80 m", "using": [ [ "vehicle_bolt", 1 ] ] },
+      "removal": { "skills": [ [ "mechanics", 4 ] ], "time": "60 m", "using": [ [ "vehicle_bolt", 1 ] ] },
+      "repair": { "skills": [ [ "mechanics", 5 ] ], "time": "70 m", "using": [ [ "welding_standard", 5 ] ] }
+    },
+    "flags": [ "CARGO", "FRIDGE", "COVERED", "ENABLED_DRAINS_EPOWER" ]
+  },
+  {
+    "type": "vehicle_part",
     "id": "minifreezer",
     "name": "minifreezer",
     "symbol": "H",
@@ -1029,7 +1043,7 @@
     "damage_modifier": 80,
     "durability": 130,
     "epower": -45,
-    "size": 1000,
+    "size": 1200,
     "item": "minifreezer",
     "location": "center",
     "requirements": {
@@ -1407,7 +1421,7 @@
     "broken_color": "light_gray",
     "damage_modifier": 60,
     "durability": 300,
-    "size": 120,
+    "size": 2000,
     "item": "workbench",
     "location": "center",
     "requirements": {
@@ -1423,7 +1437,7 @@
       { "item": "steel_chunk", "count": [ 4, 8 ] },
       { "item": "scrap", "count": [ 12, 24 ] }
     ],
-    "workbench": { "multiplier": 1.2, "mass": 300000, "volume": "300L" },
+    "workbench": { "multiplier": 1.3, "mass": 800000, "volume": "500L" },
     "damage_reduction": { "all": 29 }
   },
   {
@@ -2819,7 +2833,6 @@
       "removal": { "skills": [ [ "mechanics", 1 ] ], "time": "100 s", "using": [ [ "vehicle_screw", 1 ] ] },
       "repair": { "skills": [ [ "mechanics", 1 ] ], "time": "20 s", "using": [ [ "adhesive", 1 ] ] }
     },
-    "location": "structure",
     "flags": [ "VISION", "PROTRUSION", "UNMOUNT_ON_DAMAGE", "FOLDABLE" ],
     "breaks_into": [ { "item": "glass_shard", "count": [ 0, 16 ] } ]
   },
