@@ -647,8 +647,8 @@ class player : public Character
 
         // TODO: Move these methods out of the class.
         rechargeable_cbm get_cbm_rechargeable_with( const item &it ) const;
-        int get_acquirable_energy( const item &it, rechargeable_cbm cbm ) const;
-        int get_acquirable_energy( const item &it ) const;
+        std::int64_t get_acquirable_energy( const item &it, rechargeable_cbm cbm ) const;
+        std::int64_t get_acquirable_energy( const item &it ) const;
 
         /** Gets player's minimum hunger and thirst */
         int stomach_capacity() const;
