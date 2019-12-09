@@ -1388,7 +1388,7 @@ void Character::set_max_power_level( units::energy npower_max )
 
 void Character::mod_power_level( units::energy npower )
 {
-    int new_power = units::to_millijoule( power_level ) + units::to_millijoule( npower );
+    std::int64_t new_power = units::to_millijoule( power_level ) + units::to_millijoule( npower );
     // An integer overflow has occurred - the sum of two positive things (power_level is always positive)
     // cannot be negative, so if it is, we know integer overflow has occured
     if( npower >= 0_mJ && new_power < 0 ) {
@@ -7159,7 +7159,7 @@ std::list<item> Character::use_charges( const itype_id &what, int qty,
             return res;
         }
         if( has_power() && has_active_bionic( bio_ups ) ) {
-            int bio = std::min( units::to_kilojoule( get_power_level() ), qty );
+            int bio = std::min<std::int64_t>( units::to_kilojoule( get_power_level() ), qty );
             mod_power_level( units::from_kilojoule( -bio ) );
             qty -= std::min( qty, bio );
         }

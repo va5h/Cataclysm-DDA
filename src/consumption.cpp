@@ -1206,7 +1206,7 @@ bool player::feed_reactor_with( item &it )
 
     const auto iter = plut_charges.find( it.typeId() );
     const int max_amount = iter != plut_charges.end() ? iter->second : 0;
-    const int amount = std::min( get_acquirable_energy( it, rechargeable_cbm::reactor ), max_amount );
+    const std::int64_t amount = std::min<std::int64_t>( get_acquirable_energy( it, rechargeable_cbm::reactor ), max_amount );
 
     if( amount >= PLUTONIUM_CHARGES * 10 &&
         !query_yn( _( "That is a LOT of plutonium.  Are you sure you want that much?" ) ) ) {
@@ -1251,7 +1251,7 @@ bool player::feed_furnace_with( item &it )
     }
 
     const int consumed_charges =  std::min( it.charges, it.charges_per_volume( furnace_max_volume ) );
-    const int energy =  get_acquirable_energy( it, rechargeable_cbm::furnace ) ;
+    const std::int64_t energy =  get_acquirable_energy( it, rechargeable_cbm::furnace ) ;
 
     if( energy == 0 ) {
         add_msg_player_or_npc( m_info,
@@ -1264,7 +1264,7 @@ bool player::feed_furnace_with( item &it )
             _( "<npcname> digests a %s for energy, they're fully powered already, so the energy is wasted." ),
             it.tname() );
     } else {
-        const int profitable_energy = std::min( energy,
+        const std::int64_t profitable_energy = std::min<std::int64_t>( energy,
                                                 units::to_kilojoule( get_max_power_level() - get_power_level() ) );
         if( it.count_by_charges() ) {
             add_msg_player_or_npc( m_info,
@@ -1346,7 +1346,7 @@ rechargeable_cbm player::get_cbm_rechargeable_with( const item &it ) const
     return rechargeable_cbm::none;
 }
 
-int player::get_acquirable_energy( const item &it, rechargeable_cbm cbm ) const
+std::int64_t player::get_acquirable_energy( const item &it, rechargeable_cbm cbm ) const
 {
     switch( cbm ) {
         case rechargeable_cbm::none:
@@ -1383,7 +1383,7 @@ int player::get_acquirable_energy( const item &it, rechargeable_cbm cbm ) const
         }
         case rechargeable_cbm::other:
             const int to_consume = std::min( it.charges, std::numeric_limits<int>::max() );
-            const int to_charge = std::min( static_cast<int>( it.fuel_energy() * to_consume ),
+            const std::int64_t to_charge = std::min<std::int64_t>( static_cast<int64_t>( it.fuel_energy() * to_consume ),
                                             units::to_kilojoule( get_max_power_level() - get_power_level() ) );
             return to_charge;
     }
@@ -1391,7 +1391,7 @@ int player::get_acquirable_energy( const item &it, rechargeable_cbm cbm ) const
     return 0;
 }
 
-int player::get_acquirable_energy( const item &it ) const
+std::int64_t player::get_acquirable_energy( const item &it ) const
 {
     return get_acquirable_energy( it, get_cbm_rechargeable_with( it ) );
 }

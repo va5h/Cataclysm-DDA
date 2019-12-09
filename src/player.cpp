@@ -3344,7 +3344,7 @@ void player::process_items()
     bool weapon_active = weapon.has_flag( "USE_UPS" ) &&
                          weapon.charges < weapon.type->maximum_charges();
     std::vector<size_t> active_held_items;
-    int ch_UPS = 0;
+    std::int64_t ch_UPS = 0;
     for( size_t index = 0; index < inv.size(); index++ ) {
         item &it = inv.find_item( index );
         itype_id identifier = it.type->get_id();
@@ -3388,7 +3388,7 @@ void player::process_items()
     if( has_active_bionic( bionic_id( "bio_ups" ) ) ) {
         ch_UPS += units::to_kilojoule( get_power_level() );
     }
-    int ch_UPS_used = 0;
+    std::int64_t ch_UPS_used = 0;
     if( cloak != nullptr ) {
         if( ch_UPS >= 20 ) {
             use_charges( "UPS", 20 );
