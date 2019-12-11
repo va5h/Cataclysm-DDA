@@ -90,38 +90,27 @@ class npc_class;
 static const std::string GUN_MODE_VAR_NAME( "item::mode" );
 static const std::string CLOTHING_MOD_VAR_PREFIX( "clothing_mod_" );
 
-const skill_id skill_survival( "survival" );
-const skill_id skill_melee( "melee" );
-const skill_id skill_bashing( "bashing" );
-const skill_id skill_cutting( "cutting" );
-const skill_id skill_stabbing( "stabbing" );
-const skill_id skill_unarmed( "unarmed" );
-const skill_id skill_cooking( "cooking" );
+static const skill_id skill_survival( "survival" );
+static const skill_id skill_melee( "melee" );
+static const skill_id skill_unarmed( "unarmed" );
+static const skill_id skill_cooking( "cooking" );
 
-const quality_id quality_jack( "JACK" );
-const quality_id quality_lift( "LIFT" );
+static const quality_id quality_jack( "JACK" );
+static const quality_id quality_lift( "LIFT" );
 
-const species_id FISH( "FISH" );
-const species_id BIRD( "BIRD" );
-const species_id INSECT( "INSECT" );
-const species_id ROBOT( "ROBOT" );
+static const species_id ROBOT( "ROBOT" );
 
-const efftype_id effect_cig( "cig" );
-const efftype_id effect_shakes( "shakes" );
-const efftype_id effect_sleep( "sleep" );
-const efftype_id effect_weed_high( "weed_high" );
+static const efftype_id effect_cig( "cig" );
+static const efftype_id effect_shakes( "shakes" );
+static const efftype_id effect_sleep( "sleep" );
+static const efftype_id effect_weed_high( "weed_high" );
 
-const material_id mat_leather( "leather" );
-const material_id mat_kevlar( "kevlar" );
+static const fault_id fault_gun_blackpowder( "fault_gun_blackpowder" );
 
-const fault_id fault_gun_dirt( "fault_gun_dirt" );
-const fault_id fault_gun_blackpowder( "fault_gun_blackpowder" );
-const fault_id fault_gun_unlubricated( "fault_gun_unlubricated" );
-
-const trait_id trait_small2( "SMALL2" );
-const trait_id trait_small_ok( "SMALL_OK" );
-const trait_id trait_huge( "HUGE" );
-const trait_id trait_huge_ok( "HUGE_OK" );
+static const trait_id trait_small2( "SMALL2" );
+static const trait_id trait_small_ok( "SMALL_OK" );
+static const trait_id trait_huge( "HUGE" );
+static const trait_id trait_huge_ok( "HUGE_OK" );
 using npc_class_id = string_id<npc_class>;
 
 std::string rad_badge_color( const int rad )
@@ -1329,12 +1318,12 @@ void item::med_info( const item *med_item, std::vector<iteminfo> &info, const it
 void item::food_info( const item *food_item, std::vector<iteminfo> &info,
                       const iteminfo_query *parts, int batch, bool debug ) const
 {
+    const nutrients nutr = g->u.compute_effective_nutrients( *food_item );
     const std::string space = "  ";
-    if( g->u.kcal_for( *food_item ) != 0 || food_item->get_comestible()->quench != 0 ) {
+    if( nutr.kcal != 0 || food_item->get_comestible()->quench != 0 ) {
         if( parts->test( iteminfo_parts::FOOD_NUTRITION ) ) {
-            const int value = g->u.kcal_for( *food_item );
             info.push_back( iteminfo( "FOOD", _( "<bold>Calories (kcal)</bold>: " ),
-                                      "", iteminfo::no_newline, value ) );
+                                      "", iteminfo::no_newline, nutr.kcal ) );
         }
         if( parts->test( iteminfo_parts::FOOD_QUENCH ) ) {
             info.push_back( iteminfo( "FOOD", space + _( "Quench: " ),
@@ -1358,9 +1347,10 @@ void item::food_info( const item *food_item, std::vector<iteminfo> &info,
         info.push_back( iteminfo( "FOOD", _( "Smells like: " ) + food_item->corpse->nname() ) );
     }
 
-    const std::map<vitamin_id, int> vits = g->u.vitamins_from( *food_item );
-    const std::string required_vits = enumerate_as_string( vits.begin(),
-    vits.end(), []( const std::pair<vitamin_id, int> &v ) {
+    const std::string required_vits = enumerate_as_string(
+                                          nutr.vitamins.begin(),
+                                          nutr.vitamins.end(),
+    []( const std::pair<vitamin_id, int> &v ) {
         // only display vitamins that we actually require
         return ( g->u.vitamin_rate( v.first ) > 0_turns && v.second != 0 ) ?
                string_format( "%s (%i%%)", v.first.obj().name(),
@@ -3330,7 +3320,8 @@ const std::string &item::symbol() const
 
 nc_color item::color_in_inventory() const
 {
-    avatar &u = g->u; // TODO: make a const reference
+    // TODO: make a const reference
+    avatar &u = g->u;
 
     // Only item not otherwise colored gets colored as favorite
     nc_color ret = is_favorite ? c_white : c_light_gray;
