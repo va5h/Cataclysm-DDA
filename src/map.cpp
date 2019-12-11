@@ -83,16 +83,12 @@
 #include "construction.h"
 #include "flat_set.h"
 
-const mtype_id mon_zombie( "mon_zombie" );
+static const mtype_id mon_zombie( "mon_zombie" );
 
-const skill_id skill_traps( "traps" );
+static const skill_id skill_traps( "traps" );
 
-const species_id ZOMBIE( "ZOMBIE" );
-
-const efftype_id effect_boomered( "boomered" );
-const efftype_id effect_crushed( "crushed" );
-const efftype_id effect_stunned( "stunned" );
-const efftype_id effect_riding( "riding" );
+static const efftype_id effect_boomered( "boomered" );
+static const efftype_id effect_crushed( "crushed" );
 
 #define dbg(x) DebugLog((x),D_MAP) << __FILE__ << ":" << __LINE__ << ": "
 
@@ -3566,7 +3562,8 @@ void map::shoot( const tripoint &p, projectile &proj, const bool hit_items )
         }
     } else if( impassable( p ) && !is_transparent( p ) ) {
         bash( p, dam, false );
-        dam = 0; // TODO: Preserve some residual damage when it makes sense.
+        // TODO: Preserve some residual damage when it makes sense.
+        dam = 0;
     }
 
     if( ammo_effects.count( "TRAIL" ) && !one_in( 4 ) ) {
@@ -4780,7 +4777,8 @@ std::list<item> map::use_charges( const tripoint &origin, const int range,
                 ftype = type;
             }
 
-            item tmp( type, 0 ); // TODO: add a sane birthday arg
+            // TODO: add a sane birthday arg
+            item tmp( type, 0 );
             tmp.charges = kpart->vehicle().drain( ftype, quantity );
             // TODO: Handle water poison when crafting starts respecting it
             quantity -= tmp.charges;
@@ -4799,8 +4797,8 @@ std::list<item> map::use_charges( const tripoint &origin, const int range,
             } else if( type == "soldering_iron" ) {
                 ftype = "battery";
             }
-
-            item tmp( type, 0 ); // TODO: add a sane birthday arg
+            // TODO: add a sane birthday arg
+            item tmp( type, 0 );
             tmp.charges = weldpart->vehicle().drain( ftype, quantity );
             quantity -= tmp.charges;
             ret.push_back( tmp );
@@ -4823,7 +4821,8 @@ std::list<item> map::use_charges( const tripoint &origin, const int range,
                 ftype = "battery";
             }
 
-            item tmp( type, 0 ); // TODO: add a sane birthday arg
+            // TODO: add a sane birthday arg
+            item tmp( type, 0 );
             tmp.charges = craftpart->vehicle().drain( ftype, quantity );
             quantity -= tmp.charges;
             ret.push_back( tmp );
@@ -4840,7 +4839,8 @@ std::list<item> map::use_charges( const tripoint &origin, const int range,
                 ftype = "battery";
             }
 
-            item tmp( type, 0 ); // TODO: add a sane birthday arg
+            // TODO: add a sane birthday arg
+            item tmp( type, 0 );
             tmp.charges = forgepart->vehicle().drain( ftype, quantity );
             quantity -= tmp.charges;
             ret.push_back( tmp );
@@ -4857,7 +4857,8 @@ std::list<item> map::use_charges( const tripoint &origin, const int range,
                 ftype = "battery";
             }
 
-            item tmp( type, 0 ); // TODO: add a sane birthday arg
+            // TODO: add a sane birthday arg
+            item tmp( type, 0 );
             tmp.charges = kilnpart->vehicle().drain( ftype, quantity );
             quantity -= tmp.charges;
             ret.push_back( tmp );
@@ -4876,7 +4877,8 @@ std::list<item> map::use_charges( const tripoint &origin, const int range,
                 ftype = "battery";
             }
 
-            item tmp( type, 0 ); // TODO: add a sane birthday arg
+            // TODO: add a sane birthday arg
+            item tmp( type, 0 );
             tmp.charges = chempart->vehicle().drain( ftype, quantity );
             quantity -= tmp.charges;
             ret.push_back( tmp );
@@ -6389,7 +6391,7 @@ void map::shift( const point &sp )
             for( int gridx = 0; gridx < my_MAPSIZE; gridx++ ) {
                 if( sp.y >= 0 ) {
                     for( int gridy = 0; gridy < my_MAPSIZE; gridy++ ) {
-                        if( gridx == 0 || gridy == 0 ) {
+                        if( ( sp.x > 0 && gridx == 0 ) || ( sp.y > 0 && gridy == 0 ) ) {
                             submaps_with_active_items.erase( { abs.x + gridx, abs.y + gridy, gridz } );
                         }
                         if( gridx + sp.x < my_MAPSIZE && gridy + sp.y < my_MAPSIZE ) {
@@ -6402,7 +6404,7 @@ void map::shift( const point &sp )
                     }
                 } else { // sy < 0; work through it backwards
                     for( int gridy = my_MAPSIZE - 1; gridy >= 0; gridy-- ) {
-                        if( gridx == 0 || gridy == my_MAPSIZE - 1 ) {
+                        if( ( sp.x > 0 && gridx == 0 ) || gridy == my_MAPSIZE - 1 ) {
                             submaps_with_active_items.erase( { abs.x + gridx, abs.y + gridy, gridz } );
                         }
                         if( gridx + sp.x < my_MAPSIZE && gridy + sp.y >= 0 ) {
@@ -6419,7 +6421,7 @@ void map::shift( const point &sp )
             for( int gridx = my_MAPSIZE - 1; gridx >= 0; gridx-- ) {
                 if( sp.y >= 0 ) {
                     for( int gridy = 0; gridy < my_MAPSIZE; gridy++ ) {
-                        if( gridx == my_MAPSIZE - 1 || gridy == 0 ) {
+                        if( gridx == my_MAPSIZE - 1 || ( sp.y > 0 && gridy == 0 ) ) {
                             submaps_with_active_items.erase( { abs.x + gridx, abs.y + gridy, gridz } );
                         }
                         if( gridx + sp.x >= 0 && gridy + sp.y < my_MAPSIZE ) {
