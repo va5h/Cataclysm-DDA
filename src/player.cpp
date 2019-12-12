@@ -5243,8 +5243,6 @@ void player::use( int inventory_position )
 void player::use( item_location loc )
 {
     item &used = *loc.get_item();
-    int inventory_position = loc.where() == item_location::type::character ?
-                             this->get_item_position( &used ) : INT_MIN;
 
     if( used.is_null() ) {
         add_msg( m_info, _( "You do not have that item." ) );
@@ -5273,9 +5271,9 @@ void player::use( item_location loc )
         consume( loc );
 
     } else if( used.is_book() ) {
-        // TODO: Remove this nasty cast once this and related functions are migrated to avatar
-        if( avatar *u = dynamic_cast<avatar *>( this ) ) {
-            u->read( inventory_position );
+        // TODO: Handle this with dynamic dispatch.
+        if( avatar *u = as_avatar() ) {
+            u->read( used );
         }
     } else if( used.type->has_use() ) {
         invoke_item( &used, loc.position() );
