@@ -8,6 +8,7 @@
 #include "map.h"
 #include "messages.h"
 #include "point.h"
+#include "line.h"
 
 static const efftype_id effect_teleglow( "teleglow" );
 
@@ -64,6 +65,9 @@ bool teleport::teleport( Creature &critter, int min_distance, int max_distance, 
                                     poor_player->has_effect_with_flag( "DIMENSIONAL_ANCHOR" ) ) ) {
             poor_player->add_msg_if_player( m_warning, _( "You feel disjointed." ) );
             return false;
+        } else if( p->has_trait( trait_id( "THRESH_CHIMERA" ) ) ) {
+            poor_player->add_msg_if_player( m_warning, _( "Violent flux swirls around you. Sweet chaos." ) );
+            return false;            
         } else {
             const bool poor_soul_is_u = ( poor_soul == &g->u );
             if( poor_soul_is_u ) {
@@ -98,6 +102,76 @@ bool teleport::teleport( Creature &critter, int min_distance, int max_distance, 
     if( c_is_u ) {
         g->update_map( *p );
     }
+    critter.remove_effect( efftype_id( "grabbed" ) );
+    return true;
+}
+
+bool teleport::teleport_directed( Creature &critter, int min_distance, int max_distance )
+{
+    if( min_distance > max_distance ) {
+        debugmsg( "ERROR: Function teleport::teleport called with invalid arguments." );
+        return false;
+    }
+    
+    player *const p = critter.as_player();
+    const bool c_is_u = p != nullptr && p == &g->u;
+    tripoint origin = critter.pos();
+    tripoint new_pos;
+    
+    if( !c_is_u ) return false;
+    
+    // choose destination
+    add_msg( m_good, _( "You feel the flux of space-time twisting and curling around you, yet bending to your will. The feeling is fascinating." ) );
+    const cata::optional<tripoint> where = g->look_around();
+    if( !where || *where == g->u.pos() ) {
+        return false;
+    }
+    new_pos = *where;
+    
+    int range = round( trig_dist( origin, new_pos ) );
+    if( ( range > max_distance ) || ( range < min_distance ) ) {
+        add_msg( m_warning, _( "Tried commence %d-long teleport. Allowed range: (%d - %d)." ), range, min_distance, max_distance );
+        return false;
+    }
+    // longer jumps cause more severe space-time disturbancies (like, squared complexity)
+    int flux_disturb_power = static_cast<int>( std::pow( std::max( ( ( range - 12 ) / 2 ), 0 ) + 2, 2 ) );
+
+    //The teleportee is dimensionally anchored so nothing happens
+    if( p->worn_with_flag( "DIMENSIONAL_ANCHOR" ) ||
+        p->has_effect_with_flag( "DIMENSIONAL_ANCHOR" ) ) {
+        p->add_msg_if_player( m_warning, _( "You feel a strange, inwards force... Too weak, though, to stop you." ) );
+    }
+
+    //handles teleporting into solids.
+    if( g->m.impassable( new_pos ) ) {
+        add_msg( m_bad, _( "You've jumped straight into the solid. At least, it WAS before" ) );
+        
+        // Multibash ( like sonic resonator, for doors and stuff )
+        g->m.bash( new_pos, 9999, false, false, true );
+        g->m.bash( new_pos, 9999, false, false, true );
+        g->m.bash( new_pos, 9999, false, false, true );
+    }
+
+    //handles telefragging other creatures
+    if( Creature *const poor_soul = g->critter_at<Creature>( new_pos ) ) {
+
+        p->add_msg_if_player( m_warning,
+                              _( "You teleport into %s, and they explode into thousands of fragments." ),
+                              poor_soul->disp_name() );
+        g->events().send<event_type::telefrags_creature>( p->getID(), poor_soul->get_name() );
+            
+        //Splatter real nice.
+        poor_soul->apply_damage( nullptr, bp_torso, 9999 );
+        poor_soul->check_dead_state();
+    }
+
+    critter.setpos( new_pos );
+    p->add_effect( effect_teleglow, flux_disturb_power * 10_minutes );
+    p->add_msg_if_player( m_warning,
+                          _( "The very fabric of existence tears around you. Like you care." ) );    
+
+    g->update_map( *p );
+
     critter.remove_effect( efftype_id( "grabbed" ) );
     return true;
 }

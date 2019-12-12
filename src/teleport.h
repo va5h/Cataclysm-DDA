@@ -12,6 +12,12 @@ namespace teleport
 bool teleport( Creature &critter, int min_distance = 2, int max_distance = 12,
                bool safe = false,
                bool add_teleglow = true );
+
+/** Controlled [Offensive] Teleportation - cheesy trait, intended to be usable after acquiring some synergy stuff.
+*
+*/
+//My thoughts: THRESH_CHIMERA (cuz it's already used for dampening teleglow side-effects). Maybe more, in the future
+bool teleport_directed( Creature &critter, int min_distance = 2, int max_distance = 500 );
 } // namespace teleport
 
 #endif

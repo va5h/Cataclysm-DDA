@@ -121,6 +121,7 @@ static const trait_id trait_MASOCHIST( "MASOCHIST" );
 static const trait_id trait_MASOCHIST_MED( "MASOCHIST_MED" );
 static const trait_id trait_NOPAIN( "NOPAIN" );
 static const trait_id trait_CENOBITE( "CENOBITE" );
+static const trait_id trait_THRESH_CHIMERA( "THRESH_CHIMERA" );
 
 static const bionic_id bionic_TOOLS_EXTEND( "bio_tools_extend" );
 
@@ -421,9 +422,14 @@ bool player::activate_bionic( int b, bool eff_only )
             add_msg_if_player( m_info, _( "You cannot activate that while mounted." ) );
             return false;
         }
-        teleport::teleport( *this );
-        add_effect( effect_teleglow, 30_minutes );
-        mod_moves( -100 );
+        
+        if( has_trait( trait_THRESH_CHIMERA ) ) {
+            teleport::teleport_directed( *this );
+        } else {
+            teleport::teleport( *this );
+            add_effect( effect_teleglow, 30_minutes );
+            mod_moves( -100 );
+        }
     } else if( bio.id == "bio_blood_anal" ) {
         static const std::map<efftype_id, std::string> bad_effects = {{
                 { effect_fungus, translate_marker( "Fungal Infection" ) },
