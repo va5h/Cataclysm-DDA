@@ -221,8 +221,8 @@
       [ "FOOT_L", 1 ],
       [ "FOOT_R", 1 ]
     ],
-    "act_cost": "30 kJ",
-    "react_cost": "30 kJ",
+    "act_cost": "4 kJ",
+    "react_cost": "300 J",
     "time": 1,
     "flags": [ "BIONIC_TOGGLED" ]
   },
@@ -1117,6 +1117,7 @@
     "id": "bio_shock_absorber",
     "type": "bionic",
     "name": "Kinetic Shock Absorbers",
+    "capacity": "15000 kJ",
     "description": "Most of the flesh in your arms, legs, and upper torso has been replaced with industrial-strength springs and protective padding.  Clenching your fist allows you to fold and unfold this padding; while active, the hydraulic absorbers will prevent damage to your body from severe impacts, at the cost of impaired movement.",
     "occupied_bodyparts": [ [ "TORSO", 1 ], [ "ARM_L", 1 ], [ "ARM_R", 1 ], [ "LEG_L", 1 ], [ "LEG_R", 1 ] ],
     "flags": [ "BIONIC_TOGGLED" ]
