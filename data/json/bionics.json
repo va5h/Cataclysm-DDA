@@ -826,7 +826,7 @@
     "name": "Sonic Resonator",
     "description": "Your entire body may resonate at very high power, creating a short-range shockwave.  While it will not do much damage to creatures, solid objects such as walls and doors will be damaged.",
     "occupied_bodyparts": [ [ "TORSO", 15 ], [ "HEAD", 1 ], [ "ARM_L", 2 ], [ "ARM_R", 2 ], [ "LEG_L", 4 ], [ "LEG_R", 4 ] ],
-    "act_cost": 100
+    "act_cost": "50 kJ"
   },
   {
     "id": "bio_scent_mask",
