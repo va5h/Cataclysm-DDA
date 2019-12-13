@@ -2874,6 +2874,58 @@ void Character::mut_cbm_encumb( std::array<encumbrance_data, num_bp> &vals ) con
         vals[bp_eyes].encumbrance -= 2;
     }
 
+    if( has_bionic( bionic_id( "bio_weight" ) ) ) {
+        if( vals[bp_torso].encumbrance >= 750 ) {
+            vals[bp_torso].encumbrance -= 750;
+        } else {
+            vals[bp_torso].encumbrance = 0;
+        }
+        
+        if( vals[bp_arm_l].encumbrance >= 750 ) {
+            vals[bp_arm_l].encumbrance -= 750;
+        } else {
+            vals[bp_arm_l].encumbrance = 0;
+        }
+        if( vals[bp_arm_r].encumbrance >= 750 ) {
+            vals[bp_arm_r].encumbrance -= 750;
+        } else {
+            vals[bp_arm_r].encumbrance = 0;
+        }
+        
+        if( vals[bp_hand_l].encumbrance >= 750 ) {
+            vals[bp_hand_l].encumbrance -= 750;
+        } else {
+            vals[bp_hand_l].encumbrance = 0;
+        }
+        if( vals[bp_hand_r].encumbrance >= 750 ) {
+            vals[bp_hand_r].encumbrance -= 750;
+        } else {
+            vals[bp_hand_r].encumbrance = 0;
+        }
+        
+        if( vals[bp_leg_l].encumbrance >= 750 ) {
+            vals[bp_leg_l].encumbrance -= 750;
+        } else {
+            vals[bp_leg_l].encumbrance = 0;
+        }
+        if( vals[bp_leg_r].encumbrance >= 750 ) {
+            vals[bp_leg_r].encumbrance -= 750;
+        } else {
+            vals[bp_leg_r].encumbrance = 0;
+        }
+        
+        if( vals[bp_foot_l].encumbrance >= 750 ) {
+            vals[bp_foot_l].encumbrance -= 750;
+        } else {
+            vals[bp_foot_l].encumbrance = 0;
+        }
+        if( vals[bp_foot_r].encumbrance >= 750 ) {
+            vals[bp_foot_r].encumbrance -= 750;
+        } else {
+            vals[bp_foot_r].encumbrance = 0;
+        }
+    }
+
     // Lower penalty for bps covered only by XL armor
     const auto oversize = exclusive_flag_coverage( "OVERSIZE" );
     for( const auto &mut_pair : my_mutations ) {
