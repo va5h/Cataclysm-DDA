@@ -6767,8 +6767,8 @@ bool player::sees( const tripoint &t, bool, int ) const
         return true;
     }
     // Only check if we need to override if we already came to the opposite conclusion.
-    if( can_see && wanted_range < 15 && wanted_range > sight_range( 1 ) &&
-        has_active_bionic( str_bio_night ) ) {
+    if( can_see && wanted_range < 9 && wanted_range > sight_range( 1 ) &&
+        has_active_bionic( str_bio_night ) && !has_bionic( bio_targeting ) ) {
         can_see = false;
     }
     if( can_see && wanted_range > unimpaired_range() ) {
