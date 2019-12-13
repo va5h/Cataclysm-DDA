@@ -835,8 +835,8 @@
     "description": "While this system is powered, your body will produce very little odor, making it nearly impossible for creatures to track you by scent.",
     "occupied_bodyparts": [ [ "TORSO", 3 ], [ "HEAD", 1 ], [ "ARM_L", 1 ], [ "ARM_R", 1 ], [ "LEG_L", 1 ], [ "LEG_R", 1 ] ],
     "flags": [ "BIONIC_TOGGLED" ],
-    "act_cost": 1,
-    "react_cost": 1,
+    "act_cost": "5 J",
+    "react_cost": "5 J",
     "time": 6000
   },
   {
