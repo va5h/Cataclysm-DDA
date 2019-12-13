@@ -447,7 +447,7 @@
     "id": "bio_gills",
     "type": "bionic",
     "name": "Respirator",
-    "description": "A complex respiration augmentation system.  Improves respiration ability in air and allows breathing water.  Will automatically turn on when drowning.  Turn on to recharge stamina faster, at moderate power cost.  Asthmatics may also use it to stop asthma attacks.",
+    "description": "A complex respiration augmentation system.  Improves respiration ability in air and allows breathing water.  Will automatically turn on when drowning.  Turn on to recharge stamina faster, at moderate power cost.  Asthmatics may also use it to stop asthma attacks. Virtually eliminates mouth encumbrance (-250)",
     "occupied_bodyparts": [ [ "TORSO", 8 ], [ "HEAD", 2 ], [ "MOUTH", 2 ] ],
     "flags": [ "BIONIC_TOGGLED" ]
   },
@@ -507,7 +507,7 @@
     "id": "bio_hydraulics",
     "type": "bionic",
     "name": "Hydraulic Muscles",
-    "description": "While activated, your muscles will be greatly enhanced, increasing your strength by about 80% of original ( but not less than 20 ).",
+    "description": "While activated, your muscles will be greatly enhanced, increasing your strength by about 80% of original ( but not less than 20 ). Vurtually eliminates body, legs and arms encumbrance (-500)",
     "occupied_bodyparts": [ [ "TORSO", 4 ], [ "ARM_L", 8 ], [ "ARM_R", 8 ], [ "LEG_L", 14 ], [ "LEG_R", 14 ] ],
     "flags": [ "BIONIC_TOGGLED", "BIONIC_NPC_USABLE" ],
     "act_cost": "2 kJ",
@@ -1109,7 +1109,7 @@
     "id": "bio_weight",
     "type": "bionic",
     "name": "Titanium Skeletal Bracing",
-    "description": "Titanium bracing has been installed onto your elbows, knees, and spine, making them far better at handling strain.  Your carrying capacity is increased by 20 kilograms, or about 44 pounds. Additionally, it virtually eliminates encumbrance for your body, arms and legs (-750).",
+    "description": "Titanium bracing has been installed onto your elbows, knees, and spine, making them far better at handling strain.  Your carrying capacity is increased by 20 kilograms, or about 44 pounds. Additionally, it virtually eliminates encumbrance for your body, arms and legs (-250).",
     "occupied_bodyparts": [ [ "TORSO", 8 ], [ "ARM_L", 3 ], [ "ARM_R", 3 ], [ "LEG_L", 3 ], [ "LEG_R", 3 ] ],
     "weight_capacity_modifier": 2.5,
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
