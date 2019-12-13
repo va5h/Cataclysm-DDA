@@ -2069,9 +2069,9 @@ int player::impact( const int force, const tripoint &p )
 
     // Shock absorbers kick in only when they need to, so if our other protections fail, fall back on them
     if( shock_absorbers ) {
-        effective_force -= 15; // Provide a flat reduction to force
-        if( mod > 0.25f ) {
-            mod = 0.25f; // And provide a 75% reduction against that force if we don't have it already
+        effective_force -= 75; // Provide a flat reduction to force
+        if( mod > 0.05f ) {
+            mod = 0.05f; // And provide a 95% reduction against that force if we don't have it already
         }
         if( effective_force < 0 ) {
             effective_force = 0;
