@@ -384,13 +384,13 @@ bool player::activate_bionic( int b, bool eff_only )
         }
     } else if( bio.id == "bio_resonator" ) {
         //~Sound of a bionic sonic-resonator shaking the area
-        sounds::sound( pos(), 30, sounds::sound_t::combat, _( "VRRRRMP!" ), false, "bionic",
+        sounds::sound( pos(), 45, sounds::sound_t::combat, _( "VRRRRMP!" ), false, "bionic",
                        "bio_resonator" );
-        for( const tripoint &bashpoint : g->m.points_in_radius( pos(), 1 ) ) {
-            g->m.bash( bashpoint, 110 );
+        for( const tripoint &bashpoint : g->m.points_in_radius( pos(), 3 ) ) {
+            g->m.bash( bashpoint, 250 );
             // Multibash effect, so that doors &c will fall
-            g->m.bash( bashpoint, 110 );
-            g->m.bash( bashpoint, 110 );
+            g->m.bash( bashpoint, 250 );
+            g->m.bash( bashpoint, 250 );
         }
 
         mod_moves( -100 );
@@ -610,7 +610,7 @@ bool player::activate_bionic( int b, bool eff_only )
         // Don't "snowball" by affecting some items multiple times
         std::vector<std::pair<item, tripoint>> affected;
         const units::mass weight_cap = weight_capacity();
-        for( const tripoint &p : g->m.points_in_radius( pos(), 10 ) ) {
+        for( const tripoint &p : g->m.points_in_radius( pos(), 15 ) ) {
             if( p == pos() || !g->m.has_items( p ) || g->m.has_flag( "SEALED", p ) ) {
                 continue;
             }

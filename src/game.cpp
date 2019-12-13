@@ -9535,7 +9535,7 @@ void game::place_player_overmap( const tripoint &om_dest )
 bool game::phasing_move( const tripoint &dest_loc )
 {
     if( !u.has_active_bionic( bionic_id( "bio_probability_travel" ) ) ||
-        u.get_power_level() < 250_kJ ) {
+        u.get_power_level() < 25_kJ ) {
         return false;
     }
 
@@ -9557,19 +9557,19 @@ bool game::phasing_move( const tripoint &dest_loc )
         //Being dimensionally anchored prevents quantum shenanigans.
         if( u.worn_with_flag( "DIMENSIONAL_ANCHOR" ) || u.has_effect_with_flag( "DIMENSIONAL_ANCHOR" ) ) {
             u.add_msg_if_player( m_info, _( "You are repelled by the barrier!" ) );
-            u.mod_power_level( -250_kJ ); //cost of tunneling one tile.
+            u.mod_power_level( -25_kJ ); //cost of tunneling one tile.
             return false;
         }
-        if( tunneldist * 250_kJ >
+        if( tunneldist * 25_kJ >
             u.get_power_level() ) { //oops, not enough energy! Tunneling costs 250 bionic power per impassable tile
             add_msg( _( "You try to quantum tunnel through the barrier but are reflected!  Try again with more energy!" ) );
-            u.mod_power_level( -250_kJ );
+            u.mod_power_level( -25_kJ );
             return false;
         }
 
         if( tunneldist > 24 ) {
             add_msg( m_info, _( "It's too dangerous to tunnel that far!" ) );
-            u.mod_power_level( -250_kJ );
+            u.mod_power_level( -25_kJ );
             return false;
         }
 
@@ -9584,7 +9584,7 @@ bool game::phasing_move( const tripoint &dest_loc )
 
         add_msg( _( "You quantum tunnel through the %d-tile wide barrier!" ), tunneldist );
         //tunneling costs 250 bionic power per impassable tile
-        u.mod_power_level( -( tunneldist * 250_kJ ) );
+        u.mod_power_level( -( tunneldist * 25_kJ ) );
         u.moves -= 100; //tunneling costs 100 moves
         u.setpos( dest );
 

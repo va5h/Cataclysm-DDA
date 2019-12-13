@@ -1327,7 +1327,7 @@
     "result": "wire_barbed",
     "category": "CC_OTHER",
     "subcategory": "CSC_OTHER_MATERIALS",
-    "skill_used": "mechanics",
+    "skill_used": "fabrication",
     "difficulty": 2,
     "time": "8 m",
     "autolearn": true,
@@ -2848,7 +2848,7 @@
     "time": "42 m",
     "autolearn": true,
     "using": [ [ "welding_standard", 15 ] ],
-    "components": [ [ [ "sheet_metal", 3 ], [ "sheet_metal_small", 72 ], [ "metal_tank", 3 ] ] ]
+    "components": [ [ [ "sheet_metal", 3 ], [ "sheet_metal_small", 72 ] ] ]
   },
   {
     "type": "recipe",
@@ -3852,9 +3852,8 @@
     "batch_time_factors": [ 75, 4 ],
     "components": [
       [ [ "water", 1 ], [ "water_clean", 1 ] ],
-      [ [ "material_soil", 4 ] ],
+      [ [ "material_soil", 2 ] ],
       [
-        [ "material_soil", 4 ],
         [ "withered", 2 ],
         [ "straw_pile", 2 ],
         [ "feces_cow", 1 ],
@@ -4489,5 +4488,28 @@
     "qualities": [ { "id": "BOIL", "level": 1 }, { "id": "CONTAIN", "level": 1 } ],
     "tools": [ [ [ "sieve_steel", -1 ], [ "sieve_primitive", -1 ] ], [ [ "surface_heat", 10, "LIST" ] ] ],
     "components": [ [ [ "water", 4 ], [ "water_clean", 4 ] ], [ [ "material_soil", 1 ] ] ]
+  },
+  {
+    "type": "recipe",
+    "result": "makeshift_stethoscope",
+    "category": "CC_OTHER",
+    "subcategory": "CSC_OTHER_TOOLS",
+    "skill_used": "fabrication",
+    "difficulty": 1,
+    "book_learn": [
+      [ "mag_fabrication", 1 ],
+      [ "manual_fabrication", 1 ],
+      [ "textbook_fabrication", 1 ],
+      [ "manual_first_aid", 1 ],
+      [ "pocket_firstaid", 1 ]
+    ],
+    "time": "15 m",
+    "qualities": [ { "id": "CUT", "level": 1 } ],
+    "components": [
+      [ [ "duct_tape", 30 ], [ "medical_tape", 30 ] ],
+      [ [ "bottle_plastic_small", 2 ], [ "funnel", 2 ], [ "metal_funnel", 2 ], [ "makeshift_funnel", 2 ] ],
+      [ [ "hose", 1 ] ],
+      [ [ "condom", 1 ], [ "balloon", 1 ] ]
+    ]
   }
 ]

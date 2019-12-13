@@ -2869,9 +2869,59 @@ void Character::mut_cbm_encumb( std::array<encumbrance_data, num_bp> &vals ) con
 
     if( has_active_bionic( bionic_id( "bio_shock_absorber" ) ) ) {
         for( auto &val : vals ) {
-            val.encumbrance += 3; // Slight encumbrance to all parts except eyes
+            val.encumbrance += 2; // Slight encumbrance to all parts except eyes
         }
-        vals[bp_eyes].encumbrance -= 3;
+        vals[bp_eyes].encumbrance -= 2;
+    }
+
+    if( has_bionic( bionic_id( "bio_weight" ) ) ) {
+        for( int bpi = 0; bpi < static_cast<int>(num_bp); bpi++ ) {
+            body_part bp = static_cast<body_part>(bpi);
+            if( bp == bp_torso ||
+                bp == bp_arm_l ||
+                bp == bp_arm_r ||
+                bp == bp_hand_l ||
+                bp == bp_hand_r ||
+                bp == bp_leg_l ||
+                bp == bp_leg_r ||
+                bp == bp_foot_l ||
+                bp == bp_foot_r) {
+                if( vals[bp].encumbrance >= 250 ) {
+                    vals[bp].encumbrance -= 250;
+                } else {
+                    vals[bp].encumbrance = 0;
+                }                    
+            }
+        }
+    }
+
+    if( has_active_bionic( bionic_id( "bio_hydraulics" ) ) ) {
+        for( int bpi = 0; bpi < static_cast<int>(num_bp); bpi++ ) {
+            body_part bp = static_cast<body_part>(bpi);
+            if( bp == bp_torso ||
+                bp == bp_arm_l ||
+                bp == bp_arm_r ||
+                bp == bp_hand_l ||
+                bp == bp_hand_r ||
+                bp == bp_leg_l ||
+                bp == bp_leg_r ||
+                bp == bp_foot_l ||
+                bp == bp_foot_r) {
+                if( vals[bp].encumbrance >= 500 ) {
+                    vals[bp].encumbrance -= 500;
+                } else {
+                    vals[bp].encumbrance = 0;
+                }                    
+            }
+        }
+    }
+
+    if( has_bionic( bionic_id( "bio_gills" ) ) ) {
+        if( vals[bp_mouth].encumbrance >= 250 ) {
+            vals[bp_mouth].encumbrance -= 250;
+        } else {
+            vals[bp_mouth].encumbrance = 0;
+        }
     }
 
     // Lower penalty for bps covered only by XL armor
