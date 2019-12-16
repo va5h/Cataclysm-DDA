@@ -93,16 +93,6 @@
   },
   {
     "type": "recipe",
-    "result": "laser_sight",
-    "obsolete": true
-  },
-  {
-    "type": "recipe",
-    "result": "rail_laser_sight",
-    "obsolete": true
-  },
-  {
-    "type": "recipe",
     "result": "goggles_nv",
     "obsolete": true
   },

@@ -449,7 +449,6 @@
     "durability": 9,
     "barrel_length": 3,
     "magazine_well": 2,
-    "built_in_mods": [ "grip", "folding_stock" ],
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 3 ] ],
     "magazines": [ [ "shot", [ "saiga10mag", "saiga30mag" ] ] ],
     "valid_mod_locations": [

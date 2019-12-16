@@ -1768,7 +1768,7 @@
       [ { "id": "WELD", "level": 2 } ],
       [ { "id": "GLARE", "level": 2 } ]
     ],
-    "components": [ [ [ "metal_tank", 15 ], [ "55gal_drum", 4 ] ], [ [ "water_faucet", 1 ] ] ],
+    "components": [ [ [ "metal_tank", 15 ], [ "55gal_drum", 5 ] ], [ [ "water_faucet", 1 ] ] ],
     "pre_special": "check_empty",
     "post_terrain": "f_standing_tank"
   },

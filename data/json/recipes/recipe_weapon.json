@@ -1388,12 +1388,25 @@
     "category": "CC_WEAPON",
     "subcategory": "CSC_WEAPON_MODS",
     "skill_used": "mechanics",
-    "skills_required": [ "gun", 1 ],
+    "skills_required": [ "gun", 4 ],
     "difficulty": 8,
     "time": "1 h",
     "autolearn": true,
     "tools": [ [ [ "large_repairkit", 250 ] ] ],
     "components": [ [ [ "scrap", 1 ] ], [ [ "pipe", 2 ] ] ]
+  },
+  {
+    "type": "recipe",
+    "result": "shot_suppressor",
+    "category": "CC_WEAPON",
+    "subcategory": "CSC_WEAPON_MODS",
+    "skill_used": "mechanics",
+    "skills_required": [ "gun", 5 ],
+    "difficulty": 9,
+    "time": "2 h",
+    "autolearn": true,
+    "tools": [ [ [ "large_repairkit", 350 ] ] ],
+    "components": [ [ [ "scrap", 2 ] ], [ [ "pipe", 3 ] ] ]
   },
   {
     "type": "recipe",
@@ -1549,7 +1562,7 @@
     "category": "CC_WEAPON",
     "subcategory": "CSC_WEAPON_MODS",
     "skill_used": "electronics",
-    "difficulty": 5,
+    "difficulty": 9,
     "time": "45 m",
     "book_learn": [ [ "manual_electronics", 2 ], [ "textbook_electronics", 2 ] ],
     "using": [ [ "soldering_standard", 20 ] ],
@@ -1573,7 +1586,29 @@
   {
     "type": "recipe",
     "result": "rail_laser_sight",
-    "copy-from": "laser_sight"
+    "category": "CC_WEAPON",
+    "subcategory": "CSC_WEAPON_MODS",
+    "skill_used": "electronics",
+    "difficulty": 9,
+    "time": "45 m",
+    "book_learn": [ [ "manual_electronics", 2 ], [ "textbook_electronics", 2 ] ],
+    "using": [ [ "soldering_standard", 20 ] ],
+    "qualities": [ { "id": "SCREW_FINE", "level": 1 } ],
+    "components": [
+      [ [ "amplifier", 2 ] ],
+      [ [ "power_supply", 2 ] ],
+      [ [ "lens", 2 ] ],
+      [ [ "lens_small", 4 ] ],
+      [ [ "light_battery_cell", 1 ], [ "plut_cell", 1 ] ],
+      [
+        [ "scrap", 2 ],
+        [ "can_drink_unsealed", 1 ],
+        [ "can_food_unsealed", 1 ],
+        [ "canister_empty", 1 ],
+        [ "plastic_chunk", 1 ]
+      ],
+      [ [ "cable", 5 ] ]
+    ]
   },
   {
     "type": "recipe",
