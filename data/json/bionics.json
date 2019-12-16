@@ -1091,7 +1091,7 @@
     "name": "Gasoline Fuel Cell CBM",
     "description": "A small gasoline fuel cell fixed to your scapula.  Despite its limited energy output compared to other fuel cells, this device still produces a significant amount of heat dissipated through a heat exhaust protruding from your back.  A diffuse network of bio-plastic bladders has been meshed with your circulatory system and serves as a fuel tank.",
     "occupied_bodyparts": [ [ "TORSO", 8 ] ],
-    "encumbrance": [ [ "TORSO", 5 ] ],
+    "encumbrance": [ [ "TORSO", 2 ] ],
     "fuel_options": [ "gasoline" ],
     "fuel_capacity": 1000,
     "fuel_efficiency": 0.55,
