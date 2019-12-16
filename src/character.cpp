@@ -5685,6 +5685,12 @@ void Character::shout( std::string msg, bool order )
 
 void Character::vomit()
 {
+    bool has_digest_aug = has_bionic( bionic_id( "bio_digestion" ) );
+    
+    if ( has_digest_aug && !query_yn( _( "Do you really want to throw up?" ) ) ) {
+        return;
+    }
+
     g->events().send<event_type::throws_up>( getID() );
 
     if( stomach.contains() != 0_ml ) {

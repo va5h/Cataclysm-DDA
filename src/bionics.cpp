@@ -550,6 +550,9 @@ bool player::activate_bionic( int b, bool eff_only )
             add_msg_if_player( m_info, _( "There's nothing to light there." ) );
             mod_power_level( bionics[bionic_id( "bio_lighter" )].power_activate );
         }
+    } else if( bio.id == "bio_digestion" ) {
+        add_msg_if_player( m_info, _( "Proceeding to vomit..." ) );
+        vomit();
     } else if( bio.id == "bio_geiger" ) {
         add_msg_if_player( m_info, _( "Your radiation level: %d" ), radiation );
     } else if( bio.id == "bio_radscrubber" ) {
