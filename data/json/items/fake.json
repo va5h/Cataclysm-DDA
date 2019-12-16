@@ -55,7 +55,7 @@
     "type": "TOOL",
     "name": "bionic goggles",
     "name_plural": "bionic goggles",
-    "qualities": [ [ "GLARE", 2 ] ]
+    "qualities": [ [ "GLARE", 3 ] ]
   },
   {
     "id": "bio_scalpel",
