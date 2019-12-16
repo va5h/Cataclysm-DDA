@@ -510,6 +510,7 @@
   {
     "type": "item_group",
     "id": "fridge",
+    "//": "This is a terrible item group and should be phased out.  See SUS_fridge for a more modern take on things.",
     "items": [
       [ "water_clean", 90 ],
       [ "water_mineral", 10 ],
@@ -5102,7 +5103,6 @@
       [ "223_casing", 85 ],
       [ "3006_casing", 40 ],
       [ "308_casing", 50 ],
-      [ "40mm_casing", 10 ],
       [ "50_casing", 30 ],
       [ "700nx_casing", 10 ],
       [ "300_casing", 60 ],

@@ -7804,9 +7804,7 @@ bool item::use_charges( const itype_id &what, int &qty, std::list<item> &used,
 {
     std::vector<item *> del;
 
-    // Remember qty to unseal self
-    int old_qty = qty;
-    visit_items( [&what, &qty, &used, &pos, &del, &filter]( item * e ) {
+    visit_items( [&what, &qty, &used, &pos, &del, &filter]( item * e, item * parent ) {
         if( qty == 0 ) {
             // found sufficient charges
             return VisitResponse::ABORT;
@@ -7831,6 +7829,9 @@ bool item::use_charges( const itype_id &what, int &qty, std::list<item> &used,
 
                 // if can supply excess charges split required off leaving remainder in-situ
                 item obj = e->split( qty );
+                if( parent ) {
+                    parent->on_contents_changed();
+                }
                 if( !obj.is_null() ) {
                     used.push_back( obj );
                     qty = 0;
@@ -7856,10 +7857,6 @@ bool item::use_charges( const itype_id &what, int &qty, std::list<item> &used,
         } else {
             remove_item( *e );
         }
-    }
-
-    if( qty != old_qty || !del.empty() ) {
-        on_contents_changed();
     }
 
     return destroy;
@@ -8060,6 +8057,23 @@ std::string item::components_to_string() const
             return entry.first;
         }
     }, enumeration_conjunction::none );
+}
+
+uint64_t item::make_component_hash() const
+{
+    // First we need to sort the IDs so that identical ingredients give identical hashes.
+    std::multiset<std::string> id_set;
+    for( const item &it : components ) {
+        id_set.insert( it.typeId() );
+    }
+
+    std::string concatenated_ids;
+    for( std::string id : id_set ) {
+        concatenated_ids += id;
+    }
+
+    std::hash<std::string> hasher;
+    return hasher( concatenated_ids );
 }
 
 bool item::needs_processing() const
