@@ -1020,8 +1020,8 @@
   {
     "type": "vehicle_part",
     "id": "minifridge_floor",
-	"copy-from": "minifridge",
-	"looks_like": "f_glass_fridge",
+    "copy-from": "minifridge",
+    "looks_like": "f_glass_fridge",
     "name": "minifridge (on floor)",
     "description": "A small fridge.  When turned on, it will cool the food inside, extended the time until the food spoils. With some skill, this unit can be placed on floor, allowing to walk over the place freely.",
     "requirements": {
