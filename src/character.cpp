@@ -6170,9 +6170,9 @@ float Character::bionic_armor_bonus( body_part bp, damage_type dt ) const
     // We only check the passive bionics
     if( has_bionic( bio_carbon ) ) {
         if( dt == DT_BASH ) {
-            result += 6;
-        } else if( dt == DT_CUT || dt == DT_STAB ) {
             result += 12;
+        } else if( dt == DT_CUT || dt == DT_STAB ) {
+            result += 18;
         }
     }
     // All the other bionic armors reduce bash/cut/stab by 3
@@ -6190,7 +6190,7 @@ float Character::bionic_armor_bonus( body_part bp, damage_type dt ) const
     auto iter = armor_bionics.find( bp );
     if( iter != armor_bionics.end() && has_bionic( iter->second ) &&
         ( dt == DT_BASH || dt == DT_CUT || dt == DT_STAB ) ) {
-        result += 9;
+        result += 15;
     }
     return result;
 }
