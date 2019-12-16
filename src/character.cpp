@@ -144,6 +144,8 @@ static const species_id ROBOT( "ROBOT" );
 
 static const skill_id skill_dodge( "dodge" );
 static const skill_id skill_throw( "throw" );
+static const skill_id skill_electronics( "electronics" );
+static const skill_id skill_computer( "computer" );
 
 static const trait_id trait_ACIDBLOOD( "ACIDBLOOD" );
 static const trait_id trait_ACIDPROOF( "ACIDPROOF" );
@@ -6008,13 +6010,15 @@ void Character::absorb_hit( body_part bp, damage_instance &dam )
 
         // The bio_ads CBM absorbs damage before hitting armor
         if( has_active_bionic( bio_ads ) ) {
+            int skill_ratio = get_skill_level( skill_electronics ) + get_skill_level( skill_computer );
+            
             if( elem.amount > 0 && get_power_level() > 24_kJ ) {
                 if( elem.type == DT_BASH ) {
-                    elem.amount -= rng( 1, 8 );
+                    elem.amount -= rng( skill_ratio / 2, skill_ratio );
                 } else if( elem.type == DT_CUT ) {
-                    elem.amount -= rng( 1, 4 );
+                    elem.amount -= rng( skill_ratio / 3, skill_ratio );
                 } else if( elem.type == DT_STAB ) {
-                    elem.amount -= rng( 1, 2 );
+                    elem.amount -= rng( skill_ratio / 4, skill_ratio );
                 }
                 mod_power_level( -25_kJ );
             }
