@@ -280,6 +280,23 @@
   },
   {
     "type": "recipe",
+    "result": "milk_powder",
+    "category": "CC_FOOD",
+    "id_suffix": "from_rotten",
+    "subcategory": "CSC_FOOD_DRY",
+    "skill_used": "cooking",
+    "difficulty": 6,
+    "charges": 1,
+    "time": "40 m",
+    "batch_time_factors": [ 75, 5 ],
+    "autolearn": true,
+    "qualities": [ { "id": "BOIL", "level": 2 }, { "id": "CHEM", "level": 2 }, { "id": "DISTILL", "level": 1 } ],
+    "tools": [ [ [ "dehydrator", 5 ] ], [ [ "surface_heat", 5, "LIST" ] ], [ [ "platinum_grille", -1 ] ] ],
+    "components": [ [ [ "milk", 2 ] ], [ [ "meal_chitin_piece", 2 ] ], [ [ "lye_powder", 10 ] ], [ [ "charcoal", 5 ] ] ],
+    "flags": [ "ALLOW_ROTTEN" ]
+  },
+  {
+    "type": "recipe",
     "result": "powder_eggs",
     "category": "CC_FOOD",
     "subcategory": "CSC_FOOD_DRY",
