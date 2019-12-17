@@ -143,10 +143,10 @@
     "mod_targets": [ "shotgun" ],
     "damage_modifier": -4,
     "handling_modifier": 3,
-    "dispersion_modifier": -10,
-    "consume_chance": 5000,
-    "consume_divisor": 235,
-    "loudness_modifier": -30,
+    "dispersion_modifier": -12,
+    "consume_chance": 9000,
+    "consume_divisor": 1335,
+    "loudness_modifier": -60,
     "flags": [ "CONSUMABLE" ]
   },
   {
@@ -184,7 +184,7 @@
     "integral_volume": 0,
     "//": "weight is accounted for in gun item",
     "integral_weight": 0,
-    "loudness_modifier": -32,
+    "loudness_modifier": -48,
     "range_modifier": -1,
     "dispersion_modifier": 0,
     "location": "barrel",
