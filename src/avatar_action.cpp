@@ -699,11 +699,19 @@ bool avatar_action::fire_check( avatar &you, const map &m, const targeting_data 
                 const bool v_mountable = static_cast<bool>( m.veh_at( you.pos() ).part_with_feature( "MOUNTABLE",
                                          true ) );
                 bool t_mountable = m.has_flag_ter_or_furn( "MOUNTABLE", you.pos() );
+
+                bool youAsWalkingTurret = you.has_bionic( bionic_id( "bio_weight" ) ) || you.has_bionic( bionic_id( "bio_hydraulics" ) );
                 if( !t_mountable && !v_mountable ) {
-                    messages.push_back( string_format(
+                    if ( youAsWalkingTurret ) {
+                        messages.push_back( string_format(
+                                            _( "You grip the %s steadily. Not a problem, with all your bionics." ),
+                                            mode_map.second->tname() ) );
+                    } else {
+                        messages.push_back( string_format(
                                             _( "You must stand near acceptable terrain or furniture to use this %s.  A table, a mound of dirt, a broken window, etc." ),
                                             mode_map.second->tname() ) );
-                    fireable = false;
+                        fireable = false;
+                    }
                 }
             }
         }
