@@ -1250,6 +1250,11 @@ size_t furn_t::count()
     return furniture_data.size();
 }
 
+bool furn_t::is_movable() const
+{
+    return move_str_req >= 0;
+}
+
 void furn_t::load( const JsonObject &jo, const std::string &src )
 {
     map_data_common_t::load( jo, src );
