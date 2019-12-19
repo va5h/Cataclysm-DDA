@@ -13,6 +13,19 @@
     "components": [ [ [ "leather", 9 ], [ "tanned_hide", 1 ] ], [ [ "scrap", 3 ] ], [ [ "filament", 20, "LIST" ] ] ]
   },
   {
+    "result": "XL_surv_holster",
+    "type": "recipe",
+    "category": "CC_ARMOR",
+    "subcategory": "CSC_ARMOR_STORAGE",
+    "skill_used": "tailor",
+    "difficulty": 8,
+    "skills_required": [ "gun", 1 ],
+    "time": "45 m",
+    "autolearn": true,
+    "qualities": [ { "id": "HAMMER", "level": 2 }, { "id": "SEW", "level": 1 }, { "id": "CUT", "level": 1 } ],
+    "components": [ [ [ "kevlar_plate", 8 ] ], [ [ "chestpouch", 2 ] ], [ [ "rag", 6 ] ], [ [ "filament", 80, "LIST" ] ] ]
+  },
+  {
     "result": "ammo_satchel",
     "type": "recipe",
     "category": "CC_ARMOR",

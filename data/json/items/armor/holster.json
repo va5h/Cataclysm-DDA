@@ -161,5 +161,44 @@
     "material_thickness": 1,
     "use_action": { "type": "holster", "min_volume": "1250 ml", "max_volume": "2 L", "skills": [ "pistol", "smg", "shotgun", "rifle" ] },
     "flags": [ "WAIST", "OVERSIZE" ]
+  },
+  {
+    "id": "XL_surv_holster",
+    "type": "ARMOR",
+    "name": "XL survivor holster",
+    "description": "A custom-built extra-large holster.  When your tacticooled gun suddenly became not that small. 'Batteries' included.",
+    "weight": "490 g",
+    "volume": "520 ml",
+    "price": 19000,
+    "price_postapoc": 32000,
+    "rigid": false,
+    "material": [ "kevlar_rigid", "cotton" ],
+    "symbol": "[",
+    "looks_like": "quiver_large",
+    "color": "light_gray",
+    "covers": [ "LEG_EITHER" ],
+    "coverage": 20,
+    "encumbrance": 5,
+    "material_thickness": 3,
+    "use_action": [
+      {
+        "type": "holster",
+        "holster_prompt": "Stash weapon",
+        "holster_msg": "You stash your %s.",
+        "min_volume": "1250 ml",
+        "max_volume": "3250 ml",
+        "skills": [ "pistol", "smg", "shotgun", "rifle" ]
+      },
+      {
+        "type": "holster",
+        "holster_prompt": "Stash ammo",
+        "holster_msg": "You stash your %s.",
+        "multi": 2,
+        "max_volume": "750 ml",
+        "draw_cost": 40,
+        "flags": [ "MAG_COMPACT" ]
+      }
+    ],
+    "flags": [ "WAIST", "STURDY", "WATERPROOF", "OVERSIZE" ]
   }
 ]
