@@ -455,6 +455,7 @@
     "storage": "1 L",
     "warmth": 60,
     "material_thickness": 4,
+    "valid_mods": [ "steel_padded" ],
     "flags": [ "VARSIZE", "POCKETS", "WATERPROOF", "STURDY" ]
   },
   {
@@ -565,6 +566,7 @@
     "storage": "20 L",
     "warmth": 40,
     "material_thickness": 5,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 1,
     "flags": [ "VARSIZE", "POCKETS" ]
   },
@@ -587,6 +589,7 @@
     "storage": "12500 ml",
     "warmth": 10,
     "material_thickness": 4,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 1,
     "flags": [ "VARSIZE", "POCKETS" ]
   },
@@ -698,6 +701,7 @@
     "storage": "20 L",
     "warmth": 40,
     "material_thickness": 5,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 2,
     "flags": [ "VARSIZE", "POCKETS", "STURDY", "WATERPROOF" ]
   },
@@ -1093,6 +1097,7 @@
     "storage": "500 ml",
     "warmth": 20,
     "material_thickness": 3,
+    "valid_mods": [ "steel_padded" ],
     "flags": [ "VARSIZE", "FANCY" ]
   },
   {
@@ -1493,6 +1498,7 @@
     "storage": "2500 ml",
     "warmth": 30,
     "material_thickness": 4,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 6,
     "flags": [ "VARSIZE", "POCKETS", "STURDY", "WATERPROOF", "RAINPROOF", "OUTER" ]
   },
@@ -1518,6 +1524,7 @@
     "storage": "1500 ml",
     "warmth": 30,
     "material_thickness": 4,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 6,
     "flags": [ "VARSIZE", "POCKETS", "STURDY", "WATERPROOF", "OUTER" ]
   },
@@ -2058,6 +2065,7 @@
     "storage": "1 L",
     "warmth": 80,
     "material_thickness": 4,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 2,
     "flags": [ "VARSIZE", "POCKETS", "OUTER" ]
   },
@@ -2093,6 +2101,7 @@
     "storage": "1250 ml",
     "warmth": 90,
     "material_thickness": 4,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 2,
     "flags": [ "VARSIZE", "POCKETS", "OUTER", "SUPER_FANCY" ]
   },
@@ -2177,6 +2186,7 @@
     "storage": "3 L",
     "warmth": 70,
     "material_thickness": 4,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 1,
     "flags": [ "VARSIZE", "POCKETS", "HOOD", "COLLAR", "OUTER" ]
   },
@@ -2410,6 +2420,7 @@
     "encumbrance": 8,
     "warmth": 12,
     "material_thickness": 3,
+    "//": "Ceramic disks inside block addition of steel plating modification",
     "flags": [ "STURDY", "OUTER", "NO_REPAIR" ]
   },
   {
@@ -2578,6 +2589,7 @@
     "storage": "6 L",
     "warmth": 50,
     "material_thickness": 3,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 1,
     "flags": [ "VARSIZE", "POCKETS", "OUTER", "WATERPROOF", "RAINPROOF" ]
   },
@@ -2636,6 +2648,7 @@
     "storage": "9 L",
     "warmth": 10,
     "material_thickness": 3,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 3,
     "flags": [ "VARSIZE", "POCKETS", "HOOD", "COLLAR", "STURDY", "WATERPROOF", "RAINPROOF", "OUTER" ]
   },
@@ -2789,6 +2802,7 @@
     "encumbrance": 5,
     "warmth": 25,
     "material_thickness": 3,
+    "valid_mods": [ "steel_padded" ],
     "flags": [ "STURDY" ]
   },
   {
@@ -3125,6 +3139,7 @@
     "storage": "10 L",
     "warmth": 15,
     "material_thickness": 4,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 10,
     "flags": [ "VARSIZE", "WATERPROOF", "POCKETS", "RAINPROOF", "STURDY" ]
   },
@@ -3167,6 +3182,7 @@
     "encumbrance": 15,
     "warmth": 30,
     "material_thickness": 5,
+    "valid_mods": [ "steel_padded" ],
     "flags": [ "VARSIZE", "STURDY" ]
   },
   {
@@ -3227,7 +3243,6 @@
     "warmth": 15,
     "material_thickness": 3,
     "environmental_protection": 1,
-    "valid_mods": [ "steel_padded" ],
     "flags": [ "VARSIZE", "STURDY", "ALLOWS_NATURAL_ATTACKS" ]
   },
   {
@@ -4077,6 +4092,7 @@
     "storage": "5500 ml",
     "warmth": 50,
     "material_thickness": 4,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 1,
     "flags": [ "VARSIZE", "POCKETS", "COLLAR", "OUTER" ]
   },
@@ -7185,6 +7201,7 @@
     "storage": "1 L",
     "warmth": 80,
     "material_thickness": 3,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 3,
     "flags": [ "VARSIZE", "POCKETS" ]
   },
@@ -7263,6 +7280,7 @@
     "storage": "3500 ml",
     "warmth": 15,
     "material_thickness": 4,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 3,
     "flags": [ "VARSIZE", "POCKETS", "STURDY", "WATERPROOF" ]
   },
@@ -7285,6 +7303,7 @@
     "storage": "2500 ml",
     "warmth": 50,
     "material_thickness": 4,
+    "valid_mods": [ "steel_padded" ],
     "flags": [ "VARSIZE", "POCKETS", "COLLAR", "OUTER", "FANCY" ]
   },
   {
@@ -7844,6 +7863,7 @@
     "storage": 8,
     "warmth": 80,
     "material_thickness": 5,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 3,
     "flags": [ "VARSIZE", "POCKETS", "HOOD", "COLLAR", "OUTER" ]
   },
@@ -8027,6 +8047,7 @@
     "storage": "6 L",
     "warmth": 50,
     "material_thickness": 3,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 1,
     "flags": [ "VARSIZE", "POCKETS", "OUTER", "WATERPROOF", "RAINPROOF" ]
   },
@@ -8086,6 +8107,7 @@
     "storage": "9 L",
     "warmth": 10,
     "material_thickness": 3,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 3,
     "flags": [ "VARSIZE", "POCKETS", "HOOD", "COLLAR", "STURDY", "WATERPROOF", "RAINPROOF", "OUTER" ]
   },
@@ -8132,6 +8154,7 @@
     "storage": "6 L",
     "warmth": 50,
     "material_thickness": 3,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 1,
     "flags": [ "VARSIZE", "POCKETS", "OUTER" ]
   },
@@ -8166,8 +8189,8 @@
     "storage": "6 L",
     "warmth": 30,
     "material_thickness": 3,
-    "environmental_protection": 1,
     "valid_mods": [ "steel_padded" ],
+    "environmental_protection": 1,
     "flags": [ "VARSIZE", "POCKETS", "OUTER" ]
   },
   {
@@ -8191,6 +8214,7 @@
     "storage": "9 L",
     "warmth": 10,
     "material_thickness": 3,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 3,
     "flags": [ "VARSIZE", "POCKETS", "HOOD", "COLLAR", "STURDY", "WATERPROOF", "RAINPROOF", "OUTER" ]
   },
@@ -8699,6 +8723,7 @@
     "storage": "7 L",
     "warmth": 15,
     "material_thickness": 4,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 3,
     "flags": [ "VARSIZE", "WATERPROOF", "POCKETS", "HOOD", "RAINPROOF", "STURDY" ]
   },
@@ -8744,6 +8769,7 @@
     "storage": "5 L",
     "warmth": 35,
     "material_thickness": 7,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 4,
     "flags": [ "POCKETS", "STURDY" ]
   },
@@ -8764,6 +8790,7 @@
     "encumbrance": 10,
     "warmth": 40,
     "material_thickness": 3,
+    "valid_mods": [ "steel_padded" ],
     "flags": [ "VARSIZE" ]
   },
   {
@@ -8783,6 +8810,7 @@
     "encumbrance": 10,
     "warmth": 30,
     "material_thickness": 3,
+    "valid_mods": [ "steel_padded" ],
     "flags": [ "VARSIZE" ]
   },
   {
@@ -9107,6 +9135,7 @@
     "storage": "250 ml",
     "warmth": 25,
     "material_thickness": 3,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 2,
     "flags": [ "VARSIZE", "WATERPROOF", "RAINPROOF" ]
   },
@@ -9151,6 +9180,7 @@
     "storage": "6 L",
     "warmth": 50,
     "material_thickness": 3,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 1,
     "flags": [ "VARSIZE", "POCKETS", "OUTER" ]
   },
@@ -9208,6 +9238,7 @@
     "storage": "9 L",
     "warmth": 10,
     "material_thickness": 3,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 3,
     "flags": [ "VARSIZE", "POCKETS", "HOOD", "COLLAR", "STURDY", "WATERPROOF", "RAINPROOF", "OUTER" ]
   },
@@ -9660,6 +9691,7 @@
     "storage": "3500 ml",
     "warmth": 50,
     "material_thickness": 3,
+    "valid_mods": [ "steel_padded" ],
     "flags": [ "VARSIZE", "POCKETS", "HOOD", "OUTER", "WATERPROOF" ]
   },
   {
@@ -9681,6 +9713,7 @@
     "storage": "2500 ml",
     "warmth": 50,
     "material_thickness": 3,
+    "valid_mods": [ "steel_padded" ],
     "flags": [ "VARSIZE", "POCKETS" ]
   },
   {
@@ -9723,6 +9756,7 @@
     "storage": "2250 ml",
     "warmth": 45,
     "material_thickness": 3,
+    "valid_mods": [ "steel_padded" ],
     "flags": [ "VARSIZE", "OUTER", "POCKETS", "HOOD" ]
   },
   {
@@ -9766,6 +9800,7 @@
     "storage": "6 L",
     "warmth": 75,
     "material_thickness": 5,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 5,
     "flags": [ "VARSIZE", "WATERPROOF", "POCKETS", "HOOD", "RAINPROOF", "STURDY" ]
   },
@@ -9790,6 +9825,7 @@
     "storage": "8500 ml",
     "warmth": 15,
     "material_thickness": 4,
+    "valid_mods": [ "steel_padded" ],
     "environmental_protection": 3,
     "flags": [ "OVERSIZE", "VARSIZE", "WATERPROOF", "POCKETS", "HOOD", "RAINPROOF", "STURDY" ]
   },
