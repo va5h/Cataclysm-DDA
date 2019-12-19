@@ -1135,9 +1135,6 @@ void player::complete_craft( item &craft, const tripoint &loc )
         //If item is crafted neither from poor-fit nor from perfect-fit components, and it can be refitted, the result is refitted by default
         if( newit.has_flag( "VARSIZE" ) ) {
             newit.item_tags.insert( "FIT" );
-        if( newit.is_filthy() && get_option<bool>( "FILTHY_CRAFTING" ) ) {
-            newit.item_tags.erase( "FILTHY" );
-        }
         }
         food_contained.inherit_flags( used );
 
@@ -1219,6 +1216,11 @@ void player::complete_craft( item &craft, const tripoint &loc )
         } else {
             set_item_map_or_vehicle( *this, pos(), newit );
         }
+        
+        // Should it work here?
+        if( newit.is_filthy() && get_option<bool>( "FILTHY_CRAFTING" ) ) {
+            newit.item_tags.erase( "FILTHY" );
+        }
     }
 
     if( making.has_byproducts() ) {
@@ -1243,6 +1245,10 @@ void player::complete_craft( item &craft, const tripoint &loc )
             } else {
                 set_item_map_or_vehicle( *this, loc, bp );
             }
+
+            if( bp.is_filthy() && get_option<bool>( "FILTHY_CRAFTING" ) ) {
+                bp.item_tags.erase( "FILTHY" );
+            }            
         }
     }
 
