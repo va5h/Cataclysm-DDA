@@ -172,11 +172,11 @@
     "ammo": "22",
     "skill": "smg",
     "ranged_damage": 3,
-    "dispersion": 220,
+    "dispersion": 120,
     "durability": 9,
     "blackpowder_tolerance": 24,
     "min_cycle_recoil": 39,
-    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 6 ] ],
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "5 rd.", 5 ], [ "AUTO", "auto", 10 ] ],
     "reload": 500,
     "valid_mod_locations": [
       [ "accessories", 3 ],
