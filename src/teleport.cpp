@@ -165,7 +165,15 @@ bool teleport::teleport_directed( Creature &critter, int min_distance, int max_d
         poor_soul->check_dead_state();
     }
 
-    critter.setpos( new_pos );
+    //critter.setpos( new_pos );
+    g->m.invalidate_map_cache( g->get_levz() );
+    g->m.build_map_cache( g->get_levz() );
+    
+    g->place_player( new_pos );
+    
+    g->m.invalidate_map_cache( g->get_levz() );
+    g->m.build_map_cache( g->get_levz() );
+
     p->add_effect( effect_teleglow, flux_disturb_power * 10_minutes );
     p->add_msg_if_player( m_warning,
                           _( "The very fabric of existence tears around you. Like you care." ) );    
