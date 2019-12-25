@@ -615,9 +615,15 @@ void player::hardcoded_effects( effect &it )
             // 20 teleports (no decay; in practice at least 21)
             if( one_in( 6000 - ( ( dur - 600_minutes ) / 1_minutes ) ) ) {
                 if( !is_npc() ) {
-                    add_msg( _( "Glowing lights surround you, and you teleport." ) );
+                    if( !isSpaceShifter ) {
+                        add_msg( _( "Glowing lights surround you, and you teleport." ) );
+                        teleport::teleport( *this );
+                    } else {
+                        add_msg( _( "Finally, a free ride on space-time matter. WHEEE!" ) );
+                        teleport::teleport_directed( *this );
+                    }
                 }
-                teleport::teleport( *this );
+
                 g->events().send<event_type::teleglow_teleports>( getID() );
                 if( one_in( 10 ) ) {
                     // Set ourselves up for removal
