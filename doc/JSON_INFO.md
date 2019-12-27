@@ -469,7 +469,7 @@ The syntax listed here is still valid.
 
 | Identifier       | Description
 |---               |---
-| `ident`          | Unique ID. Must be one continuous word, use underscores if necessary.
+| `ident`          | Unique ID. Lowercase snake_case. Must be one continuous word, use underscores if necessary.
 | `name`           | In-game name displayed.
 | `bash_resist`    | How well a material resists bashing damage.
 | `cut_resist`     | How well a material resists cutting damage.
@@ -1850,6 +1850,13 @@ The contents of use_action fields can either be a string indicating a built-in f
     "skill1": "throw", // Id of a skill, higher skill level means more likely to place a friendly monster.
     "skill2": "unarmed", // Another id, just like the skill1. Both entries are optional.
     "moves": 60 // how many move points the action takes.
+},
+"use_action": {
+    "type": "place_npc", // place npc of specific class on the map
+    "npc_class_id": "true_foodperson", // npc class id, see npcs/classes.json
+    "summon_msg": "You summon a food hero!", // (optional) message when summoning the npc.
+    "place_randomly": true, // if true: places npc randomly around the player, if false: let the player decide where to put it (default: false)
+    "moves": 50 // how many move points the action takes.
 },
 "use_action": {
     "type": "ups_based_armor", // Armor that can be activated and uses power from an UPS, needs additional json code to work
