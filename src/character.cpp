@@ -2938,8 +2938,8 @@ void Character::mut_cbm_encumb( std::array<encumbrance_data, num_bp> &vals ) con
                 bp == bp_leg_r ||
                 bp == bp_foot_l ||
                 bp == bp_foot_r) {
-                if( vals[bp].encumbrance >= 250 ) {
-                    vals[bp].encumbrance -= 250;
+                if( vals[bp].encumbrance >= 750 ) {
+                    vals[bp].encumbrance -= 750;
                 } else {
                     vals[bp].encumbrance = 0;
                 }                    
@@ -2959,8 +2959,8 @@ void Character::mut_cbm_encumb( std::array<encumbrance_data, num_bp> &vals ) con
                 bp == bp_leg_r ||
                 bp == bp_foot_l ||
                 bp == bp_foot_r) {
-                if( vals[bp].encumbrance >= 500 ) {
-                    vals[bp].encumbrance -= 500;
+                if( vals[bp].encumbrance >= 750 ) {
+                    vals[bp].encumbrance -= 750;
                 } else {
                     vals[bp].encumbrance = 0;
                 }                    
@@ -2973,6 +2973,14 @@ void Character::mut_cbm_encumb( std::array<encumbrance_data, num_bp> &vals ) con
             vals[bp_mouth].encumbrance -= 250;
         } else {
             vals[bp_mouth].encumbrance = 0;
+        }
+    }
+
+    if( has_bionic( bionic_id( "bio_targeting" ) ) ) {
+        if( vals[bp_eyes].encumbrance >= 250 ) {
+            vals[bp_eyes].encumbrance -= 250;
+        } else {
+            vals[bp_eyes].encumbrance = 0;
         }
     }
 
