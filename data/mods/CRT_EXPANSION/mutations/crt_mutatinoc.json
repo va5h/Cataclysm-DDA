@@ -10,7 +10,8 @@
     "prereqs": [ "WEAKSCENT" ],
     "threshreq": [ "THRESH_VAMP" ],
     "category": [ "VAMP" ],
-    "stealth_modifier": 25
+    "stealth_modifier": 50,
+    "noise_modifier": 0
   },
   {
     "type": "mutation",
@@ -20,12 +21,13 @@
     "visibility": -7,
     "ugliness": -7,
     "description": "Aside from your appearances, your movements are incredibly graceful and allow you to seemingly glide through every task.",
-    "thresheq": [ "THRESH_VAMP" ],
+    "threshreq": [ "THRESH_VAMP" ],
     "category": [ "VAMP" ],
-    "stealth_modifier": 5,
-    "noise_modifier": 0.2,
-    "movecost_modifier": 0.9,
-    "attackcost_modifier": 0.9
+    "stealth_modifier": 10,
+    "noise_modifier": 0.1,
+    "speed_modifier": 1.25,
+    "movecost_modifier": 0.75,
+    "attackcost_modifier": 0.75
   },
   {
     "type": "mutation",

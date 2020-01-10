@@ -289,15 +289,15 @@
     "color": "light_gray",
     "description": "A handful of pebbles, useful as ammunition for slings or slingshots.",
     "material": "stone",
-    "volume": "250 ml",
-    "weight": "5 g",
+    "volume": "200 ml",
+    "weight": "30 g",
     "ammo_type": "pebble",
     "damage": 2,
     "range": 10,
     "dispersion": 14,
     "loudness": 0,
     "count": 10,
-    "effects": [ "NEVER_MISFIRES", "NON-FOULING" ]
+    "effects": [ "NEVER_MISFIRES", "NON-FOULING", "RECOVER_60" ]
   },
   {
     "type": "AMMO",
@@ -310,14 +310,14 @@
     "description": "A handful of round projectiles made of clay, useful for slings or slingshots.",
     "material": "clay",
     "volume": "250 ml",
-    "weight": "3 g",
+    "weight": "10 g",
     "ammo_type": "pebble",
-    "damage": 1,
+    "damage": 2,
     "range": 20,
     "dispersion": 12,
     "loudness": 0,
     "count": 40,
-    "effects": [ "NEVER_MISFIRES" ]
+    "effects": [ "NEVER_MISFIRES", "RECOVER_3" ]
   },
   {
     "type": "AMMO",
@@ -330,14 +330,14 @@
     "description": "A handful of glass marbles, useful as ammunition for slings or slingshots.",
     "material": "glass",
     "volume": "250 ml",
-    "weight": "3 g",
+    "weight": "15 g",
     "ammo_type": "pebble",
     "damage": 3,
     "range": 18,
     "dispersion": 12,
     "loudness": 0,
     "count": 20,
-    "effects": [ "NEVER_MISFIRES" ]
+    "effects": [ "NEVER_MISFIRES", "RECOVER_2" ]
   },
   {
     "type": "AMMO",
@@ -351,7 +351,7 @@
     "description": "A box of ball bearings, useful as ammunition for slings or slingshots.",
     "material": "steel",
     "volume": "250 ml",
-    "weight": "10 g",
+    "weight": "30 g",
     "ammo_type": "pebble",
     "damage": 6,
     "pierce": 1,
@@ -359,7 +359,7 @@
     "dispersion": 14,
     "loudness": 0,
     "count": 50,
-    "effects": [ "NEVER_MISFIRES", "NON-FOULING" ]
+    "effects": [ "NEVER_MISFIRES", "NON-FOULING", "RECOVER_90" ]
   },
   {
     "type": "AMMO",

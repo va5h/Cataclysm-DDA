@@ -12,6 +12,7 @@
 
 #include "action.h"
 #include "avatar.h"
+#include "bionics.h"
 #include "behavior.h"
 #include "behavior_oracle.h"
 #include "cata_utility.h"
@@ -59,6 +60,8 @@ static const trait_id trait_THRESH_BIRD( "THRESH_BIRD" );
 static const trait_id trait_THRESH_URSINE( "THRESH_URSINE" );
 
 static const efftype_id effect_got_checked( "got_checked" );
+
+static const bionic_id bio_nanobots( "bio_nanobots" );
 
 // constructor
 window_panel::window_panel( std::function<void( avatar &, const catacurses::window & )>
@@ -860,7 +863,7 @@ static int get_int_digits( const int &digits )
 static void draw_limb_health( avatar &u, const catacurses::window &w, int limb_index )
 {
     const bool no_feeling = u.has_trait( trait_NOPAIN );
-    const bool is_self_aware = u.has_trait( trait_SELFAWARE ) && !no_feeling;
+    const bool is_self_aware = u.has_bionic( bio_nanobots ) || ( u.has_trait( trait_SELFAWARE ) && !no_feeling );
     static auto print_symbol_num = []( const catacurses::window & w, int num, const std::string & sym,
     const nc_color & color ) {
         while( num-- > 0 ) {
