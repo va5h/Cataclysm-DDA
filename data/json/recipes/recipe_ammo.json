@@ -173,8 +173,8 @@
     "category": "CC_AMMO",
     "subcategory": "CSC_AMMO_ARROWS",
     "skill_used": "fabrication",
-    "skills_required": [ [ "archery", 3 ], [ "survival", 1 ] ],
-    "difficulty": 4,
+    "skills_required": [ [ "archery", 5 ], [ "survival", 3 ] ],
+    "difficulty": 6,
     "time": "20 m",
     "autolearn": true,
     "book_learn": [ [ "recipe_arrows", 3 ] ],
@@ -182,6 +182,102 @@
     "components": [
       [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ],
       [ [ "wire", 5 ], [ "pipe", 1 ] ],
+      [ [ "fletching", 1, "LIST" ] ]
+    ]
+  },
+  {
+    "type": "recipe",
+    "result": "arrow_metal_sharpened_fletched",
+    "id_suffix": "from_scratch",
+    "category": "CC_AMMO",
+    "subcategory": "CSC_AMMO_ARROWS",
+    "skill_used": "fabrication",
+    "skills_required": [ [ "archery", 5 ], [ "survival", 3 ] ],
+    "difficulty": 8,
+    "time": "90 m",
+    "autolearn": true,
+    "book_learn": [ [ "recipe_arrows", 3 ] ],
+    "using": [ [ "blacksmithing_standard", 15 ], [ "cutting_wire_standard", 1 ], [ "steel_tiny", 15 ] ],
+    "qualities": [ { "id": "CHISEL", "level": 3 } ],
+    "tools": [ [ [ "swage", -1 ] ] ],
+    "components": [
+      [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ],
+      [ [ "fletching", 1, "LIST" ] ]
+    ]
+  },
+  {
+    "type": "recipe",
+    "result": "arrow_metal_bodkin_fletched",
+    "category": "CC_AMMO",
+    "subcategory": "CSC_AMMO_ARROWS",
+    "skill_used": "fabrication",
+    "skills_required": [ [ "archery", 5 ], [ "survival", 3 ] ],
+    "difficulty": 6,
+    "time": "20 m",
+    "autolearn": true,
+    "book_learn": [ [ "recipe_arrows", 3 ] ],
+    "qualities": [ { "id": "HAMMER", "level": 1 }, { "id": "CUT", "level": 1 }, { "id": "SAW_M", "level": 1 } ],
+    "components": [
+      [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ],
+      [ [ "wire", 5 ], [ "pipe", 1 ] ],
+      [ [ "fletching", 1, "LIST" ] ]
+    ]
+  },
+  {
+    "type": "recipe",
+    "result": "arrow_metal_bodkin_fletched",
+    "id_suffix": "from_scratch",
+    "category": "CC_AMMO",
+    "subcategory": "CSC_AMMO_ARROWS",
+    "skill_used": "fabrication",
+    "skills_required": [ [ "archery", 5 ], [ "survival", 3 ] ],
+    "difficulty": 8,
+    "time": "90 m",
+    "autolearn": true,
+    "book_learn": [ [ "recipe_arrows", 3 ] ],
+    "using": [ [ "blacksmithing_standard", 15 ], [ "cutting_wire_standard", 1 ], [ "steel_tiny", 15 ] ],
+    "qualities": [ { "id": "CHISEL", "level": 3 } ],
+    "tools": [ [ [ "swage", -1 ] ] ],
+    "components": [
+      [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ],
+      [ [ "fletching", 1, "LIST" ] ]
+    ]
+  },
+  {
+    "type": "recipe",
+    "result": "arrow_metal_blunted_fletched",
+    "category": "CC_AMMO",
+    "subcategory": "CSC_AMMO_ARROWS",
+    "skill_used": "fabrication",
+    "skills_required": [ [ "archery", 5 ], [ "survival", 3 ] ],
+    "difficulty": 6,
+    "time": "20 m",
+    "autolearn": true,
+    "book_learn": [ [ "recipe_arrows", 3 ] ],
+    "qualities": [ { "id": "HAMMER", "level": 1 }, { "id": "CUT", "level": 1 }, { "id": "SAW_M", "level": 1 } ],
+    "components": [
+      [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ],
+      [ [ "wire", 5 ], [ "pipe", 1 ] ],
+      [ [ "fletching", 1, "LIST" ] ]
+    ]
+  },
+  {
+    "type": "recipe",
+    "result": "arrow_metal_blunted_fletched",
+    "id_suffix": "from_scratch",
+    "category": "CC_AMMO",
+    "subcategory": "CSC_AMMO_ARROWS",
+    "skill_used": "fabrication",
+    "skills_required": [ [ "archery", 5 ], [ "survival", 3 ] ],
+    "difficulty": 8,
+    "time": "90 m",
+    "autolearn": true,
+    "book_learn": [ [ "recipe_arrows", 3 ] ],
+    "using": [ [ "blacksmithing_standard", 15 ], [ "cutting_wire_standard", 1 ], [ "steel_tiny", 15 ] ],
+    "qualities": [ { "id": "CHISEL", "level": 3 } ],
+    "tools": [ [ [ "swage", -1 ] ] ],
+    "components": [
+      [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ],
       [ [ "fletching", 1, "LIST" ] ]
     ]
   },
