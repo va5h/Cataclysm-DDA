@@ -200,10 +200,7 @@
     "using": [ [ "blacksmithing_standard", 15 ], [ "cutting_wire_standard", 1 ], [ "steel_tiny", 15 ] ],
     "qualities": [ { "id": "CHISEL", "level": 3 } ],
     "tools": [ [ [ "swage", -1 ] ] ],
-    "components": [
-      [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ],
-      [ [ "fletching", 1, "LIST" ] ]
-    ]
+    "components": [ [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ], [ [ "fletching", 1, "LIST" ] ] ]
   },
   {
     "type": "recipe",
@@ -238,10 +235,7 @@
     "using": [ [ "blacksmithing_standard", 15 ], [ "cutting_wire_standard", 1 ], [ "steel_tiny", 15 ] ],
     "qualities": [ { "id": "CHISEL", "level": 3 } ],
     "tools": [ [ [ "swage", -1 ] ] ],
-    "components": [
-      [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ],
-      [ [ "fletching", 1, "LIST" ] ]
-    ]
+    "components": [ [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ], [ [ "fletching", 1, "LIST" ] ] ]
   },
   {
     "type": "recipe",
@@ -276,10 +270,7 @@
     "using": [ [ "blacksmithing_standard", 15 ], [ "cutting_wire_standard", 1 ], [ "steel_tiny", 15 ] ],
     "qualities": [ { "id": "CHISEL", "level": 3 } ],
     "tools": [ [ [ "swage", -1 ] ] ],
-    "components": [
-      [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ],
-      [ [ "fletching", 1, "LIST" ] ]
-    ]
+    "components": [ [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ], [ [ "fletching", 1, "LIST" ] ] ]
   },
   {
     "type": "recipe",
@@ -423,10 +414,7 @@
     "using": [ [ "blacksmithing_standard", 12 ], [ "cutting_wire_standard", 1 ], [ "steel_tiny", 12 ] ],
     "qualities": [ { "id": "CHISEL", "level": 3 } ],
     "tools": [ [ [ "swage", -1 ] ] ],
-    "components": [
-      [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ],
-      [ [ "fletching", 1, "LIST" ] ]
-    ]
+    "components": [ [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ], [ [ "fletching", 1, "LIST" ] ] ]
   },
   {
     "type": "recipe",
@@ -461,10 +449,7 @@
     "using": [ [ "blacksmithing_standard", 12 ], [ "cutting_wire_standard", 1 ], [ "steel_tiny", 12 ] ],
     "qualities": [ { "id": "CHISEL", "level": 3 } ],
     "tools": [ [ [ "swage", -1 ] ] ],
-    "components": [
-      [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ],
-      [ [ "fletching", 1, "LIST" ] ]
-    ]
+    "components": [ [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ], [ [ "fletching", 1, "LIST" ] ] ]
   },
   {
     "type": "recipe",
@@ -499,10 +484,7 @@
     "using": [ [ "blacksmithing_standard", 12 ], [ "cutting_wire_standard", 1 ], [ "steel_tiny", 12 ] ],
     "qualities": [ { "id": "CHISEL", "level": 3 } ],
     "tools": [ [ [ "swage", -1 ] ] ],
-    "components": [
-      [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ],
-      [ [ "fletching", 1, "LIST" ] ]
-    ]
+    "components": [ [ [ "adhesive", 1, "LIST" ], [ "filament", 10, "LIST" ] ], [ [ "fletching", 1, "LIST" ] ] ]
   },
   {
     "type": "recipe",
