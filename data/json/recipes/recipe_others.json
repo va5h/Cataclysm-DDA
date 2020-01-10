@@ -1778,7 +1778,7 @@
     "time": "30 m",
     "autolearn": true,
     "qualities": [ { "id": "CUT", "level": 1 } ],
-    "components": [ [ [ "duct_tape", 10 ] ], [ [ "bottle_plastic", 8 ], [ "bottle_plastic_small", 16 ] ] ]
+    "components": [ [ [ "duct_tape", 10 ] ], [ [ "bottle_twoliter", 2 ], [ "bottle_plastic", 8 ], [ "bottle_plastic_small", 16 ] ] ]
   },
   {
     "type": "recipe",
