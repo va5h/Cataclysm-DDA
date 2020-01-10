@@ -4632,7 +4632,7 @@ int Character::visibility( bool, int ) const
     // TODO:
     // if ( dark_clothing() && light check ...
     int stealth_modifier = std::floor( mutation_value( "stealth_modifier" ) );
-    return clamp( 100 - stealth_modifier, 40, 160 );
+    return clamp( 100 - stealth_modifier, 5, 200 );
 }
 
 /*
