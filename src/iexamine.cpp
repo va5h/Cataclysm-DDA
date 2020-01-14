@@ -1248,7 +1248,9 @@ void iexamine::gunsafe_ml( player &p, const tripoint &examp )
     }
 
     int pick_quality = 1;
-    if( p.has_amount( "picklocks", 1 ) || p.has_bionic( bionic_id( "bio_lockpick" ) ) ) {
+    if( p.has_bionic( bionic_id( "bio_lockpick" ) ) ) {
+        pick_quality = 10;
+    } else if( p.has_amount( "picklocks", 1 ) ) {
         pick_quality = 5;
     } else if( p.has_amount( "fc_hairpin", 1 ) ) {
         pick_quality = 1;
@@ -1256,7 +1258,7 @@ void iexamine::gunsafe_ml( player &p, const tripoint &examp )
         pick_quality = 3;
     }
 
-    p.practice( skill_mechanics, 1 );
+    p.practice( skill_mechanics, pick_quality );
 
     ///\EFFECT_DEX speeds up lock picking gun safe
     ///\EFFECT_MECHANICS speeds up lock picking gun safe
@@ -1269,7 +1271,7 @@ void iexamine::gunsafe_ml( player &p, const tripoint &examp )
                       p.dex_cur ) ) * pick_quality;
     int door_roll = dice( 4, 30 );
     if( pick_roll >= door_roll ) {
-        p.practice( skill_mechanics, 1 );
+        p.practice( skill_mechanics, pick_quality );
         add_msg( _( "You successfully unlock the gun safe." ) );
         g->m.furn_set( examp, furn_str_id( "f_safe_o" ) );
     } else if( door_roll > ( 3 * pick_roll ) ) {
