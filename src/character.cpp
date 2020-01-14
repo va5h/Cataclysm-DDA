@@ -5436,15 +5436,15 @@ void Character::update_stamina( int turns )
     }
 
     const int max_stam = get_stamina_max();
-    if( get_power_level() >= 3_kJ && has_active_bionic( bio_gills ) ) {
+    if( get_power_level() >= 30_kJ && has_active_bionic( bio_gills ) ) {
         int bonus = std::min<int>( units::to_kilojoule( get_power_level() ) / 3,
                                    max_stam - get_stamina() - stamina_recovery * turns );
-        // so the effective recovery is up to 5x default
-        bonus = std::min( bonus, 4 * static_cast<int>
+        // so the effective recovery is up to 25x default
+        bonus = std::min( bonus, 24 * static_cast<int>
                           ( get_option<float>( "PLAYER_BASE_STAMINA_REGEN_RATE" ) ) );
         if( bonus > 0 ) {
             stamina_recovery += bonus * 5;
-            bonus /= 100;
+            bonus /= 50;
             bonus = std::max( bonus, 1 );
             mod_power_level( units::from_kilojoule( -bonus ) );
         }
