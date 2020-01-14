@@ -2976,7 +2976,7 @@ void Character::mut_cbm_encumb( std::array<encumbrance_data, num_bp> &vals ) con
         }
     }
 
-    if( has_bionic( bionic_id( "bio_targeting" ) ) ) {
+    if( has_bionic( bionic_id( "bio_eye_enhancer" ) ) ) {
         if( vals[bp_eyes].encumbrance >= 250 ) {
             vals[bp_eyes].encumbrance -= 250;
         } else {
