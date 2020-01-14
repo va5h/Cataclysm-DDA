@@ -2976,7 +2976,7 @@ void Character::mut_cbm_encumb( std::array<encumbrance_data, num_bp> &vals ) con
         }
     }
 
-    if( has_bionic( bionic_id( "bio_targeting" ) ) ) {
+    if( has_bionic( bionic_id( "bio_eye_enhancer" ) ) ) {
         if( vals[bp_eyes].encumbrance >= 250 ) {
             vals[bp_eyes].encumbrance -= 250;
         } else {
@@ -5436,15 +5436,15 @@ void Character::update_stamina( int turns )
     }
 
     const int max_stam = get_stamina_max();
-    if( get_power_level() >= 3_kJ && has_active_bionic( bio_gills ) ) {
+    if( get_power_level() >= 30_kJ && has_active_bionic( bio_gills ) ) {
         int bonus = std::min<int>( units::to_kilojoule( get_power_level() ) / 3,
                                    max_stam - get_stamina() - stamina_recovery * turns );
-        // so the effective recovery is up to 5x default
-        bonus = std::min( bonus, 4 * static_cast<int>
+        // so the effective recovery is up to 25x default
+        bonus = std::min( bonus, 24 * static_cast<int>
                           ( get_option<float>( "PLAYER_BASE_STAMINA_REGEN_RATE" ) ) );
         if( bonus > 0 ) {
             stamina_recovery += bonus * 5;
-            bonus /= 100;
+            bonus /= 50;
             bonus = std::max( bonus, 1 );
             mod_power_level( units::from_kilojoule( -bonus ) );
         }
@@ -6100,13 +6100,16 @@ void Character::absorb_hit( body_part bp, damage_instance &dam )
             
             if( elem.amount > 0 && get_power_level() > 24_kJ ) {
                 if( elem.type == DT_BASH ) {
-                    elem.amount -= rng( skill_ratio / 2, skill_ratio );
+                    elem.amount -= rng( static_cast<int>( skill_ratio * 0.9 ), skill_ratio );
                 } else if( elem.type == DT_CUT ) {
-                    elem.amount -= rng( skill_ratio / 3, skill_ratio );
+                    elem.amount -= rng( static_cast<int>( skill_ratio * 0.8 ), skill_ratio );
                 } else if( elem.type == DT_STAB ) {
-                    elem.amount -= rng( skill_ratio / 4, skill_ratio );
+                    elem.amount -= rng( static_cast<int>( skill_ratio * 0.75 ), skill_ratio );
                 }
                 mod_power_level( -25_kJ );
+
+                //practice( skill_computer, elem.amount );
+                //practice( skill_electronics, elem.amount);
             }
             if( elem.amount < 0 ) {
                 elem.amount = 0;
