@@ -6108,8 +6108,8 @@ void Character::absorb_hit( body_part bp, damage_instance &dam )
                 }
                 mod_power_level( -25_kJ );
 
-                practice( skill_computer, elem.amount );
-                practice( skill_electronics, elem.amount);
+                //practice( skill_computer, elem.amount );
+                //practice( skill_electronics, elem.amount);
             }
             if( elem.amount < 0 ) {
                 elem.amount = 0;
