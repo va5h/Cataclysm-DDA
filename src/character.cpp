@@ -6100,13 +6100,16 @@ void Character::absorb_hit( body_part bp, damage_instance &dam )
             
             if( elem.amount > 0 && get_power_level() > 24_kJ ) {
                 if( elem.type == DT_BASH ) {
-                    elem.amount -= rng( skill_ratio / 2, skill_ratio );
+                    elem.amount -= rng( static_cast<int>( skill_ratio * 0.9 ), skill_ratio );
                 } else if( elem.type == DT_CUT ) {
-                    elem.amount -= rng( skill_ratio / 3, skill_ratio );
+                    elem.amount -= rng( static_cast<int>( skill_ratio * 0.8 ), skill_ratio );
                 } else if( elem.type == DT_STAB ) {
-                    elem.amount -= rng( skill_ratio / 4, skill_ratio );
+                    elem.amount -= rng( static_cast<int>( skill_ratio * 0.75 ), skill_ratio );
                 }
                 mod_power_level( -25_kJ );
+
+                practice( skill_computer, elem.amount );
+                practice( skill_electronics, elem.amount);
             }
             if( elem.amount < 0 ) {
                 elem.amount = 0;
