@@ -55,7 +55,7 @@
     "type": "TOOL",
     "name": "bionic goggles",
     "name_plural": "bionic goggles",
-    "artifact_data": { "charge_type": "ARTC_NULL", "effects_carried": [ "AEP_PSYSHIELD" ] },
+    "artifact_data": { "charge_type": "ARTC_NULL", "effects_worn": [ "AEP_PSYSHIELD" ] },
     "qualities": [ [ "GLARE", 3 ] ]
   },
   {
