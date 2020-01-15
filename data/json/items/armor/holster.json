@@ -138,7 +138,13 @@
     "encumbrance": 2,
     "storage": "3 L",
     "material_thickness": 3,
-    "use_action": { "type": "holster", "multi": 2, "max_volume": "4250 ml", "min_volume": "1000 ml", "skills": [ "smg", "shotgun", "rifle" ] },
+    "use_action": {
+      "type": "holster",
+      "multi": 2,
+      "max_volume": "4250 ml",
+      "min_volume": "1000 ml",
+      "skills": [ "smg", "shotgun", "rifle" ]
+    },
     "flags": [ "WATER_FRIENDLY", "STURDY", "BELTED" ]
   },
   {
