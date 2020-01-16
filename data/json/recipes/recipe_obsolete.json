@@ -2192,5 +2192,10 @@
     "type": "recipe",
     "result": "scrambler",
     "obsolete": true
+  },
+  {
+    "type": "recipe",
+    "result": "crucible",
+    "obsolete": true
   }
 ]
