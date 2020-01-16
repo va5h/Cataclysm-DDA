@@ -94,14 +94,20 @@
     "items": [
       { "group": "clothing_soldier_shirt" },
       { "item": "jacket_army" },
-      { "item": "pants_army" },
-      { "item": "boots_combat" },
-      { "item": "helmet_army", "prob": 20 },
-      { "item": "gloves_tactical", "prob": 10 },
       { "item": "elbow_pads", "prob": 10 },
+      { "item": "pants_army" },
+      { "item": "knee_pads", "prob": 85 },
+      { "item": "boots_combat" },
+      { "item": "helmet_army", "prob": 80 },
+      { "item": "gloves_tactical", "prob": 60 },
       { "group": "clothing_tactical_leg", "prob": 15 },
       { "group": "clothing_tactical_torso", "prob": 15 },
-      { "group": "underwear" },
+      {
+        "distribution": [
+          { "collection": [ { "item": "sports_bra" }, { "item": "boy_shorts" } ] },
+          { "distribution": [ { "item": "briefs" }, { "item": "boxer_briefs" }, { "item": "boxer_shorts" } ] }
+        ]
+      },
       { "distribution": [ { "item": "socks", "prob": 95 }, { "item": "socks_wool", "prob": 5 } ] },
       {
         "distribution": [
@@ -123,14 +129,20 @@
     "items": [
       { "group": "clothing_soldier_shirt" },
       { "item": "winter_jacket_army" },
-      { "item": "winter_pants_army" },
-      { "item": "boots_combat" },
-      { "collection": [ { "item": "helmet_army" }, { "item": "helmet_liner" } ], "prob": 20 },
-      { "collection": [ { "item": "gloves_liner" }, { "item": "winter_gloves_army" } ], "prob": 40 },
       { "item": "elbow_pads", "prob": 10 },
+      { "item": "winter_pants_army" },
+      { "item": "knee_pads", "prob": 85 },
+      { "item": "boots_combat" },
+      { "collection": [ { "item": "helmet_army" }, { "item": "helmet_liner" } ], "prob": 80 },
+      { "collection": [ { "item": "gloves_liner" }, { "item": "winter_gloves_army" } ], "prob": 80 },
       { "group": "clothing_tactical_leg", "prob": 15 },
       { "group": "clothing_tactical_torso", "prob": 15 },
-      { "group": "underwear" },
+      {
+        "distribution": [
+          { "collection": [ { "item": "sports_bra" }, { "item": "boy_shorts" } ] },
+          { "distribution": [ { "item": "briefs" }, { "item": "boxer_briefs" }, { "item": "boxer_shorts" } ] }
+        ]
+      },
       { "distribution": [ { "item": "socks", "prob": 10 }, { "item": "socks_wool", "prob": 90 } ] },
       {
         "distribution": [
@@ -259,7 +271,7 @@
     "id": "clothing_tactical_leg",
     "type": "item_group",
     "//": "Tactical gear that can be strapped to the legs",
-    "items": [ [ "knee_pads", 100 ], [ "legpouch_large", 100 ], [ "legrig", 100 ] ]
+    "items": [ [ "legpouch_large", 100 ], [ "legrig", 100 ] ]
   },
   {
     "id": "clothing_tactical_torso",
@@ -520,6 +532,68 @@
       { "group": "earrings_silver", "prob": 10 },
       { "group": "earrings_gold", "prob": 10 },
       { "group": "earrings_platinum", "prob": 10 }
+    ]
+  },
+  {
+    "id": "cufflinks_silver",
+    "type": "item_group",
+    "items": [
+      [ "cufflinks", 50 ],
+      [ "cufflinks_intricate", 50 ],
+      [ "citrine_silver_cufflinks", 50 ],
+      [ "diamond_silver_cufflinks", 50 ],
+      [ "emerald_silver_cufflinks", 50 ],
+      [ "peridot_silver_cufflinks", 50 ],
+      [ "amethyst_silver_cufflinks", 50 ],
+      [ "sapphire_silver_cufflinks", 50 ],
+      [ "aquamarine_silver_cufflinks", 50 ],
+      [ "blue_topaz_silver_cufflinks", 50 ],
+      [ "tourmaline_silver_cufflinks", 50 ],
+      [ "alexandrite_silver_cufflinks", 50 ],
+      [ "pearl_silver_cufflinks", 50 ],
+      [ "opal_silver_cufflinks", 50 ],
+      [ "ruby_silver_cufflinks", 50 ],
+      [ "garnet_silver_cufflinks", 50 ]
+    ]
+  },
+  {
+    "id": "cufflinks_gold",
+    "type": "item_group",
+    "items": [
+      [ "citrine_gold_cufflinks", 50 ],
+      [ "diamond_gold_cufflinks", 50 ],
+      [ "emerald_gold_cufflinks", 50 ],
+      [ "peridot_gold_cufflinks", 50 ],
+      [ "amethyst_gold_cufflinks", 50 ],
+      [ "sapphire_gold_cufflinks", 50 ],
+      [ "aquamarine_gold_cufflinks", 50 ],
+      [ "blue_topaz_gold_cufflinks", 50 ],
+      [ "tourmaline_gold_cufflinks", 50 ],
+      [ "alexandrite_gold_cufflinks", 50 ],
+      [ "pearl_gold_cufflinks", 50 ],
+      [ "opal_gold_cufflinks", 50 ],
+      [ "ruby_gold_cufflinks", 50 ],
+      [ "garnet_gold_cufflinks", 50 ]
+    ]
+  },
+  {
+    "id": "cufflinks_platinum",
+    "type": "item_group",
+    "items": [
+      [ "citrine_platinum_cufflinks", 50 ],
+      [ "diamond_platinum_cufflinks", 50 ],
+      [ "emerald_platinum_cufflinks", 50 ],
+      [ "peridot_platinum_cufflinks", 50 ],
+      [ "amethyst_platinum_cufflinks", 50 ],
+      [ "sapphire_platinum_cufflinks", 50 ],
+      [ "aquamarine_platinum_cufflinks", 50 ],
+      [ "blue_topaz_platinum_cufflinks", 50 ],
+      [ "tourmaline_platinum_cufflinks", 50 ],
+      [ "alexandrite_platinum_cufflinks", 50 ],
+      [ "pearl_platinum_cufflinks", 50 ],
+      [ "opal_platinum_cufflinks", 50 ],
+      [ "ruby_platinum_cufflinks", 50 ],
+      [ "garnet_platinum_cufflinks", 50 ]
     ]
   },
   {
@@ -2156,26 +2230,6 @@
       [ "survivor_scope", 1 ],
       [ "survnote", 30 ]
     ]
-  },
-  {
-    "type": "item_group",
-    "id": "bio_op_face",
-    "items": [ [ "glasses_bal", 40 ], [ "mask_filter", 30 ], [ "mask_bal", 30 ], [ "mask_gas", 40 ] ]
-  },
-  {
-    "type": "item_group",
-    "id": "bio_op_torso",
-    "items": [ [ "dragonskin", 50 ], [ "winter_jacket_army", 10 ], [ "modularvestceramic", 40 ], [ "modularvestkevlar", 20 ] ]
-  },
-  {
-    "type": "item_group",
-    "id": "bio_op_boots",
-    "items": [ [ "boots_combat", 1 ] ]
-  },
-  {
-    "type": "item_group",
-    "id": "bio_op_gloves",
-    "items": [ [ "gloves_tactical", 60 ], [ "gloves_fingerless", 40 ], [ "winter_gloves_army", 40 ] ]
   },
   {
     "type": "item_group",
