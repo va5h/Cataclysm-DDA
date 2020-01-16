@@ -1444,6 +1444,7 @@
     "revert_to": "mask_h20survivor",
     "use_action": { "type": "transform", "menu_text": "Turn off", "msg": "Your %s deactivates.", "target": "mask_h20survivor" },
     "covers": [ "MOUTH", "EYES" ],
+    "environmental_protection": 16,
     "encumbrance": 20
   },
   {
@@ -1490,6 +1491,7 @@
     "revert_to": "mask_h20survivorxl",
     "use_action": { "type": "transform", "menu_text": "Turn off", "msg": "Your %s deactivates.", "target": "mask_h20survivorxl" },
     "covers": [ "MOUTH", "EYES" ],
+    "environmental_protection": 16,
     "encumbrance": 20
   },
   {
