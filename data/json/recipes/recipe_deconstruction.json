@@ -1875,6 +1875,54 @@
     "components": [ [ [ "glass_shard", 322 ] ] ]
   },
   {
+    "result": "bottle_glass",
+    "type": "uncraft",
+    "time": "2 m",
+    "components": [ [ [ "glass_shard", 15 ] ] ]
+  },
+  {
+    "result": "jar_glass",
+    "type": "uncraft",
+    "time": "2 m",
+    "components": [ [ [ "glass_shard", 11 ] ] ]
+  },
+  {
+    "result": "jar_3l_glass",
+    "type": "uncraft",
+    "time": "2 m",
+    "components": [ [ [ "glass_shard", 27 ] ] ]
+  },
+  {
+    "result": "flask_glass",
+    "type": "uncraft",
+    "time": "2 m",
+    "components": [ [ [ "glass_shard", 4 ] ] ]
+  },
+  {
+    "result": "test_tube",
+    "type": "uncraft",
+    "time": "2 m",
+    "components": [ [ [ "glass_shard", 1 ] ] ]
+  },
+  {
+    "result": "pipe_glass",
+    "type": "uncraft",
+    "time": "2 m",
+    "components": [ [ [ "glass_shard", 4 ] ] ]
+  },
+  {
+    "result": "crackpipe",
+    "type": "uncraft",
+    "time": "2 m",
+    "components": [ [ [ "glass_shard", 6 ] ] ]
+  },
+  {
+    "result": "mirror",
+    "type": "uncraft",
+    "time": "2 m",
+    "components": [ [ [ "glass_sheet", 1 ] ], [ [ "silver_small", 10 ] ] ]
+  },
+  {
     "result": "game_watch",
     "type": "uncraft",
     "time": "10 m",

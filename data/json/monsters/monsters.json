@@ -749,7 +749,7 @@
     "diff": 20,
     "volume": "92500 ml",
     "weight": "120 kg",
-    "hp": 90,
+    "hp": 150,
     "speed": 115,
     "material": [ "steel" ],
     "symbol": "R",
