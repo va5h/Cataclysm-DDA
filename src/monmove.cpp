@@ -1076,6 +1076,7 @@ tripoint monster::scent_move()
     }
 
     const std::set<scenttype_id> &tracked_scents = type->scents_tracked;
+    const std::set<scenttype_id> &ignored_scents = type->scents_ignored;
 
     std::vector<tripoint> smoves;
 
@@ -1117,6 +1118,11 @@ tripoint monster::scent_move()
                 right_scent = true;
             }
         }
+        // is the monster actually ignoring this scent
+        if( !ignored_scents.empty() && ( ignored_scents.find( type_scent ) != ignored_scents.end() ) ) {
+            right_scent = false;
+        }
+
 
         if( ( !fleeing && smell < bestsmell ) || ( fleeing && smell > bestsmell ) || !right_scent ) {
             continue;

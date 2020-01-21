@@ -256,7 +256,7 @@ Character::Character() :
 
     name.clear();
 
-    *path_settings = pathfinding_settings{ 0, 1000, 1000, 0, true, false, true, false };
+    *path_settings = pathfinding_settings{ 0, 1000, 1000, 0, true, true, true, false };
 
     move_mode = CMM_WALK;
 
@@ -1255,6 +1255,9 @@ float Character::get_vision_threshold( float light_level ) const
     if( vision_mode_cache[BIRD_EYE] ) {
         range++;
     }
+
+    // Clamp range to 1+, so that we can always see where we are
+    range = std::max( 1.0f, range );
 
     return std::min( static_cast<float>( LIGHT_AMBIENT_LOW ),
                      threshold_for_range( range ) * dimming_from_light );
@@ -3007,6 +3010,7 @@ void Character::mut_cbm_encumb( std::array<encumbrance_data, num_bp> &vals ) con
         } else {
             vals[bp_eyes].encumbrance = 0;
         }
+        vals[bp_eyes].encumbrance -= 3;
     }
 
     // Lower penalty for bps covered only by XL armor
@@ -5072,6 +5076,7 @@ mutation_value_map = {
     { "max_stamina_modifier", calc_mutation_value_multiplicative<&mutation_branch::max_stamina_modifier> },
     { "weight_capacity_modifier", calc_mutation_value_multiplicative<&mutation_branch::weight_capacity_modifier> },
     { "hearing_modifier", calc_mutation_value_multiplicative<&mutation_branch::hearing_modifier> },
+    { "movecost_swim_modifier", calc_mutation_value_multiplicative<&mutation_branch::movecost_swim_modifier> },
     { "noise_modifier", calc_mutation_value_multiplicative<&mutation_branch::noise_modifier> },
     { "overmap_sight", calc_mutation_value_multiplicative<&mutation_branch::overmap_sight> },
     { "overmap_multiplier", calc_mutation_value_multiplicative<&mutation_branch::overmap_multiplier> },
@@ -6310,9 +6315,9 @@ float Character::bionic_armor_bonus( body_part bp, damage_type dt ) const
     // We only check the passive bionics
     if( has_bionic( bio_carbon ) ) {
         if( dt == DT_BASH ) {
-            result += 12;
+            result += 20;
         } else if( dt == DT_CUT || dt == DT_STAB ) {
-            result += 18;
+            result += 24;
         }
     }
     // All the other bionic armors reduce bash/cut/stab by 3
@@ -6330,7 +6335,7 @@ float Character::bionic_armor_bonus( body_part bp, damage_type dt ) const
     auto iter = armor_bionics.find( bp );
     if( iter != armor_bionics.end() && has_bionic( iter->second ) &&
         ( dt == DT_BASH || dt == DT_CUT || dt == DT_STAB ) ) {
-        result += 15;
+        result += 22;
     }
     return result;
 }
@@ -6532,6 +6537,18 @@ void Character::set_type_of_scent( scenttype_id id )
 scenttype_id Character::get_type_of_scent() const
 {
     return type_of_scent;
+}
+
+void Character::restore_scent()
+{
+    const std::string prev_scent = get_value( "prev_scent" );
+    if( !prev_scent.empty() ) {
+        remove_effect( efftype_id( "masked_scent" ) );
+        set_type_of_scent( scenttype_id( prev_scent ) );
+        remove_value( "prev_scent" );
+        remove_value( "waterproof_scent" );
+        add_msg_if_player( m_info, _( "You smell like yourself again." ) );
+    }
 }
 
 void Character::spores()
