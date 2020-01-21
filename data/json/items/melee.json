@@ -63,7 +63,7 @@
     "volume": "1 L",
     "bashing": 13,
     "cutting": 7,
-    "flags": [ "DURABLE_MELEE", "BELT_CLIP", "NONCONDUCTIVE" ],
+    "flags": [ "DURABLE_MELEE", "BELT_CLIP", "NONCONDUCTIVE", "SHEATH_AXE" ],
     "to_hit": 1,
     "category": "weapons",
     "qualities": [ [ "AXE", 2 ], [ "CUT", 1 ], [ "HAMMER", 2 ], [ "HAMMER_FINE", 1 ], [ "BUTCHER", 16 ] ]
@@ -543,7 +543,7 @@
     "price": 1050,
     "price_postapoc": 300,
     "material": [ "aluminum", "wood" ],
-    "flags": "NONCONDUCTIVE",
+    "flags": [ "NONCONDUCTIVE", "SHEATH_AXE" ],
     "techniques": [ "WBLOCK_1", "WIDE", "BRUTAL", "SWEEP" ],
     "weight": "2068 g",
     "volume": "3250 ml",
@@ -565,7 +565,7 @@
     "volume": "2500 ml",
     "bashing": 16,
     "cutting": 24,
-    "flags": [ "NONCONDUCTIVE" ],
+    "flags": [ "NONCONDUCTIVE", "SHEATH_AXE" ],
     "techniques": [ "WBLOCK_1", "BRUTAL", "SWEEP" ],
     "to_hit": 1,
     "category": "weapons",
@@ -621,7 +621,7 @@
     "color": "dark_gray",
     "qualities": [ [ "DIG", 2 ], [ "AXE", 1 ], [ "CUT", 1 ], [ "BUTCHER", -11 ], [ "COOK", 1 ] ],
     "techniques": [ "WBLOCK_1", "BRUTAL", "SWEEP" ],
-    "flags": [ "NEEDS_UNFOLD", "BELT_CLIP" ]
+    "flags": [ "NEEDS_UNFOLD", "BELT_CLIP", "SHEATH_AXE" ]
   },
   {
     "id": "tazer",
@@ -667,7 +667,7 @@
     "color": "light_gray",
     "techniques": [ "WBLOCK_1", "BRUTAL", "SWEEP" ],
     "qualities": [ [ "AXE", 2 ], [ "BUTCHER", -20 ] ],
-    "flags": [ "DURABLE_MELEE", "NONCONDUCTIVE" ]
+    "flags": [ "DURABLE_MELEE", "NONCONDUCTIVE", "SHEATH_AXE" ]
   },
   {
     "id": "ax",
@@ -685,6 +685,6 @@
     "color": "light_gray",
     "qualities": [ [ "AXE", 2 ], [ "BUTCHER", -36 ] ],
     "techniques": [ "WBLOCK_1", "BRUTAL", "SWEEP" ],
-    "flags": [ "NONCONDUCTIVE" ]
+    "flags": [ "NONCONDUCTIVE", "SHEATH_AXE" ]
   }
 ]
