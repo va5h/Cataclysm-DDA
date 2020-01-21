@@ -543,7 +543,6 @@
     "loudness": 7,
     "dispersion": 25,
     "durability": 8,
-    "reload": 500,
     "valid_mod_locations": [
       [ "accessories", 4 ],
       [ "grip", 1 ],

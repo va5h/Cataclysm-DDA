@@ -9,7 +9,7 @@
     "mod_value": [
       { "type": "bash", "value": 1, "proportion": [ "thickness", "coverage" ] },
       { "type": "cut", "value": 1, "proportion": [ "thickness", "coverage" ] },
-      { "type": "encumbrance", "value": 2, "round_up": true, "proportion": [ "thickness", "coverage" ] }
+      { "type": "encumbrance", "value": 1, "round_up": true, "proportion": [ "thickness", "coverage" ] }
     ]
   },
   {
@@ -22,7 +22,7 @@
     "restricted": true,
     "mod_value": [
       { "type": "bash", "value": 1, "proportion": [ "thickness", "coverage" ] },
-      { "type": "cut", "value": 1, "proportion": [ "thickness", "coverage" ] },
+      { "type": "cut", "value": 3, "proportion": [ "thickness", "coverage" ] },
       { "type": "encumbrance", "value": 2, "round_up": true, "proportion": [ "thickness", "coverage" ] }
     ]
   },
@@ -34,7 +34,7 @@
     "implement_prompt": "Pad with Kevlar",
     "destroy_prompt": "Destroy Kevlar padding",
     "mod_value": [
-      { "type": "bash", "value": 1, "proportion": [ "thickness", "coverage" ] },
+      { "type": "bash", "value": 2, "proportion": [ "thickness", "coverage" ] },
       { "type": "cut", "value": 2, "proportion": [ "thickness", "coverage" ] },
       { "type": "encumbrance", "value": 2, "round_up": true, "proportion": [ "thickness", "coverage" ] }
     ]

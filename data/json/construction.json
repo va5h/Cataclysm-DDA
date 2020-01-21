@@ -2742,7 +2742,7 @@
     "description": "Build Reinforced Glass Window",
     "//": "Step 4 : Additional layers of glass. Now surpassing ballistic glass",
     "category": "CONSTRUCT",
-    "required_skills": [ [ "fabrication", 9 ] ],
+    "required_skills": [ [ "fabrication", 9 ], [ "mechanics", 6 ] ],
     "time": "180 m",
     "qualities": [ [ { "id": "HAMMER", "level": 2 } ], [ { "id": "SAW_M", "level": 1 } ] ],
     "components": [ [ [ "reinforced_glass_sheet", 4 ] ] ],
