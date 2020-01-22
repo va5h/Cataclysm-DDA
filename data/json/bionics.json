@@ -603,6 +603,7 @@
     "name": "Nictating Membrane",
     "description": "Your eyes have a thin membrane that closes over your eyes while underwater, negating any vision penalties.",
     "occupied_bodyparts": [ [ "EYES", 1 ] ],
+    "env_protec": [ [ "EYES", 8 ] ],
     "flags": [ "BIONIC_NPC_USABLE" ]
   },
   {
