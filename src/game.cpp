@@ -1667,7 +1667,9 @@ void game::catch_a_monster( monster *fish, const tripoint &pos, player *p,
     //spawn the corpse, rotten by a part of the duration
     m.add_item_or_charges( pos, item::make_corpse( fish->type->id, calendar::turn + rng( 0_turns,
                            catch_duration ) ) );
-    u.add_msg_if_player( m_good, _( "You caught a %s." ), fish->type->nname() );
+    if( u.sees( pos ) ) {
+        u.add_msg_if_player( m_good, _( "You caught a %s." ), fish->type->nname() );
+    }
     //quietly kill the caught
     fish->no_corpse_quiet = true;
     fish->die( p );
@@ -7787,14 +7789,7 @@ void game::drop_in_direction()
 // Used to set up the first Hotkey in the display set
 static int get_initial_hotkey( const size_t menu_index )
 {
-    int hotkey = -1;
-    if( menu_index == 0 ) {
-        const int butcher_key = inp_mngr.get_previously_pressed_key();
-        if( butcher_key != 0 ) {
-            hotkey = butcher_key;
-        }
-    }
-    return hotkey;
+    return ( menu_index == 0 ) ? hotkey_for_action( ACTION_BUTCHER ) : -1;
 }
 
 // Returns a vector of pairs.

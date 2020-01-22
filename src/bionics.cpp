@@ -1401,7 +1401,7 @@ void Character::process_bionic( int b )
     }
 }
 
-void player::bionics_uninstall_failure( int difficulty, int success, float adjusted_skill )
+void Character::bionics_uninstall_failure( int difficulty, int success, float adjusted_skill )
 {
     // "success" should be passed in as a negative integer representing how far off we
     // were for a successful removal.  We use this to determine consequences for failing.
@@ -1463,9 +1463,9 @@ void player::bionics_uninstall_failure( int difficulty, int success, float adjus
 
 }
 
-void player::bionics_uninstall_failure( monster &installer, player &patient, int difficulty,
-                                        int success,
-                                        float adjusted_skill )
+void Character::bionics_uninstall_failure( monster &installer, player &patient, int difficulty,
+        int success,
+        float adjusted_skill )
 {
 
     // "success" should be passed in as a negative integer representing how far off we
@@ -1550,7 +1550,7 @@ void player::bionics_uninstall_failure( monster &installer, player &patient, int
     }
 }
 
-bool player::has_enough_anesth( const itype *cbm, player &patient )
+bool Character::has_enough_anesth( const itype *cbm, player &patient )
 {
     if( !cbm->bionic ) {
         debugmsg( "has_enough_anesth( const itype *cbm ): %s is not a bionic", cbm->get_id() );
@@ -1576,10 +1576,10 @@ bool player::has_enough_anesth( const itype *cbm, player &patient )
 }
 
 // bionic manipulation adjusted skill
-float player::bionics_adjusted_skill( const skill_id &most_important_skill,
-                                      const skill_id &important_skill,
-                                      const skill_id &least_important_skill,
-                                      int skill_level )
+float Character::bionics_adjusted_skill( const skill_id &most_important_skill,
+        const skill_id &important_skill,
+        const skill_id &least_important_skill,
+        int skill_level )
 {
     int pl_skill = bionics_pl_skill( most_important_skill, important_skill, least_important_skill,
                                      skill_level );
@@ -1590,9 +1590,9 @@ float player::bionics_adjusted_skill( const skill_id &most_important_skill,
     return adjusted_skill;
 }
 
-int player::bionics_pl_skill( const skill_id &most_important_skill,
-                              const skill_id &important_skill,
-                              const skill_id &least_important_skill, int skill_level )
+int Character::bionics_pl_skill( const skill_id &most_important_skill,
+                                 const skill_id &important_skill,
+                                 const skill_id &least_important_skill, int skill_level )
 {
     int pl_skill;
     if( skill_level == -1 ) {
@@ -1644,8 +1644,8 @@ int bionic_manip_cos( float adjusted_skill, bool autodoc, int bionic_difficulty 
     return chance_of_success;
 }
 
-bool player::can_uninstall_bionic( const bionic_id &b_id, player &installer, bool autodoc,
-                                   int skill_level )
+bool Character::can_uninstall_bionic( const bionic_id &b_id, player &installer, bool autodoc,
+                                      int skill_level )
 {
     // if malfunctioning bionics doesn't have associated item it gets a difficulty of 12
     int difficulty = 12;
@@ -1722,8 +1722,8 @@ bool player::can_uninstall_bionic( const bionic_id &b_id, player &installer, boo
     return true;
 }
 
-bool player::uninstall_bionic( const bionic_id &b_id, player &installer, bool autodoc,
-                               int skill_level )
+bool Character::uninstall_bionic( const bionic_id &b_id, player &installer, bool autodoc,
+                                  int skill_level )
 {
     // if malfunctioning bionics doesn't have associated item it gets a difficulty of 12
     int difficulty = 12;
@@ -1798,8 +1798,9 @@ bool player::uninstall_bionic( const bionic_id &b_id, player &installer, bool au
     return true;
 }
 
-void player::perform_uninstall( bionic_id bid, int difficulty, int success, units::energy power_lvl,
-                                int pl_skill )
+void Character::perform_uninstall( bionic_id bid, int difficulty, int success,
+                                   units::energy power_lvl,
+                                   int pl_skill )
 {
     if( success > 0 ) {
         g->events().send<event_type::removes_cbm>( getID(), bid );
@@ -1835,8 +1836,8 @@ void player::perform_uninstall( bionic_id bid, int difficulty, int success, unit
     g->refresh_all();
 }
 
-bool player::uninstall_bionic( const bionic &target_cbm, monster &installer, player &patient,
-                               float adjusted_skill, bool autodoc )
+bool Character::uninstall_bionic( const bionic &target_cbm, monster &installer, player &patient,
+                                  float adjusted_skill, bool autodoc )
 {
     const std::string ammo_type( "anesthetic" );
 
@@ -1911,8 +1912,8 @@ bool player::uninstall_bionic( const bionic &target_cbm, monster &installer, pla
     return false;
 }
 
-bool player::can_install_bionics( const itype &type, player &installer, bool autodoc,
-                                  int skill_level )
+bool Character::can_install_bionics( const itype &type, player &installer, bool autodoc,
+                                     int skill_level )
 {
     if( !type.bionic ) {
         debugmsg( "Tried to install NULL bionic" );
@@ -1971,8 +1972,8 @@ bool player::can_install_bionics( const itype &type, player &installer, bool aut
     return true;
 }
 
-bool player::install_bionics( const itype &type, player &installer, bool autodoc,
-                              int skill_level )
+bool Character::install_bionics( const itype &type, player &installer, bool autodoc,
+                                 int skill_level )
 {
     if( !type.bionic ) {
         debugmsg( "Tried to install NULL bionic" );
@@ -2072,9 +2073,9 @@ bool player::install_bionics( const itype &type, player &installer, bool autodoc
     return true;
 }
 
-void player::perform_install( bionic_id bid, bionic_id upbid, int difficulty, int success,
-                              int pl_skill, std::string installer_name,
-                              std::vector<trait_id> trait_to_rem, tripoint patient_pos )
+void Character::perform_install( bionic_id bid, bionic_id upbid, int difficulty, int success,
+                                 int pl_skill, std::string installer_name,
+                                 std::vector<trait_id> trait_to_rem, tripoint patient_pos )
 {
     if( success > 0 ) {
         g->events().send<event_type::installs_cbm>( getID(), bid );
@@ -2109,8 +2110,8 @@ void player::perform_install( bionic_id bid, bionic_id upbid, int difficulty, in
     g->refresh_all();
 }
 
-void player::bionics_install_failure( bionic_id bid, std::string installer, int difficulty,
-                                      int success, float adjusted_skill, tripoint patient_pos )
+void Character::bionics_install_failure( bionic_id bid, std::string installer, int difficulty,
+        int success, float adjusted_skill, tripoint patient_pos )
 {
     // "success" should be passed in as a negative integer representing how far off we
     // were for a successful install.  We use this to determine consequences for failing.
@@ -2225,7 +2226,7 @@ std::string list_occupied_bps( const bionic_id &bio_id, const std::string &intro
     return desc;
 }
 
-int player::get_used_bionics_slots( const body_part bp ) const
+int Character::get_used_bionics_slots( const body_part bp ) const
 {
     int used_slots = 0;
     for( const bionic_id bid : get_bionics() ) {
@@ -2238,7 +2239,7 @@ int player::get_used_bionics_slots( const body_part bp ) const
     return used_slots;
 }
 
-std::map<body_part, int> player::bionic_installation_issues( const bionic_id &bioid )
+std::map<body_part, int> Character::bionic_installation_issues( const bionic_id &bioid )
 {
     std::map<body_part, int> issues;
     if( !get_option < bool >( "CBM_SLOTS_ENABLED" ) ) {
@@ -2253,17 +2254,17 @@ std::map<body_part, int> player::bionic_installation_issues( const bionic_id &bi
     return issues;
 }
 
-int player::get_total_bionics_slots( const body_part bp ) const
+int Character::get_total_bionics_slots( const body_part bp ) const
 {
     return convert_bp( bp )->bionic_slots();
 }
 
-int player::get_free_bionics_slots( const body_part bp ) const
+int Character::get_free_bionics_slots( const body_part bp ) const
 {
     return get_total_bionics_slots( bp ) - get_used_bionics_slots( bp );
 }
 
-void player::add_bionic( const bionic_id &b )
+void Character::add_bionic( const bionic_id &b )
 {
     if( has_bionic( b ) ) {
         debugmsg( "Tried to install bionic %s that is already installed!", b.c_str() );
@@ -2279,7 +2280,7 @@ void player::add_bionic( const bionic_id &b )
         return;
     }
 
-    my_bionics->push_back( bionic( b, get_free_invlet( *this ) ) );
+    my_bionics->push_back( bionic( b, get_free_invlet( *this->as_player() ) ) );
     if( b == "bio_tools" || b == "bio_ears" ) {
         activate_bionic( my_bionics->size() - 1 );
     }
@@ -2292,7 +2293,7 @@ void player::add_bionic( const bionic_id &b )
     recalc_sight_limits();
 }
 
-void player::remove_bionic( const bionic_id &b )
+void Character::remove_bionic( const bionic_id &b )
 {
     bionic_collection new_my_bionics;
     for( bionic &i : *my_bionics ) {
@@ -2658,8 +2659,8 @@ void bionic::deserialize( JsonIn &jsin )
 
 }
 
-void player::introduce_into_anesthesia( const time_duration &duration, player &installer,
-                                        bool needs_anesthesia )   //used by the Autodoc
+void Character::introduce_into_anesthesia( const time_duration &duration, player &installer,
+        bool needs_anesthesia )   //used by the Autodoc
 {
     if( installer.has_trait( trait_DEBUG_BIONICS ) ) {
         installer.add_msg_if_player( m_info,
