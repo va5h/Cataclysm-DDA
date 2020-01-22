@@ -487,7 +487,8 @@
     "batch_time_factors": [ 80, 4 ],
     "qualities": [ { "id": "COOK", "level": 3 } ],
     "tools": [ [ [ "surface_heat", 100, "LIST" ] ], [ [ "pot_canning", -1 ] ] ],
-    "components": [ [ [ "jar_glass", 1 ] ], [ [ "bone", 20 ] ], [ [ "water", 12 ], [ "water_clean", 12 ] ] ]
+    "using": [ [ "bone_broth_ingredients", 2 ] ],
+    "components": [ [ [ "jar_glass", 1 ] ], [ [ "water", 12 ], [ "water_clean", 12 ] ] ]
   },
   {
     "type": "recipe",
@@ -1103,7 +1104,8 @@
     "batch_time_factors": [ 80, 4 ],
     "qualities": [ { "id": "COOK", "level": 3 } ],
     "tools": [ [ [ "surface_heat", 200, "LIST" ] ], [ [ "pot_canning", -1 ] ] ],
-    "components": [ [ [ "jar_3l_glass", 1 ] ], [ [ "water", 22 ], [ "water_clean", 22 ] ], [ [ "bone", 120 ] ] ]
+    "using": [ [ "bone_broth_ingredients", 12 ] ],
+    "components": [ [ [ "jar_3l_glass", 1 ] ], [ [ "water", 22 ], [ "water_clean", 22 ] ] ]
   },
   {
     "type": "recipe",
@@ -1312,6 +1314,7 @@
       { "id": "COOK", "level": 3 }
     ],
     "tools": [ [ [ "surface_heat", 10, "LIST" ] ], [ [ "can_sealer", -1 ] ] ],
-    "components": [ [ [ "can_medium_unsealed", 1 ] ], [ [ "scrap", 1 ] ], [ [ "bone", 20 ] ], [ [ "water", 2 ], [ "water_clean", 2 ] ] ]
+    "using": [ [ "bone_broth_ingredients", 2 ] ],
+    "components": [ [ [ "can_medium_unsealed", 1 ] ], [ [ "scrap", 1 ] ], [ [ "water", 2 ], [ "water_clean", 2 ] ] ]
   }
 ]
