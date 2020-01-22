@@ -197,6 +197,13 @@
   },
   {
     "type": "EXTERNAL_OPTION",
+    "name": "INT_BASED_LEARNING",
+    "info": "INT Based Learning mod. Enables rebalance of practice and reading gains.",
+    "stype": "bool",
+    "value": false
+  },
+  {
+    "type": "EXTERNAL_OPTION",
     "name": "FILTHY_CRAFTING",
     "info": "Enable crafting from filthy items. Most definitely will cause various bugs.",
     "stype": "bool",
