@@ -5407,22 +5407,22 @@ int Character::get_armor_bash_base( body_part bp ) const
         }
     }
     if( has_bionic( bio_carbon ) ) {
-        ret += 2;
+        ret += 12;
     }
     if( bp == bp_head && has_bionic( bio_armor_head ) ) {
-        ret += 3;
+        ret += 15;
     }
     if( ( bp == bp_arm_l || bp == bp_arm_r ) && has_bionic( bio_armor_arms ) ) {
-        ret += 3;
+        ret += 15;
     }
     if( bp == bp_torso && has_bionic( bio_armor_torso ) ) {
-        ret += 3;
+        ret += 15;
     }
     if( ( bp == bp_leg_l || bp == bp_leg_r ) && has_bionic( bio_armor_legs ) ) {
-        ret += 3;
+        ret += 15;
     }
     if( bp == bp_eyes && has_bionic( bio_armor_eyes ) ) {
-        ret += 3;
+        ret += 15;
     }
 
     ret += mutation_armor( bp, DT_BASH );
@@ -5438,18 +5438,18 @@ int Character::get_armor_cut_base( body_part bp ) const
         }
     }
     if( has_bionic( bio_carbon ) ) {
-        ret += 4;
+        ret += 18;
     }
     if( bp == bp_head && has_bionic( bio_armor_head ) ) {
-        ret += 3;
+        ret += 15;
     } else if( ( bp == bp_arm_l || bp == bp_arm_r ) && has_bionic( bio_armor_arms ) ) {
-        ret += 3;
+        ret += 15;
     } else if( bp == bp_torso && has_bionic( bio_armor_torso ) ) {
-        ret += 3;
+        ret += 15;
     } else if( ( bp == bp_leg_l || bp == bp_leg_r ) && has_bionic( bio_armor_legs ) ) {
-        ret += 3;
+        ret += 15;
     } else if( bp == bp_eyes && has_bionic( bio_armor_eyes ) ) {
-        ret += 3;
+        ret += 15;
     }
 
     ret += mutation_armor( bp, DT_CUT );
