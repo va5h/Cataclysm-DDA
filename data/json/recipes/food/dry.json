@@ -338,7 +338,12 @@
     "autolearn": true,
     "qualities": [ { "id": "BOIL", "level": 2 }, { "id": "CHEM", "level": 2 }, { "id": "DISTILL", "level": 1 } ],
     "tools": [ [ [ "dehydrator", 5 ] ], [ [ "surface_heat", 5, "LIST" ] ], [ [ "platinum_grille", -1 ] ] ],
-    "components": [ [ [ "eggs_bird", 12, "LIST" ], [ "egg_reptile", 12 ], [ "spider_egg", 4 ], [ "ant_egg", 1 ] ], [ [ "meal_chitin_piece", 2 ] ], [ [ "lye_powder", 10 ] ], [ [ "charcoal", 5 ] ] ],
+    "components": [
+      [ [ "eggs_bird", 12, "LIST" ], [ "egg_reptile", 12 ], [ "spider_egg", 4 ], [ "ant_egg", 1 ] ],
+      [ [ "meal_chitin_piece", 2 ] ],
+      [ [ "lye_powder", 10 ] ],
+      [ [ "charcoal", 5 ] ]
+    ],
     "flags": [ "ALLOW_ROTTEN" ]
   },
   {

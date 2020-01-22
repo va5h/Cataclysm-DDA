@@ -594,12 +594,7 @@
   {
     "id": "bone_broth_ingredients",
     "type": "requirement",
-    "components": [
-      [
-        [ "bone", 10 ],
-        [ "bone_human", 10 ]
-      ]
-    ]
+    "components": [ [ [ "bone", 10 ], [ "bone_human", 10 ] ] ]
   },
   {
     "id": "broth_ingredients",
