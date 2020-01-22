@@ -1659,8 +1659,8 @@ class Character : public Creature, public visitable<Character>
         bool can_feed_reactor_with( const item &it ) const;
         bool can_feed_furnace_with( const item &it ) const;
         rechargeable_cbm get_cbm_rechargeable_with( const item &it ) const;
-        int get_acquirable_energy( const item &it, rechargeable_cbm cbm ) const;
-        int get_acquirable_energy( const item &it ) const;
+        std::int64_t get_acquirable_energy( const item &it, rechargeable_cbm cbm ) const;
+        std::int64_t get_acquirable_energy( const item &it ) const;
 
         /**
         * Recharge CBMs whenever possible.
