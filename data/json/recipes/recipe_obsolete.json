@@ -2202,5 +2202,10 @@
     "type": "recipe",
     "result": "crucible",
     "obsolete": true
+  },
+  {
+    "type": "recipe",
+    "result": "hand_vice",
+    "obsolete": true
   }
 ]
