@@ -1,75 +1,75 @@
 # JSON Flags
 
-* [Notes](#notes)
-* [Inheritance](#inheritance)
-* [TODO](#todo)
-* [Ammo](#ammo)
-  + [Ammo type](#ammo-type)
-  + [Effects](#effects)
-* [Armor](#armor)
-  + [Covers](#covers)
-  + [Flags](#flags)
-* [Bionics](#bionics)
-* [Books](#books)
-  + [Use actions](#use-actions)
-* [Comestibles](#comestibles)
-  + [Comestible type](#comestible-type)
-  + [Addiction type](#addiction-type)
-  + [Use action](#use-action)
-  + [Flags](#flags-1)
-* [Furniture and Terrain](#furniture-and-terrain)
-  + [Flags](#flags-2)
-  + [Examine Actions](#examine-actions)
-  + [Fungal Conversions Only](#fungal-conversions-only)
-  + [Furniture Only](#furniture-only)
-* [Generic](#generic)
-  + [Flags](#flags-3)
-* [Guns](#guns)
-  + [Firing modes](#firing-modes)
-  + [Faults](#faults)
+- [JSON Flags](#json-flags)
+  - [Notes](#notes)
+  - [Inheritance](#inheritance)
+  - [TODO](#todo)
+  - [Ammo](#ammo)
+    - [Ammo type](#ammo-type)
+    - [Effects](#effects)
+  - [Armor](#armor)
+    - [Covers](#covers)
     - [Flags](#flags)
-    - [Parameters](#parameters)
-* [Magazines](#magazines)
-* [MAP SPECIALS](#map-specials)
-* [Material Phases](#material-phases)
-* [Melee](#melee)
-  + [Flags](#flags-4)
-* [Monster Groups](#monster-groups)
-  + [Conditions](#conditions)
+  - [Bionics](#bionics)
+  - [Books](#books)
+    - [Use actions](#use-actions)
+  - [Comestibles](#comestibles)
+    - [Comestible type](#comestible-type)
+    - [Addiction type](#addiction-type)
+    - [Use action](#use-action)
+    - [Flags](#flags-1)
+  - [Furniture and Terrain](#furniture-and-terrain)
+    - [Flags](#flags-2)
+    - [Examine Actions](#examine-actions)
+    - [Fungal Conversions Only](#fungal-conversions-only)
+    - [Furniture Only](#furniture-only)
+  - [Generic](#generic)
+    - [Flags](#flags-3)
+  - [Guns](#guns)
+    - [Firing modes](#firing-modes)
+    - [Faults](#faults)
+      - [Flags](#flags-4)
+      - [Parameters](#parameters)
+  - [Magazines](#magazines)
+  - [MAP SPECIALS](#map-specials)
+  - [Material Phases](#material-phases)
+  - [Melee](#melee)
+    - [Flags](#flags-5)
+  - [Monster Groups](#monster-groups)
     - [Seasons](#seasons)
     - [Time of day](#time-of-day)
-* [Monsters](#monsters)
-  + [Anger, Fear and Placation Triggers](#anger--fear-and-placation-triggers)
-  + [Categories](#categories)
-  + [Death Functions](#death-functions)
-  + [Flags](#flags-5)
-  + [Monster Defense and Attacks](#monster-defense-and-attacks)
-  + [Sizes](#sizes)
-  + [Special attacks](#special-attacks)
-* [Mutations](#mutations)
-  + [Categories](#categories-1)
-* [Overmap](#overmap)
-  + [Overmap connections](#overmap-connections)
+  - [Monsters](#monsters)
+    - [Anger, Fear and Placation Triggers](#anger-fear-and-placation-triggers)
+    - [Categories](#categories)
+    - [Death Functions](#death-functions)
     - [Flags](#flags-6)
-  + [Overmap specials](#overmap-specials)
-    - [Flags](#flags-7)
-  + [Overmap terrains](#overmap-terrains)
-    - [Flags](#flags-8)
-* [Recipes](#recipes)
-  + [Categories](#categories-2)
-  + [Flags](#flags-9)
-* [Scenarios](#scenarios)
-  + [Flags](#flags-10)
-    - [Season Flags](#season-flags)
-* [Skills](#skills)
-  + [Tags](#tags)
-* [Techniques](#techniques)
-* [Tools](#tools)
-  + [Flags](#flags-11)
-  + [Flags that apply to items](#flags-that-apply-to-items)
-* [Vehicle Parts](#vehicle-parts)
-  + [Flags](#flags-12)
-  + [Fuel types](#fuel-types)
+    - [Monster Defense and Attacks](#monster-defense-and-attacks)
+    - [Sizes](#sizes)
+    - [Special attacks](#special-attacks)
+  - [Mutations](#mutations)
+      - [Flags](#flags-7)
+    - [Categories](#categories-1)
+  - [Overmap](#overmap)
+    - [Overmap connections](#overmap-connections)
+    - [Overmap specials](#overmap-specials)
+      - [Flags](#flags-8)
+    - [Overmap terrains](#overmap-terrains)
+      - [Flags](#flags-9)
+  - [Recipes](#recipes)
+    - [Categories](#categories-2)
+    - [Flags](#flags-10)
+  - [Scenarios](#scenarios)
+    - [Flags](#flags-11)
+      - [Season Flags](#season-flags)
+  - [Skills](#skills)
+    - [Tags](#tags)
+  - [Techniques](#techniques)
+  - [Tools](#tools)
+    - [Flags](#flags-12)
+    - [Flags that apply to items](#flags-that-apply-to-items)
+  - [Vehicle Parts](#vehicle-parts)
+    - [Flags](#flags-13)
+    - [Fuel types](#fuel-types)
 
 
 ## Notes
@@ -805,11 +805,9 @@ List of known flags, used in both `terrain.json` and `furniture.json`.
 
 ## Monster Groups
 
-### Conditions
+The condition flags limit when monsters can spawn.
 
-Limit when monsters can spawn.
-
-#### Seasons
+### Seasons
 
 Multiple season conditions will be combined together so that any of those conditions become valid time of year spawn times.
 
@@ -818,7 +816,7 @@ Multiple season conditions will be combined together so that any of those condit
 - ```SUMMER```
 - ```WINTER```
 
-#### Time of day
+### Time of day
 
 Multiple time of day conditions will be combined together so that any of those conditions become valid time of day spawn times.
 
@@ -1009,7 +1007,7 @@ Also see `monster_attacks.json` for more special attacks, for example, impale an
 - ```BRANDISH``` Brandish a knife at the player.
 - ```BREATHE``` Spawns a `breather`
 - ```CALLBLOBS``` Calls 2/3 of nearby blobs to defend this monster, and sends 1/3 of nearby blobs after the player.
-- ```CHICKENBOT``` Robot can attack with tazer, M4, or MGL depending on distance.
+- ```CHICKENBOT``` LEGACY - Robot can attack with tazer, M4, or MGL depending on distance.
 - ```COPBOT``` Cop-bot alerts and then tazes the player.
 - ```DANCE``` Monster dances.
 - ```DARKMAN``` Can cause darkness and wraiths to spawn.
@@ -1332,6 +1330,7 @@ Those flags are added by the game code to specific items (that specific welder, 
 - ```CIRCLE_LIGHT``` Projects a circular radius of light when turned on.
 - ```CONE_LIGHT``` Projects a cone of light when turned on.
 - ```CONTROLS``` Can be used to control the vehicle.
+- ```CONTROL_ANIMAL``` These controls can only be used to control a vehicle pulled by an animal (such as reins etc).
 - ```COOLER``` There is separate command to toggle this part.
 - ```COVERED``` Prevents items in cargo parts from emitting any light.
 - ```CRAFTRIG``` Acts as a dehydrator, vacuum sealer and reloading press for crafting purposes. Potentially to include additional tools in the future.
