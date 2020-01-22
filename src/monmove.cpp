@@ -69,7 +69,7 @@ bool monster::wander()
     return ( goal == pos() );
 }
 
-bool monster::is_immune_field( const field_type_id fid ) const
+bool monster::is_immune_field( const field_type_id &fid ) const
 {
     if( fid == fd_fungal_haze ) {
         return has_flag( MF_NO_BREATHE ) || type->in_species( FUNGUS );
@@ -891,7 +891,6 @@ void monster::move()
                 if( !can_bash ) {
                     continue;
                 }
-
                 const int estimate = g->m.bash_rating( bash_estimate(), candidate );
                 if( estimate <= 0 ) {
                     continue;
@@ -923,14 +922,14 @@ void monster::move()
     const bool can_open_doors = has_flag( MF_CAN_OPEN_DOORS );
     // Finished logic section.  By this point, we should have chosen a square to
     //  move to (moved = true).
+    const tripoint local_next_step = g->m.getlocal( next_step );
     if( moved ) { // Actual effects of moving to the square we've chosen
         const bool did_something =
-            ( !pacified && attack_at( next_step ) ) ||
-            ( !pacified && can_open_doors && g->m.open_door( next_step, !g->m.is_outside( pos() ) ) ) ||
-            ( !pacified && bash_at( next_step ) ) ||
-            ( !pacified && push_to( next_step, 0, 0 ) ) ||
-            move_to( g->m.getlocal( next_step ), false, get_stagger_adjust( pos(), destination,
-                     g->m.getlocal( next_step ) ) );
+            ( !pacified && attack_at( local_next_step ) ) ||
+            ( !pacified && can_open_doors && g->m.open_door( local_next_step, !g->m.is_outside( pos() ) ) ) ||
+            ( !pacified && bash_at( local_next_step ) ) ||
+            ( !pacified && push_to( local_next_step, 0, 0 ) ) ||
+            move_to( local_next_step, false, get_stagger_adjust( pos(), destination, local_next_step ) );
 
         if( !did_something ) {
             moves -= 100; // If we don't do this, we'll get infinite loops.
@@ -1401,7 +1400,7 @@ bool monster::attack_at( const tripoint &p )
 
 static tripoint find_closest_stair( const tripoint &near_this, const ter_bitflags stair_type )
 {
-    for( const tripoint &candidate : closest_tripoints_first( 10, near_this ) ) {
+    for( const tripoint &candidate : closest_tripoints_first( near_this, 10 ) ) {
         if( g->m.has_flag( stair_type, candidate ) ) {
             return candidate;
         }
@@ -1420,7 +1419,7 @@ bool monster::move_to( const tripoint &p, bool force, const float stagger_adjust
     tripoint destination = p;
 
     // This is stair teleportation hackery.
-    // @TODO: Remove this in favor of stair alignment
+    // TODO: Remove this in favor of stair alignment
     if( going_up ) {
         if( g->m.has_flag( TFLAG_GOES_UP, pos() ) ) {
             destination = find_closest_stair( p, TFLAG_GOES_DOWN );
@@ -1596,14 +1595,14 @@ bool monster::move_to( const tripoint &p, bool force, const float stagger_adjust
                 g->m.add_item_or_charges( pos(), item( "napalm", calendar::turn, 50 ) );
                 ammo["pressurized_tank"] -= 50;
             } else {
-                // TODO remove MF_DRIPS_NAPALM flag since no more napalm in tank
+                // TODO: remove MF_DRIPS_NAPALM flag since no more napalm in tank
                 // Not possible for now since flag check is done on type, not individual monster
             }
         }
     }
     if( has_flag( MF_DRIPS_GASOLINE ) ) {
         if( one_in( 5 ) ) {
-            // TODO use same idea that limits napalm dripping
+            // TODO: use same idea that limits napalm dripping
             g->m.add_item_or_charges( pos(), item( "gasoline" ) );
         }
     }
@@ -1909,7 +1908,7 @@ bool monster::will_reach( const point &p )
 
 int monster::turns_to_reach( const point &p )
 {
-    // This function is a(n old) temporary hack that should soon be removed
+    // HACK: This function is a(n old) temporary hack that should soon be removed
     auto path = g->m.route( pos(), tripoint( p, posz() ), get_pathfinding_settings() );
     if( path.empty() ) {
         return 999;
