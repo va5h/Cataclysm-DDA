@@ -80,7 +80,8 @@
     "material": "steel",
     "symbol": ";",
     "color": "light_gray",
-    "use_action": { "type": "picklock", "pick_quality": 5 }
+    "use_action": { "type": "picklock", "pick_quality": 5 },
+    "flags": [ "BELT_CLIP" ]
   },
   {
     "id": "pseuso_bio_picklock",
