@@ -2666,6 +2666,7 @@ void Character::introduce_into_anesthesia( const time_duration &duration, player
         installer.add_msg_if_player( m_info,
                                      _( "You tell the pain to bug off and proceed with the operation." ) );
         return;
+    }
     installer.add_msg_player_or_npc( m_info,
                                      _( "You set up the operation step-by-step, configuring the Autodoc to manipulate a CBM." ),
                                      _( "<npcname> sets up the operation, configuring the Autodoc to manipulate a CBM." ) );
