@@ -5925,138 +5925,6 @@ float player::fine_detail_vision_mod( const tripoint &p ) const
     return std::min( own_light, ambient_light );
 }
 
-int player::get_armor_bash( body_part bp ) const
-{
-    return get_armor_bash_base( bp ) + armor_bash_bonus;
-}
-
-int player::get_armor_cut( body_part bp ) const
-{
-    return get_armor_cut_base( bp ) + armor_cut_bonus;
-}
-
-int player::get_armor_type( damage_type dt, body_part bp ) const
-{
-    switch( dt ) {
-        case DT_TRUE:
-        case DT_BIOLOGICAL:
-            return 0;
-        case DT_BASH:
-            return get_armor_bash( bp );
-        case DT_CUT:
-            return get_armor_cut( bp );
-        case DT_STAB:
-            return get_armor_cut( bp ) * 0.8f;
-        case DT_ACID:
-        case DT_HEAT:
-        case DT_COLD:
-        case DT_ELECTRIC: {
-            int ret = 0;
-            for( auto &i : worn ) {
-                if( i.covers( bp ) ) {
-                    ret += i.damage_resist( dt );
-                }
-            }
-
-            ret += mutation_armor( bp, dt );
-            return ret;
-        }
-        case DT_NULL:
-        case NUM_DT:
-            // Let it error below
-            break;
-    }
-
-    debugmsg( "Invalid damage type: %d", dt );
-    return 0;
-}
-
-int player::get_armor_bash_base( body_part bp ) const
-{
-    int ret = 0;
-    for( auto &i : worn ) {
-        if( i.covers( bp ) ) {
-            ret += i.bash_resist();
-        }
-    }
-    if( has_bionic( bio_carbon ) ) {
-        ret += 12;
-    }
-    if( bp == bp_head && has_bionic( bio_armor_head ) ) {
-        ret += 15;
-    }
-    if( ( bp == bp_arm_l || bp == bp_arm_r ) && has_bionic( bio_armor_arms ) ) {
-        ret += 15;
-    }
-    if( bp == bp_torso && has_bionic( bio_armor_torso ) ) {
-        ret += 15;
-    }
-    if( ( bp == bp_leg_l || bp == bp_leg_r ) && has_bionic( bio_armor_legs ) ) {
-        ret += 15;
-    }
-    if( bp == bp_eyes && has_bionic( bio_armor_eyes ) ) {
-        ret += 15;
-    }
-
-    ret += mutation_armor( bp, DT_BASH );
-    return ret;
-}
-
-int player::get_armor_cut_base( body_part bp ) const
-{
-    int ret = 0;
-    for( auto &i : worn ) {
-        if( i.covers( bp ) ) {
-            ret += i.cut_resist();
-        }
-    }
-    if( has_bionic( bio_carbon ) ) {
-        ret += 18;
-    }
-    if( bp == bp_head && has_bionic( bio_armor_head ) ) {
-        ret += 15;
-    } else if( ( bp == bp_arm_l || bp == bp_arm_r ) && has_bionic( bio_armor_arms ) ) {
-        ret += 15;
-    } else if( bp == bp_torso && has_bionic( bio_armor_torso ) ) {
-        ret += 15;
-    } else if( ( bp == bp_leg_l || bp == bp_leg_r ) && has_bionic( bio_armor_legs ) ) {
-        ret += 15;
-    } else if( bp == bp_eyes && has_bionic( bio_armor_eyes ) ) {
-        ret += 15;
-    }
-
-    ret += mutation_armor( bp, DT_CUT );
-    return ret;
-}
-
-int player::get_armor_acid( body_part bp ) const
-{
-    return get_armor_type( DT_ACID, bp );
-}
-
-int player::get_env_resist( body_part bp ) const
-{
-    int ret = 0;
-    for( auto &i : worn ) {
-        // Head protection works on eyes too (e.g. baseball cap)
-        if( i.covers( bp ) || ( bp == bp_eyes && i.covers( bp_head ) ) ) {
-            ret += i.get_env_resist();
-        }
-    }
-
-    for( const bionic &bio : *my_bionics ) {
-        const auto EP = bio.info().env_protec.find( bp );
-        if( EP != bio.info().env_protec.end() ) {
-            ret += EP->second;
-        }
-    }
-
-    if( bp == bp_eyes && has_trait( trait_SEESLEEP ) ) {
-        ret += 8;
-    }
-    return ret;
-}
-
 bool player::natural_attack_restricted_on( body_part bp ) const
 {
     for( auto &i : worn ) {
@@ -6714,7 +6582,7 @@ bool player::sees( const Creature &critter ) const
     }
     
     // Targeting CBM now scans and reveals close-range targets.
-    if( dist <= 7 && has_bionic( bio_targeting ) ) {
+    if( dist <= 9 && has_bionic( bio_targeting ) ) {
         return true;
     }    
 
