@@ -566,7 +566,7 @@
     "bashing": 16,
     "cutting": 24,
     "flags": [ "NONCONDUCTIVE", "SHEATH_AXE" ],
-    "techniques": [ "WBLOCK_1", "BRUTAL", "SWEEP" ],
+    "techniques": [ "WBLOCK_1", "WIDE", "BRUTAL", "SWEEP" ],
     "to_hit": 1,
     "category": "weapons",
     "qualities": [ [ "AXE", 2 ], [ "BUTCHER", -20 ] ]
@@ -665,7 +665,7 @@
     "material": [ "steel", "wood" ],
     "symbol": "/",
     "color": "light_gray",
-    "techniques": [ "WBLOCK_1", "BRUTAL", "SWEEP" ],
+    "techniques": [ "WBLOCK_1", "WIDE", "BRUTAL", "SWEEP" ],
     "qualities": [ [ "AXE", 2 ], [ "BUTCHER", -20 ] ],
     "flags": [ "DURABLE_MELEE", "NONCONDUCTIVE", "SHEATH_AXE" ]
   },
