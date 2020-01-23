@@ -2083,7 +2083,6 @@
     "epower": 30,
     "item": "xl_wind_turbine",
     "location": "on_roof",
-    "power": -3000,
     "requirements": {
       "install": { "skills": [ [ "mechanics", 3 ] ], "time": "450 s", "qualities": [ { "id": "WRENCH", "level": 1 } ] },
       "removal": { "skills": [ [ "mechanics", 3 ] ], "time": "450 s", "qualities": [ { "id": "WRENCH", "level": 1 } ] },
