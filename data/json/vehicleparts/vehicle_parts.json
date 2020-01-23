@@ -1063,6 +1063,34 @@
   },
   {
     "type": "vehicle_part",
+    "id": "freezer_industrial",
+    "name": "industrial-grade freezer",
+    "symbol": "H",
+    "color": "cyan",
+    "broken_symbol": "#",
+    "broken_color": "blue",
+    "looks_like": "f_sample_freezer",
+    "damage_modifier": 80,
+    "durability": 400,
+    "epower": -300,
+    "size": 6000,
+    "item": "freezer_industrial",
+    "location": "center",
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 10 ] ], "time": "360 m", "using": [ [ "vehicle_bolt", 1 ] ] },
+      "removal": { "skills": [ [ "mechanics", 9 ] ], "time": "240 m", "using": [ [ "vehicle_bolt", 1 ] ] },
+      "repair": { "skills": [ [ "mechanics", 10 ] ], "time": "120 m", "using": [ [ "welding_standard", 25 ] ] }
+    },
+    "flags": [ "CARGO", "OBSTACLE", "FREEZER", "COVERED", "ENABLED_DRAINS_EPOWER", "NEEDS_JACKING" ],
+    "breaks_into": [
+      { "item": "steel_lump", "count": [ 40, 52 ] },
+      { "item": "steel_chunk", "count": [ 40, 52 ] },
+      { "item": "scrap", "count": [ 40, 52 ] }
+    ],
+    "damage_reduction": { "all": 128 }
+  },
+  {
+    "type": "vehicle_part",
     "id": "washing_machine",
     "name": "washing machine",
     "symbol": "H",
