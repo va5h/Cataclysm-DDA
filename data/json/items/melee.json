@@ -613,15 +613,15 @@
     "weight": "2722 g",
     "volume": "1750 ml",
     "price": 25000,
-    "to_hit": -3,
-    "bashing": 13,
+    "to_hit": 1,
+    "bashing": 17,
     "cutting": 26,
     "material": [ "steel" ],
     "symbol": "/",
     "color": "dark_gray",
-    "qualities": [ [ "DIG", 2 ], [ "AXE", 1 ], [ "CUT", 1 ], [ "BUTCHER", -11 ], [ "COOK", 1 ] ],
-    "techniques": [ "WBLOCK_1", "BRUTAL", "SWEEP" ],
-    "flags": [ "NEEDS_UNFOLD", "BELT_CLIP", "SHEATH_AXE" ]
+    "qualities": [ [ "DIG", 2 ], [ "AXE", 2 ], [ "CUT", 1 ], [ "BUTCHER", -11 ], [ "COOK", 1 ] ],
+    "techniques": [ "WBLOCK_1", "WIDE", "BRUTAL", "SWEEP" ],
+    "flags": [ "NEEDS_UNFOLD", "DURABLE_MELEE", "BELT_CLIP", "SHEATH_AXE" ]
   },
   {
     "id": "tazer",
