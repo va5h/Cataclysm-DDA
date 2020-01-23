@@ -69,7 +69,7 @@
     "weight": "700000 g",
     "to_hit": -16,
     "color": "blue",
-    "volume": "1500 L",
+    "volume": "1500 L"
   },
   {
     "type": "GENERIC",
