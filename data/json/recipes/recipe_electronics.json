@@ -947,7 +947,7 @@
       [ [ "power_supply", 1 ] ],
       [ [ "amplifier", 1 ] ],
       [ [ "processor", 2 ], [ "RAM", 3 ] ],
-      [ [ "lens", 2 ], [ "lens_small", 4 ] ],
+      [ [ "lens", 1 ], [ "lens_small", 2 ] ],
       [ [ "small_lcd_screen", 2 ] ],
       [ [ "gold_small", 20 ] ],
       [ [ "e_scrap", 5 ] ]
