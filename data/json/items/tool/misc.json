@@ -585,6 +585,22 @@
     "use_action": "LADDER"
   },
   {
+    "id": "ladder_telescopic",
+    "//": "Telesteps 1600EP",
+    "type": "TOOL",
+    "name": "telescoping ladder",
+    "description": "This is a telescoping aluminum stepladder.  Compact and durable.",
+    "weight": "8900 g",
+    "volume": "28 L",
+    "price": 15000,
+    "to_hit": -3,
+    "bashing": 6,
+    "material": [ "aluminum", "plastic" ]
+    "symbol": "H",
+    "color": "light_gray",
+    "use_action": "LADDER"
+  },  
+  {
     "id": "survival_marker",
     "type": "TOOL",
     "name": "survival marker",
