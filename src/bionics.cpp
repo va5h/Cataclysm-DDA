@@ -1973,7 +1973,7 @@ bool Character::install_bionics( const itype &type, player &installer, bool auto
     if( is_npc() ) {
         assign_activity( ACT_OPERATION, to_moves<int>( difficulty * 20_minutes ) );
     } else {
-        assign_activity( "ACT_OPERATION, to_moves<int>( isPainTolerant ? ( difficulty * 1_minutes ) : ( difficulty * 20_minutes ) ) );
+        assign_activity( ACT_OPERATION, to_moves<int>( isPainTolerant ? ( difficulty * 1_minutes ) : ( difficulty * 20_minutes ) ) );
     }
 
     activity.values.push_back( difficulty );
