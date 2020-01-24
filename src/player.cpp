@@ -1195,28 +1195,6 @@ int player::read_speed( bool return_stat_effect ) const
     return return_stat_effect ? ret : ret / 10;
 }
 
-int player::rust_rate( bool return_stat_effect ) const
-{
-    if( get_option<std::string>( "SKILL_RUST" ) == "off" ) {
-        return 0;
-    }
-
-    // Stat window shows stat effects on based on current stat
-    int intel = get_int();
-    /** @EFFECT_INT reduces skill rust */
-    int ret = ( ( get_option<std::string>( "SKILL_RUST" ) == "vanilla" ||
-                  get_option<std::string>( "SKILL_RUST" ) == "capped" ) ? 500 : 500 - 35 * ( intel - 8 ) );
-
-    ret *= mutation_value( "skill_rust_multiplier" );
-
-    if( ret < 0 ) {
-        ret = 0;
-    }
-
-    // return_stat_effect actually matters here
-    return ( return_stat_effect ? ret : ret / 10 );
-}
-
 int player::talk_skill() const
 {
     /** @EFFECT_INT slightly increases talking skill */
@@ -2179,17 +2157,15 @@ void player::get_sick()
 void player::check_needs_extremes()
 {
     // Check if we've overdosed... in any deadly way.
-    // Blood Filter CBM preventively safeguards from any overdose whatsoever.
-    const bool safe_overdose = has_bionic(bio_blood_filter);
-    if( ( get_stim() > 250 ) && !safe_overdose ) {
+    if( get_stim() > 250 ) {
         add_msg_if_player( m_bad, _( "You have a sudden heart attack!" ) );
         g->events().send<event_type::dies_from_drug_overdose>( getID(), efftype_id() );
         hp_cur[hp_torso] = 0;
-    } else if( ( get_stim() < -200 || get_painkiller() > 240 ) && !safe_overdose ) {
+    } else if( get_stim() < -200 || get_painkiller() > 240 ) {
         add_msg_if_player( m_bad, _( "Your breathing stops completely." ) );
         g->events().send<event_type::dies_from_drug_overdose>( getID(), efftype_id() );
         hp_cur[hp_torso] = 0;
-    } else if( ( has_effect( effect_jetinjector ) && get_effect_dur( effect_jetinjector ) > 40_minutes ) && !safe_overdose ) {
+    } else if( has_effect( effect_jetinjector ) && get_effect_dur( effect_jetinjector ) > 40_minutes ) {
         if( !( has_trait( trait_NOPAIN ) ) ) {
             add_msg_if_player( m_bad, _( "Your heart spasms painfully and stops." ) );
         } else {
@@ -2197,11 +2173,11 @@ void player::check_needs_extremes()
         }
         g->events().send<event_type::dies_from_drug_overdose>( getID(), effect_jetinjector );
         hp_cur[hp_torso] = 0;
-    } else if( ( get_effect_dur( effect_adrenaline ) > 50_minutes ) && !safe_overdose ) {
+    } else if( get_effect_dur( effect_adrenaline ) > 50_minutes ) {
         add_msg_if_player( m_bad, _( "Your heart spasms and stops." ) );
         g->events().send<event_type::dies_from_drug_overdose>( getID(), effect_adrenaline );
         hp_cur[hp_torso] = 0;
-    } else if( ( get_effect_int( effect_drunk ) > 4 ) && !safe_overdose ) {
+    } else if( get_effect_int( effect_drunk ) > 4 ) {
         add_msg_if_player( m_bad, _( "Your breathing slows down to a stop." ) );
         g->events().send<event_type::dies_from_drug_overdose>( getID(), effect_drunk );
         hp_cur[hp_torso] = 0;
@@ -2398,8 +2374,8 @@ needs_rates player::calc_needs_rates() const
     // Note: intentionally not in metabolic rate
     if( has_recycler ) {
         // Recycler won't help much with mutant metabolism - it is intended for human one
-        rates.hunger = std::min( rates.hunger, std::max( 0.25f, rates.hunger - 3.5f ) );
-        rates.thirst = std::min( rates.thirst, std::max( 0.25f, rates.thirst - 3.5f ) );
+        rates.hunger = std::min( rates.hunger, std::max( 0.5f, rates.hunger - 0.5f ) );
+        rates.thirst = std::min( rates.thirst, std::max( 0.5f, rates.thirst - 0.5f ) );
     }
 
     if( asleep ) {
@@ -2421,8 +2397,6 @@ needs_rates player::calc_needs_rates() const
         }
         rates.recovery -= static_cast<float>( get_perceived_pain() ) / 60;
 
-    } else if( has_trait( trait_EATHEALTH ) ) {
-        rates.recovery = 1.0f + mutation_value( "fatigue_regen_modifier" );
     } else {
         rates.recovery = 0;
     }
@@ -2506,10 +2480,10 @@ void player::update_needs( int rate_multiplier )
                     // Sleeping on a bed, no bionic      = 2x rest_modifier
                     // Sleeping on a comfy bed, no bionic= 3x rest_modifier
 
-                    // Sleeping on the ground, bionic    = 6x rest_modifier
-                    // Sleeping on a bed, bionic         = 12x rest_modifier
-                    // Sleeping on a comfy bed, bionic   = 18x rest_modifier
-                    float rest_modifier = ( has_active_bionic( bio_synaptic_regen ) ? 6 : 1 );
+                    // Sleeping on the ground, bionic    = 3x rest_modifier
+                    // Sleeping on a bed, bionic         = 6x rest_modifier
+                    // Sleeping on a comfy bed, bionic   = 9x rest_modifier
+                    float rest_modifier = ( has_active_bionic( bio_synaptic_regen ) ? 3 : 1 );
                     // Magnesium supplements also add a flat bonus to recovery speed
                     if( has_effect( effect_magnesium_supplements ) ) {
                         rest_modifier += 1;
@@ -2539,21 +2513,6 @@ void player::update_needs( int rate_multiplier )
             }
         }
     }
-    // final touch to our Battery Rabbit^^
-    if( has_trait( trait_EATHEALTH ) ) {
-        if( rates.recovery > 0.0f ) {
-            int recovered = roll_remainder( rates.recovery * rate_multiplier );
-
-            if( has_effect( effect_recently_coughed ) ) {
-                recovered *= .5;
-            }
-            
-            mod_fatigue( -recovered );
-            add_msg( m_good, _( "...eat, kill zeds, repeat. Why bother sleeping? You recovered %d fatigue." ),
-                     recovered );
-        }
-    }
-
     if( is_player() && wasnt_fatigued && get_fatigue() > DEAD_TIRED && !lying ) {
         if( !activity ) {
             add_msg_if_player( m_warning, _( "You're feeling tired.  %s to lie down for sleep." ),
@@ -5161,133 +5120,6 @@ void player::try_to_sleep( const time_duration &dur )
     assign_activity( activity_id( "ACT_TRY_SLEEP" ), to_moves<int>( dur ) );
 }
 
-comfort_level player::base_comfort_value( const tripoint &p ) const
-{
-    // Comfort of sleeping spots is "objective", while sleep_spot( p ) is "subjective"
-    // As in the latter also checks for fatigue and other variables while this function
-    // only looks at the base comfyness of something. It's still subjective, in a sense,
-    // as arachnids who sleep in webs will find most places comfortable for instance.
-    int comfort = 0;
-
-    bool plantsleep = has_trait( trait_CHLOROMORPH );
-    bool fungaloid_cosplay = has_trait( trait_M_SKIN3 );
-    bool websleep = has_trait( trait_WEB_WALKER );
-    bool webforce = has_trait( trait_THRESH_SPIDER ) && ( has_trait( trait_WEB_SPINNER ) ||
-                    ( has_trait( trait_WEB_WEAVER ) ) );
-    bool in_shell = has_active_mutation( trait_SHELL2 );
-    bool watersleep = has_trait( trait_WATERSLEEP );
-
-    const optional_vpart_position vp = g->m.veh_at( p );
-    const maptile tile = g->m.maptile_at( p );
-    const trap &trap_at_pos = tile.get_trap_t();
-    const ter_id ter_at_pos = tile.get_ter();
-    const furn_id furn_at_pos = tile.get_furn();
-
-    int web = g->m.get_field_intensity( p, fd_web );
-
-    // Some mutants have different comfort needs
-    if( !plantsleep && !webforce ) {
-        if( in_shell ) {
-            comfort += 1 + static_cast<int>( comfort_level::slightly_comfortable );
-            // Note: shelled individuals can still use sleeping aids!
-        } else if( vp ) {
-            vehicle &veh = vp->vehicle();
-            const cata::optional<vpart_reference> carg = vp.part_with_feature( "CARGO", false );
-            const cata::optional<vpart_reference> board = vp.part_with_feature( "BOARDABLE", true );
-            if( carg ) {
-                vehicle_stack items = veh.get_items( carg->part_index() );
-                for( auto &items_it : items ) {
-                    if( items_it.has_flag( "SLEEP_AID" ) ) {
-                        // Note: BED + SLEEP_AID = 9 pts, or 1 pt below very_comfortable
-                        comfort += 1 + static_cast<int>( comfort_level::slightly_comfortable );
-                        add_msg_if_player( m_info, _( "You use your %s for comfort." ), items_it.tname() );
-                        break; // prevents using more than 1 sleep aid
-                    }
-                }
-            }
-            if( board ) {
-                comfort += board->info().comfort;
-            } else {
-                comfort -= g->m.move_cost( p );
-            }
-        }
-        // Not in a vehicle, start checking furniture/terrain/traps at this point in decreasing order
-        else if( furn_at_pos != f_null ) {
-            comfort += 0 + furn_at_pos.obj().comfort;
-        }
-        // Web sleepers can use their webs if better furniture isn't available
-        else if( websleep && web >= 3 ) {
-            comfort += 1 + static_cast<int>( comfort_level::slightly_comfortable );
-        } else if( ter_at_pos == t_improvised_shelter ) {
-            comfort += 0 + static_cast<int>( comfort_level::slightly_comfortable );
-        } else if( ter_at_pos == t_floor || ter_at_pos == t_floor_waxed ||
-                   ter_at_pos == t_carpet_red || ter_at_pos == t_carpet_yellow ||
-                   ter_at_pos == t_carpet_green || ter_at_pos == t_carpet_purple ) {
-            comfort += 1 + static_cast<int>( comfort_level::neutral );
-        } else if( !trap_at_pos.is_null() ) {
-            comfort += 0 + trap_at_pos.comfort;
-        } else {
-            // Not a comfortable sleeping spot
-            comfort -= g->m.move_cost( p );
-        }
-
-        auto items = g->m.i_at( p );
-        for( auto &items_it : items ) {
-            if( items_it.has_flag( "SLEEP_AID" ) ) {
-                // Note: BED + SLEEP_AID = 9 pts, or 1 pt below very_comfortable
-                comfort += 1 + static_cast<int>( comfort_level::slightly_comfortable );
-                add_msg_if_player( m_info, _( "You use your %s for comfort." ), items_it.tname() );
-                break; // prevents using more than 1 sleep aid
-            }
-        }
-
-        if( fungaloid_cosplay && g->m.has_flag_ter_or_furn( "FUNGUS", pos() ) ) {
-            comfort += static_cast<int>( comfort_level::very_comfortable );
-        } else if( watersleep && g->m.has_flag_ter( "SWIMMABLE", pos() ) ) {
-            comfort += static_cast<int>( comfort_level::very_comfortable );
-        }
-    } else if( plantsleep ) {
-        if( vp || furn_at_pos != f_null ) {
-            // Sleep ain't happening in a vehicle or on furniture
-            comfort = static_cast<int>( comfort_level::impossible );
-        } else {
-            // It's very easy for Chloromorphs to get to sleep on soil!
-            if( ter_at_pos == t_dirt || ter_at_pos == t_pit || ter_at_pos == t_dirtmound ||
-                ter_at_pos == t_pit_shallow ) {
-                comfort += static_cast<int>( comfort_level::very_comfortable );
-            }
-            // Not as much if you have to dig through stuff first
-            else if( ter_at_pos == t_grass ) {
-                comfort += static_cast<int>( comfort_level::comfortable );
-            }
-            // Sleep ain't happening
-            else {
-                comfort = static_cast<int>( comfort_level::impossible );
-            }
-        }
-        // Has webforce
-    } else {
-        if( web >= 3 ) {
-            // Thick Web and you're good to go
-            comfort += static_cast<int>( comfort_level::very_comfortable );
-        } else {
-            comfort = static_cast<int>( comfort_level::impossible );
-        }
-    }
-
-    if( comfort > static_cast<int>( comfort_level::comfortable ) ) {
-        return comfort_level::very_comfortable;
-    } else if( comfort > static_cast<int>( comfort_level::slightly_comfortable ) ) {
-        return comfort_level::comfortable;
-    } else if( comfort > static_cast<int>( comfort_level::neutral ) ) {
-        return comfort_level::slightly_comfortable;
-    } else if( comfort == static_cast<int>( comfort_level::neutral ) ) {
-        return comfort_level::neutral;
-    } else {
-        return comfort_level::uncomfortable;
-    }
-}
-
 int player::sleep_spot( const tripoint &p ) const
 {
     const int current_stim = get_stim();
@@ -6577,12 +6409,12 @@ void player::do_skill_rust()
             continue;
         }
 
-        const bool charged_bio_mem = get_power_level() > 25_J && has_active_bionic( bio_memory );
+        const bool charged_bio_mem = get_power_level() > 25_kJ && has_active_bionic( bio_memory );
         const int oldSkillLevel = skill_level_obj.level();
         if( skill_level_obj.rust( charged_bio_mem ) ) {
             add_msg_if_player( m_warning,
                                _( "Your knowledge of %s begins to fade, but your memory banks retain it!" ), aSkill.name() );
-            mod_power_level( -25_J );
+            mod_power_level( -25_kJ );
         }
         const int newSkill = skill_level_obj.level();
         if( newSkill < oldSkillLevel ) {
@@ -6676,14 +6508,4 @@ std::pair<std::string, nc_color> player::get_pain_description() const
         pain_string = pain.first;
     }
     return std::make_pair( pain_string, pain_color );
-}
-
-void player::enforce_minimum_healing()
-{
-    for( int i = 0; i < num_hp_parts; i++ ) {
-        if( healed_total[i] <= 0 ) {
-            heal( static_cast<hp_part>( i ), 1 );
-        }
-        healed_total[i] = 0;
-    }
 }
