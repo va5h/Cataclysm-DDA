@@ -19,6 +19,7 @@
 #include "avatar.h"
 #include "avatar_action.h"
 #include "bionics.h"
+#include "cata_string_consts.h"
 #include "cata_utility.h"
 #include "catacharset.h"
 #include "coordinate_conversions.h"
@@ -65,7 +66,6 @@
 #include "requirements.h"
 #include "skill.h"
 #include "sounds.h"
-#include "string_consts.h"
 #include "string_formatter.h"
 #include "submap.h"
 #include "text_snippets.h"
@@ -6263,7 +6263,8 @@ std::vector<Creature *> player::get_visible_creatures( const int range ) const
 std::vector<Creature *> player::get_targetable_creatures( const int range ) const
 {
     return g->get_creatures_if( [this, range]( const Creature & critter ) -> bool {
-        return this != &critter && pos() != critter.pos() && // TODO: get rid of fake npcs (pos() check)
+        // TODO: get rid of fake npcs (pos() check)
+        return this != &critter && pos() != critter.pos() && attitude_to( critter ) != Creature::Attitude::A_FRIENDLY &&
         round( rl_dist_exact( pos(), critter.pos() ) ) <= range &&
         ( sees( critter ) || sees_with_infrared( critter ) );
     } );
