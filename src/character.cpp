@@ -2605,12 +2605,12 @@ void Character::do_skill_rust()
             continue;
         }
 
-        const bool charged_bio_mem = get_power_level() > 25_kJ && has_active_bionic( bio_memory );
+        const bool charged_bio_mem = get_power_level() > 25_J && has_active_bionic( bio_memory );
         const int oldSkillLevel = skill_level_obj.level();
         if( skill_level_obj.rust( charged_bio_mem ) ) {
             add_msg_if_player( m_warning,
                                _( "Your knowledge of %s begins to fade, but your memory banks retain it!" ), aSkill.name() );
-            mod_power_level( -25_kJ );
+            mod_power_level( -25_J );
         }
         const int newSkill = skill_level_obj.level();
         if( newSkill < oldSkillLevel ) {
@@ -4004,10 +4004,10 @@ void Character::update_needs( int rate_multiplier )
                     // Sleeping on a bed, no bionic      = 2x rest_modifier
                     // Sleeping on a comfy bed, no bionic= 3x rest_modifier
 
-                    // Sleeping on the ground, bionic    = 3x rest_modifier
-                    // Sleeping on a bed, bionic         = 6x rest_modifier
-                    // Sleeping on a comfy bed, bionic   = 9x rest_modifier
-                    float rest_modifier = ( has_active_bionic( bio_synaptic_regen ) ? 3 : 1 );
+                    // Sleeping on the ground, bionic    = 6x rest_modifier
+                    // Sleeping on a bed, bionic         = 12x rest_modifier
+                    // Sleeping on a comfy bed, bionic   = 18x rest_modifier
+                    float rest_modifier = ( has_active_bionic( bio_synaptic_regen ) ? 6 : 1 );
                     // Magnesium supplements also add a flat bonus to recovery speed
                     if( has_effect( effect_magnesium_supplements ) ) {
                         rest_modifier += 1;
@@ -4037,6 +4037,22 @@ void Character::update_needs( int rate_multiplier )
             }
         }
     }
+
+    // final touch to our Battery Rabbit^^
+    if( has_trait( trait_EATHEALTH ) ) {
+        if( rates.recovery > 0.0f ) {
+            int recovered = roll_remainder( rates.recovery * rate_multiplier );
+
+            if( has_effect( effect_recently_coughed ) ) {
+                recovered *= .5;
+            }
+            
+            mod_fatigue( -recovered );
+            add_msg( m_good, _( "...eat, kill zeds, repeat. Why bother sleeping? You recovered %d fatigue." ),
+                     recovered );
+        }
+    }
+
     if( is_player() && wasnt_fatigued && get_fatigue() > DEAD_TIRED && !lying ) {
         if( !activity ) {
             add_msg_if_player( m_warning, _( "You're feeling tired.  %s to lie down for sleep." ),
@@ -4060,7 +4076,7 @@ void Character::update_needs( int rate_multiplier )
     if( in_vehicle && ( has_trait( trait_HUGE ) || has_trait( trait_HUGE_OK ) ) ) {
         vehicle *veh = veh_pointer_or_null( g->m.veh_at( pos() ) );
         // it's painful to work the controls, but passengers in open topped vehicles are fine
-        if( veh && ( veh->enclosed_at( pos() ) || veh->player_in_control( *this->as_player() ) ) ) {
+        if( veh && ( veh->enclosed_at( pos() ) || veh->player_in_control( *this ) ) ) {
             add_msg_if_player( m_bad,
                                _( "You're cramping up from stuffing yourself in this vehicle." ) );
             if( is_npc() ) {
@@ -4072,6 +4088,7 @@ void Character::update_needs( int rate_multiplier )
         }
     }
 }
+
 needs_rates Character::calc_needs_rates() const
 {
     const effect &sleep = get_effect( effect_sleep );
@@ -4098,8 +4115,8 @@ needs_rates Character::calc_needs_rates() const
     // Note: intentionally not in metabolic rate
     if( has_recycler ) {
         // Recycler won't help much with mutant metabolism - it is intended for human one
-        rates.hunger = std::min( rates.hunger, std::max( 0.5f, rates.hunger - 0.5f ) );
-        rates.thirst = std::min( rates.thirst, std::max( 0.5f, rates.thirst - 0.5f ) );
+        rates.hunger = std::min( rates.hunger, std::max( 0.25f, rates.hunger - 3.5f ) );
+        rates.thirst = std::min( rates.thirst, std::max( 0.25f, rates.thirst - 3.5f ) );
     }
 
     if( asleep ) {
@@ -4121,6 +4138,8 @@ needs_rates Character::calc_needs_rates() const
         }
         rates.recovery -= static_cast<float>( get_perceived_pain() ) / 60;
 
+    } else if( has_trait( trait_EATHEALTH ) ) {
+        rates.recovery = 1.0f + mutation_value( "fatigue_regen_modifier" );
     } else {
         rates.recovery = 0;
     }
@@ -4151,15 +4170,17 @@ needs_rates Character::calc_needs_rates() const
 void Character::check_needs_extremes()
 {
     // Check if we've overdosed... in any deadly way.
-    if( get_stim() > 250 ) {
+    // Blood Filter CBM preventively safeguards from any overdose whatsoever.
+    const bool safe_overdose = has_bionic(bio_blood_filter);
+    if( ( get_stim() > 250 ) && !safe_overdose ) {
         add_msg_if_player( m_bad, _( "You have a sudden heart attack!" ) );
         g->events().send<event_type::dies_from_drug_overdose>( getID(), efftype_id() );
         hp_cur[hp_torso] = 0;
-    } else if( get_stim() < -200 || get_painkiller() > 240 ) {
+    } else if( ( get_stim() < -200 || get_painkiller() > 240 ) && !safe_overdose ) {
         add_msg_if_player( m_bad, _( "Your breathing stops completely." ) );
         g->events().send<event_type::dies_from_drug_overdose>( getID(), efftype_id() );
         hp_cur[hp_torso] = 0;
-    } else if( has_effect( effect_jetinjector ) && get_effect_dur( effect_jetinjector ) > 40_minutes ) {
+    } else if( ( has_effect( effect_jetinjector ) && get_effect_dur( effect_jetinjector ) > 40_minutes ) && !safe_overdose ) {
         if( !( has_trait( trait_NOPAIN ) ) ) {
             add_msg_if_player( m_bad, _( "Your heart spasms painfully and stops." ) );
         } else {
@@ -4167,11 +4188,11 @@ void Character::check_needs_extremes()
         }
         g->events().send<event_type::dies_from_drug_overdose>( getID(), effect_jetinjector );
         hp_cur[hp_torso] = 0;
-    } else if( get_effect_dur( effect_adrenaline ) > 50_minutes ) {
+    } else if( ( get_effect_dur( effect_adrenaline ) > 50_minutes ) && !safe_overdose ) {
         add_msg_if_player( m_bad, _( "Your heart spasms and stops." ) );
         g->events().send<event_type::dies_from_drug_overdose>( getID(), effect_adrenaline );
         hp_cur[hp_torso] = 0;
-    } else if( get_effect_int( effect_drunk ) > 4 ) {
+    } else if( ( get_effect_int( effect_drunk ) > 4 ) && !safe_overdose ) {
         add_msg_if_player( m_bad, _( "Your breathing slows down to a stop." ) );
         g->events().send<event_type::dies_from_drug_overdose>( getID(), effect_drunk );
         hp_cur[hp_torso] = 0;
