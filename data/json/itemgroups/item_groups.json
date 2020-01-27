@@ -1511,9 +1511,6 @@
   },
   {
     "type": "item_group",
-  },
-  {
-    "type": "item_group",
     "id": "ant_food",
     "items": [
       [ "meat", 50 ],
