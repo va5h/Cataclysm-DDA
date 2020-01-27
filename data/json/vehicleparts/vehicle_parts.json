@@ -1902,7 +1902,7 @@
     "durability": 100,
     "description": "A series of straps attached to the seat, intended to fasten together after going over your shoulders and hips and between your legs.",
     "folded_volume": 4,
-    "bonus": 25,
+    "bonus": 75,
     "item": "rope_30",
     "location": "on_seat",
     "requirements": {
