@@ -674,6 +674,7 @@ static const trait_id trait_THICK_SCALES( "THICK_SCALES" );
 static const trait_id trait_THORNS( "THORNS" );
 static const trait_id trait_THRESH_BIRD( "THRESH_BIRD" );
 static const trait_id trait_THRESH_CATTLE( "THRESH_CATTLE" );
+static const trait_id trait_THRESH_CHIMERA( "THRESH_CHIMERA" );
 static const trait_id trait_THRESH_CEPHALOPOD( "THRESH_CEPHALOPOD" );
 static const trait_id trait_THRESH_FELINE( "THRESH_FELINE" );
 static const trait_id trait_THRESH_INSECT( "THRESH_INSECT" );
