@@ -7037,6 +7037,8 @@ void game::reset_item_list_state( const catacurses::window &window, int height, 
         xpos += shortcut_print( window, point( xpos, ypos ), c_white, c_light_green,
                                 tokens[i] ) + gap_spaces;
     }
+
+    refresh_all();
 }
 
 void game::list_items_monsters()
@@ -7078,6 +7080,7 @@ void game::list_items_monsters()
         }
     }
 
+    refresh_all();
     if( ret == game::vmenu_ret::FIRE ) {
         avatar_action::fire( u, m, u.weapon );
     }
