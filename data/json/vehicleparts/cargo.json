@@ -53,9 +53,9 @@
     "broken_symbol": "#",
     "color": "light_gray",
     "broken_color": "dark_gray",
-    "durability": 2150,
+    "durability": 250,
     "description": "Storage space, mounted outside your vehicle's armor and vulnerable to damage.",
-    "size": 1000,
+    "size": 4000,
     "breaks_into": [  ],
     "requirements": {
       "install": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] },
