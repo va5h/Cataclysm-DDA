@@ -1736,6 +1736,7 @@ static void draw_compass( avatar &, const catacurses::window &w )
 {
     werase( w );
     g->mon_info( w );
+    g->mon_info_update();
     wrefresh( w );
 }
 
@@ -1743,6 +1744,7 @@ static void draw_compass_padding( avatar &, const catacurses::window &w )
 {
     werase( w );
     g->mon_info( w, 1 );
+    g->mon_info_update();
     wrefresh( w );
 }
 
