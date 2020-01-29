@@ -92,25 +92,5 @@
     "dispersion_modifier": -8,
     "handling_modifier": 8,
     "min_skills": [ [ "weapon", 5 ] ]
-  },
-  {
-    "id": "cheek_pad",
-    "type": "GUNMOD",
-    "name": "cheek pad",
-    "description": "A stock accessory for sniper rifles and even DMRs considerably improving eye relief efficiency, prevents slipping, and reduces recoil to the neck and cheek.",
-    "weight": "300 g",
-    "volume": "250 ml",
-    "integral_volume": 0,
-    "price": 4500,
-    "to_hit": 1,
-    "bashing": 2,
-    "material": [ "plastic", "steel" ],
-    "symbol": ":",
-    "color": "dark_gray",
-    "location": "stock",
-    "mod_targets": [ "rifle" ],
-    "dispersion_modifier": -1,
-    "handling_modifier": 2,
-    "min_skills": [ [ "weapon", 2 ] ]
   }
 ]

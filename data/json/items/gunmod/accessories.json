@@ -84,5 +84,25 @@
     "location": "accessories",
     "mod_targets": [ "rugerlcp", "kp32", "kp3at", "kpf9", "cop_38", "moss_brownie" ],
     "flags": [ "IS_ARMOR", "SKINTIGHT", "WATER_FRIENDLY" ]
+  },
+  {
+    "id": "cheek_pad",
+    "type": "GUNMOD",
+    "name": "cheek pad",
+    "description": "A stock accessory for sniper rifles and even DMRs considerably improving eye relief efficiency, prevents slipping, and reduces recoil to the neck and cheek.",
+    "weight": "300 g",
+    "volume": "250 ml",
+    "integral_volume": 0,
+    "price": 4500,
+    "to_hit": 1,
+    "bashing": 2,
+    "material": [ "plastic", "steel" ],
+    "symbol": ":",
+    "color": "dark_gray",
+    "location": "accessories",
+    "mod_targets": [ "rifle" ],
+    "dispersion_modifier": -2,
+    "handling_modifier": 2,
+    "min_skills": [ [ "weapon", 2 ] ]
   }
 ]
