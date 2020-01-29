@@ -88,7 +88,7 @@
     "symbol": ":",
     "color": "dark_gray",
     "location": "stock",
-    "mod_targets": [ "smg", "rifle", "shotgun", "launcher" ],
+    "mod_targets": [ "smg", "rifle", "shotgun", "crossbow", "launcher" ],
     "dispersion_modifier": -8,
     "handling_modifier": 8,
     "min_skills": [ [ "weapon", 5 ] ]
