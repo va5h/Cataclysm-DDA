@@ -897,12 +897,39 @@
           "silver",
           "gold",
           "platinum",
-          "superalloy"
+          "superalloy",
+          "ceramic",
+          "lightceramic",
+          "acidchitin",
+          "chitin"
         ],
         "skill": "mechanics",
         "tool_quality": 20,
         "cost_scaling": 0.1,
         "move_cost": 100
+      },
+      {
+        "type": "sew_advanced",
+        "materials": [
+          "kevlar",
+          "plastic",
+          "iron",
+          "steel",
+          "hardsteel",
+          "aluminum",
+          "copper",
+          "bronze",
+          "silver",
+          "gold",
+          "platinum",
+          "superalloy",
+          "ceramic",
+          "lightceramic",
+          "acidchitin",
+          "chitin"
+        ],
+        "skill": "tailor",
+        "clothing_mods": [ "leather_padded", "steel_padded", "kevlar_padded", "furred", "wooled" ]
       },
       { "flame": false, "type": "cauterize" }
     ],
