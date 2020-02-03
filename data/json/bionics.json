@@ -43,6 +43,8 @@
     "name": "Alloy Plating - Arms",
     "description": "The flesh on your arms has been surgically replaced by alloy plating.  Provides passive protection and can be used in conjunction with bionic martial arts.",
     "occupied_bodyparts": [ [ "ARM_L", 4 ], [ "ARM_R", 4 ] ],
+    "bash_protec": [ [ "ARM_L", 20 ], [ "ARM_R", 20 ] ],
+    "cut_protec": [ [ "ARM_L", 20 ], [ "ARM_R", 20 ] ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   },
   {
@@ -52,6 +54,8 @@
     "description": "Your eye sockets have been surgically sealed with highly protective mirrored lenses and your tear ducts have been re-routed to your mouth.  When you cry, you must spit out or swallow your tears.",
     "occupied_bodyparts": [ [ "EYES", 1 ] ],
     "env_protec": [ [ "EYES", 12 ] ],
+    "bash_protec": [ [ "EYES", 20 ] ],
+    "cut_protec": [ [ "EYES", 20 ] ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   },
   {
@@ -60,6 +64,8 @@
     "name": "Alloy Plating - Head",
     "description": "The flesh on your head has been surgically replaced by alloy plating, protecting both your head and jaw regions.",
     "occupied_bodyparts": [ [ "HEAD", 5 ], [ "MOUTH", 1 ] ],
+    "bash_protec": [ [ "HEAD", 20 ] ],
+    "cut_protec": [ [ "HEAD", 20 ] ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   },
   {
@@ -68,6 +74,8 @@
     "name": "Alloy Plating - Legs",
     "description": "The flesh on your legs has been surgically replaced by alloy plating.  Provides passive protection and can be used in conjunction with bionic martial arts.",
     "occupied_bodyparts": [ [ "LEG_L", 6 ], [ "LEG_R", 6 ] ],
+    "bash_protec": [ [ "LEG_L", 20 ], [ "LEG_R", 20 ] ],
+    "cut_protec": [ [ "LEG_L", 20 ], [ "LEG_R", 20 ] ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   },
   {
@@ -76,6 +84,8 @@
     "name": "Alloy Plating - Torso",
     "description": "The flesh on your torso has been surgically replaced by alloy plating, protecting it from physical trauma.",
     "occupied_bodyparts": [ [ "TORSO", 10 ] ],
+    "bash_protec": [ [ "TORSO", 20 ] ],
+    "cut_protec": [ [ "TORSO", 20 ] ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   },
   {
@@ -86,7 +96,7 @@
     "occupied_bodyparts": [ [ "TORSO", 1 ] ],
     "fuel_options": [ "battery" ],
     "fuel_efficiency": 1,
-    "fuel_capacity": 7500,
+    "fuel_capacity": 15000,
     "capacity": "5000 kJ",
     "time": 1,
     "flags": [ "BIONIC_POWER_SOURCE", "BIONIC_TOGGLED", "BIONIC_NPC_USABLE" ]
@@ -151,7 +161,7 @@
     "id": "bio_carbon",
     "type": "bionic",
     "name": "Subdermal Carbon Filament",
-    "description": "Lying just beneath your skin is a thin armor made of carbon nanotubes.  This reduces bashing damage by 12 and cutting damage by 18.",
+    "description": "Lying just beneath your skin is a thin armor made of carbon nanotubes.  This reduces bashing damage by 18 and cutting damage by 22.",
     "occupied_bodyparts": [
       [ "TORSO", 5 ],
       [ "HEAD", 2 ],
@@ -163,6 +173,30 @@
       [ "LEG_R", 3 ],
       [ "FOOT_L", 1 ],
       [ "FOOT_R", 1 ]
+    ],
+    "bash_protec": [
+      [ "TORSO", 18 ],
+      [ "HEAD", 18 ],
+      [ "ARM_L", 18 ],
+      [ "ARM_R", 18 ],
+      [ "HAND_L", 18 ],
+      [ "HAND_R", 18 ],
+      [ "LEG_L", 18 ],
+      [ "LEG_R", 18 ],
+      [ "FOOT_L", 18 ],
+      [ "FOOT_R", 18 ]
+    ],
+    "cut_protec": [
+      [ "TORSO", 22 ],
+      [ "HEAD", 22 ],
+      [ "ARM_L", 22 ],
+      [ "ARM_R", 22 ],
+      [ "HAND_L", 22 ],
+      [ "HAND_R", 22 ],
+      [ "LEG_L", 22 ],
+      [ "LEG_R", 22 ],
+      [ "FOOT_L", 22 ],
+      [ "FOOT_R", 22 ]
     ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   },
@@ -582,7 +616,7 @@
     "description": "The index fingers of both hands have powerful fire starters which extend from the tip.",
     "occupied_bodyparts": [ [ "HAND_L", 1 ], [ "HAND_R", 1 ] ],
     "fake_item": "fake_firestarter",
-    "act_cost": "75 J"
+    "act_cost": "750 J"
   },
   {
     "id": "bio_lockpick",
@@ -762,7 +796,7 @@
     "id": "bio_probability_travel",
     "type": "bionic",
     "name": "Probability Travel",
-    "description": "Increases your body's wavelength, allowing you to quantum tunnel through walls, reappearing on the other side.  Power drain in standby is minimal, but each tile tunneled through costs 25 bionic power.",
+    "description": "Increases your body's wavelength, allowing you to quantum tunnel through walls, reappearing on the other side.  Power drain in standby is minimal, but each tile tunneled through costs 250 bionic power.",
     "occupied_bodyparts": [ [ "TORSO", 20 ], [ "ARM_L", 2 ], [ "ARM_R", 2 ], [ "LEG_L", 3 ], [ "LEG_R", 3 ], [ "FOOT_L", 1 ], [ "FOOT_R", 1 ] ],
     "flags": [ "BIONIC_TOGGLED" ],
     "act_cost": "3 J",
@@ -1067,7 +1101,7 @@
     "flags": [ "BIONIC_TOGGLED" ],
     "act_cost": "6 J",
     "react_cost": "6 J",
-    "time": 1200
+    "time": 1
   },
   {
     "id": "bio_ups",
