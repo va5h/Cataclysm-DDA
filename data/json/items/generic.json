@@ -1092,7 +1092,7 @@
     "price": 1000,
     "material": [ "steel", "plastic" ],
     "weight": "1023850 g",
-    "volume": "1100 L",
+    "volume": "900 L",
     "bashing": 20,
     "cutting": 15,
     "to_hit": -3,
