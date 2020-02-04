@@ -1407,6 +1407,12 @@ void options_manager::add_options_interface()
          true
        );
 
+    add( "FORCE_FULL_RECIPE_LIST", "interface",
+         translate_marker( "Force displaying full recipe list" ),
+         translate_marker( "If true, will show all recipes for items, no matter what." ),
+         true
+       );
+
     add_empty_line();
 
     add( "DIAG_MOVE_WITH_MODIFIERS_MODE", "interface",

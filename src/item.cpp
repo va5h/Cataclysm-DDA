@@ -3305,11 +3305,13 @@ void item::final_info( std::vector<iteminfo> &info, const iteminfo_query *parts,
     if( !known_recipes.empty() && parts->test( iteminfo_parts::DESCRIPTION_APPLICABLE_RECIPES ) ) {
         const inventory &inv = g->u.crafting_inventory();
 
-        if( known_recipes.size() > 24 ) {
+        bool force_full = get_option<bool>( "FORCE_FULL_RECIPE_LIST" );
+
+        if( ( known_recipes.size() > 24 ) && !force_full ) {
             insert_separation_line( info );
             info.push_back( iteminfo( "DESCRIPTION",
                                       _( "You know dozens of things you could craft with it." ) ) );
-        } else if( known_recipes.size() > 12 ) {
+        } else if( ( known_recipes.size() > 12 ) && !force_full ) {
             insert_separation_line( info );
             info.push_back( iteminfo( "DESCRIPTION",
                                       _( "You could use it to craft various other things." ) ) );
