@@ -1366,7 +1366,9 @@ std::vector<tripoint> target_handler::target_ui( player &pc, target_mode mode,
             if( who.guaranteed_hostile() ) {
                 return true;
             }
-            return query_yn( _( "Really attack %s?" ), who.name );
+            if( g->u.sees( who ) ) {
+                return query_yn( _( "Really attack %s?" ), who.name );
+            }
         }
         return true;
     };
