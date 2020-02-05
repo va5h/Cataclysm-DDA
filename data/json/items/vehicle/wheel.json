@@ -258,6 +258,23 @@
     "width": 30
   },
   {
+    "id": "hd_steel_drum_spiked",
+    "type": "WHEEL",
+    "category": "veh_parts",
+    "name": "spiked steel drum",
+    "description": "Welding a whole bunch or menacing spikes onto roller drums seems like utter stupidity... or ingeniousness",
+    "weight": "780000 g",
+    "volume": "290 L",
+    "price": 50000,
+    "bashing": 60,
+    "to_hit": -2,
+    "material": [ "steel" ],
+    "symbol": "m",
+    "color": "light_gray",
+    "diameter": 64,
+    "width": 30
+  },
+  {
     "id": "wheel_small",
     "type": "WHEEL",
     "category": "veh_parts",

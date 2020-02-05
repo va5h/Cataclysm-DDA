@@ -397,6 +397,21 @@
     ]
   },
   {
+    "result": "hd_steel_drum_spiked",
+    "type": "recipe",
+    "category": "CC_OTHER",
+    "subcategory": "CSC_OTHER_VEHICLE",
+    "skill_used": "fabrication",
+    "difficulty": 10,
+    "time": "300 m",
+    "reversible": true,
+    "autolearn": true,
+    "using": [ [ "welding_standard", 60 ] ],
+    "tools": [ [ [ "mold_plastic", -1 ] ] ],
+    "qualities": [ { "id": "HAMMER", "level": 2 }, { "id": "SAW_M", "level": 1 }, { "id": "SAW_M_FINE", "level": 1 } ],
+    "components": [ [ [ "hd_steel_drum", 1 ] ], [ [ "plastic_chunk", 240 ] ], [ [ "rebar", 36 ] ] ]
+  },
+  {
     "type": "recipe",
     "result": "boat_board",
     "category": "CC_OTHER",
