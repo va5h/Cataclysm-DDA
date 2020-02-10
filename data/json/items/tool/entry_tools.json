@@ -84,7 +84,7 @@
     "flags": [ "BELT_CLIP" ]
   },
   {
-    "id": "pseuso_bio_picklock",
+    "id": "pseudo_bio_picklock",
     "type": "TOOL",
     "name": "bio lockpick",
     "description": "this a pseudo item",
