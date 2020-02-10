@@ -934,7 +934,7 @@
       [ "CHISEL", 3 ],
       [ "CUT", 2 ],
       [ "CUT_FINE", 2 ],
-      [ "DIG", 1 ]
+      [ "DIG", 1 ],
       [ "DRILL", 3 ],
       [ "FILE", 2 ],
       [ "HAMMER", 3 ],
