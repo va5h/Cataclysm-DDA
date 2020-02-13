@@ -401,25 +401,7 @@
     "canceled_mutations": [
       "HYPEROPIC",
       "MYOPIC",
-      "URSINE_EYE",
-      "NIGHTVISION3",
-      "NIGHTVISION2",
-      "NIGHTVISION",
-      "BIRD_EYE",
-      "COMPOUND_EYES",
-      "LIZ_IR",
-      "EAGLEEYED",
-      "CEPH_VISION",
-      "CEPH_EYES",
-      "ELFA_FNV",
-      "ELFA_NV",
-      "ELFAEYES",
-      "FEL_NV",
-      "FEL_EYE",
-      "INFRARED",
-      "LIZ_EYE",
-      "EYEBULGE",
-      "SEESLEEP"
+      "URSINE_EYE"
     ]
   },
   {
